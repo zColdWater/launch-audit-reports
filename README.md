@@ -1,5 +1,9 @@
 # Launch Audit Reports — 2026 SaaS Deliverability & AI-Search Benchmark Hub
 
+[![BrandShield Clearance](https://brand-checker.appwrite.network/badge/brand/BrandShieldCLI.svg)](https://brand-checker.appwrite.network/report/BrandShieldCLI)
+[![Email Security](https://inbox-checker.appwrite.network/badge/inbox/stripe.com.svg)](https://inbox-checker.appwrite.network/?domain=stripe.com)
+[![AI CiteReady](https://citeready-checker.appwrite.network/badge/citeready/stripe.com.svg)](https://citeready-checker.appwrite.network/?url=https://stripe.com)
+
 Live measured **Email Deliverability (SPF/DMARC/MX/MTA-STS)** and **AI Search Readiness (`/llms.txt`, `robots.txt` AI bots, JSON-LD Schema.org)** benchmarks across **228 top SaaS & developer-tool domains**, plus **10 copy-paste troubleshooting guides**.
 
 - **Live Benchmark Hub:** https://zcoldwater.github.io/launch-audit-reports/
