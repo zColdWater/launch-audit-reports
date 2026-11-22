@@ -2,13 +2,12 @@
 
 > Live measured SPF/DMARC/MX email deliverability and /llms.txt, robots.txt AI crawler & JSON-LD Schema readiness across 228 top SaaS & developer-tool domains, plus 10 copy-paste troubleshooting guides.
 
-## Benchmark Hub & Live Scanners
+## Benchmark Hub & Live v5.0 Online Web Apps
 - Interactive Benchmark Directory (228 Companies): https://zcoldwater.github.io/launch-audit-reports/
-- Free Brand Name & USPTO Trademark Scanner: https://brand-checker.appwrite.network
-- Free Email Deliverability Scanner (SPF/DMARC/MX): https://inbox-checker.appwrite.network
-- Free Online SPF >10 Lookup Flattener: https://inbox-checker.appwrite.network/spf-flattener
-- Free AI Search & llms.txt Readiness Scanner: https://citeready-checker.appwrite.network
-- Free Live /llms.txt Starter Generator: https://citeready-checker.appwrite.network/generator
+- VibeShield v5.0 — Free JS Bundle Secrets & Supabase RLS Scanner: https://vibe-checker.appwrite.network
+- BrandShield v5.0 — Free 8-TLD RDAP, USPTO Trademark & 60-Idea Brand Namer: https://brand-checker.appwrite.network
+- CiteReady v5.0 — Free 10-Bot AI Search (GEO) & /llms.txt Generator: https://citeready-checker.appwrite.network | https://citeready-checker.appwrite.network/generator
+- InboxShield v5.0 — Free SPF/DKIM/DMARC/DNSBL Audit & SPF Flattener: https://inbox-checker.appwrite.network | https://inbox-checker.appwrite.network/spf-flattener
 
 ## Troubleshooting Guides
 - [Fix Resend Emails Going to Spam](https://zcoldwater.github.io/launch-audit-reports/guides/resend-emails-going-to-spam-fix.html): Most Resend spam-folder drops come from sending on a root domain with broken SPF lookup counts, missing DMARC alignment, or sharing reputation between marketing blasts and auth emails.
@@ -32,8 +31,9 @@
 - [PostHog (posthog.com) — 78/100](https://zcoldwater.github.io/launch-audit-reports/report/posthog.com.html): Email 88/100 (DMARC quarantine, SPF 10/10), AI Search 65/100 (llms.txt present)
 - [Linear (linear.app) — 86/100](https://zcoldwater.github.io/launch-audit-reports/report/linear.app.html): Email 90/100 (DMARC reject, SPF 4/10), AI Search 80/100 (llms.txt present)
 
-## Pro Toolkits (One-Time Offline Node.js Kits)
-- 3-in-1 Founder Launch Stack ($49 Solo / $89 Agency): https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack | Direct: https://omnipulse-x402.appwrite.network/checkout/launch-stack
-- BrandShield Pro ($19/$39): https://agentarenastudi.gumroad.com/l/omniforge-brandshield | Direct: https://omnipulse-x402.appwrite.network/checkout/brandshield
-- InboxShield Pro ($29/$49): https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield | Direct: https://omnipulse-x402.appwrite.network/checkout/inboxshield
-- CiteReady Pro ($19/$39): https://omnipulse-x402.appwrite.network/go/gumroad/citeready | Direct: https://omnipulse-x402.appwrite.network/checkout/citeready
+## OmniForge v5.0 Web Pro Suite (One-Time In-Browser Activation, Zero Subscriptions)
+- VibeShield Web Pro ($9 One-Time): https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield | Direct: https://omnipulse-x402.appwrite.network/checkout/vibeshield
+- BrandShield Web Pro ($12 One-Time): https://omnipulse-x402.appwrite.network/go/gumroad/brandshield | Direct: https://omnipulse-x402.appwrite.network/checkout/brandshield
+- CiteReady Web Pro ($12 One-Time): https://omnipulse-x402.appwrite.network/go/gumroad/citeready | Direct: https://omnipulse-x402.appwrite.network/checkout/citeready
+- InboxShield Web Pro ($15 One-Time): https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield | Direct: https://omnipulse-x402.appwrite.network/checkout/inboxshield
+- 4-in-1 Launch Stack Web Pro ($29 One-Time — Save $19 across all 4 apps): https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack | Direct: https://omnipulse-x402.appwrite.network/checkout/launch-stack
