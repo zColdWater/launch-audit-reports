@@ -9,7 +9,7 @@ Live measured **Email Deliverability (SPF/DMARC/MX/MTA-STS)** and **AI Search Re
 - **Live Benchmark Hub:** https://zcoldwater.github.io/launch-audit-reports/
 - **Free Live Scanners:** [BrandShield (Name + USPTO)](https://brand-checker.appwrite.network) · [InboxShield (SPF/DMARC)](https://inbox-checker.appwrite.network) · [CiteReady (llms.txt + GEO)](https://citeready-checker.appwrite.network)
 - **Open-Source CLIs & GitHub Actions:** [brandshield-cli](https://github.com/zColdWater/brandshield-cli) · [inboxshield-cli](https://github.com/zColdWater/inboxshield-cli) · [citeready-cli](https://github.com/zColdWater/citeready-cli)
-- **3-in-1 Founder Launch Stack ($49 Solo / $89 Agency):** [Gumroad](https://agentarenastudi.gumroad.com/l/omniforge-launch-stack) · [Instant Direct Checkout](https://omnipulse-x402.appwrite.network/checkout/launch-stack)
+- **3-in-1 Founder Launch Stack ($49 Solo / $89 Agency):** [Gumroad](https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack) · [Instant Direct Checkout](https://omnipulse-x402.appwrite.network/checkout/launch-stack)
 
 ## Key Findings (2026-11-22)
 - **66 / 228** top SaaS domains still lack `/llms.txt`.
