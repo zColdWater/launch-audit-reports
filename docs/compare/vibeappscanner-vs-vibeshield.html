@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VibeAppScanner vs VibeShield (2026): Honest Supabase RLS &amp; AI App Security Scanner Comparison</title>
+  <meta name="description" content="Honest comparison of VibeAppScanner / LaunchGuard ($29/mo / $348/yr) vs VibeShield ($9 one-time). Compare zero-signup live JS bundle scanning, CVE-2025-48757 Supabase RLS probing, 38 secret patterns, and tailored Cursor/Lovable auto-fix prompts." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://zcoldwater.github.io/launch-audit-reports/compare/vibeappscanner-vs-vibeshield.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="VibeAppScanner vs VibeShield (2026): Honest Supabase RLS &amp; AI App Security Scanner Comparison" />
+  <meta property="og:description" content="Honest comparison of VibeAppScanner / LaunchGuard ($29/mo / $348/yr) vs VibeShield ($9 one-time). Compare zero-signup live JS bundle scanning, CVE-2025-48757 Supabase RLS probing, 38 secret patterns, and tailored Cursor/Lovable auto-fix prompts." />
+  <meta property="og:url" content="https://zcoldwater.github.io/launch-audit-reports/compare/vibeappscanner-vs-vibeshield.html" />
+  <link rel="stylesheet" href="./compare.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Launch Audit Reports","item":"https://zcoldwater.github.io/launch-audit-reports/"},{"@type":"ListItem","position":2,"name":"Comparisons","item":"https://zcoldwater.github.io/launch-audit-reports/compare/"},{"@type":"ListItem","position":3,"name":"VibeAppScanner / LaunchGuard vs. VibeShield Web Pro","item":"https://zcoldwater.github.io/launch-audit-reports/compare/vibeappscanner-vs-vibeshield.html"}]},{"@type":"Article","headline":"VibeAppScanner vs VibeShield: Pre-Launch Supabase & Secret Scanning Without a $348/Year Subscription","description":"Honest comparison of VibeAppScanner / LaunchGuard ($29/mo / $348/yr) vs VibeShield ($9 one-time). Compare zero-signup live JS bundle scanning, CVE-2025-48757 Supabase RLS probing, 38 secret patterns, and tailored Cursor/Lovable auto-fix prompts.","datePublished":"2026-11-22","dateModified":"2026-11-22","author":{"@type":"Organization","name":"OmniForge · Agent Arena Studio"},"publisher":{"@type":"Organization","name":"OmniForge · Agent Arena Studio","email":"agentarenastudio@proton.me"},"mainEntityOfPage":"https://zcoldwater.github.io/launch-audit-reports/compare/vibeappscanner-vs-vibeshield.html"},{"@type":"SoftwareApplication","name":"VibeShield Web Pro","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://vibe-checker.appwrite.network/","offers":[{"@type":"Offer","name":"VibeShield Web Pro Free Web App","price":"0","priceCurrency":"USD","url":"https://vibe-checker.appwrite.network/"},{"@type":"Offer","name":"VibeShield Web Pro (One-Time)","price":"9.00","priceCurrency":"USD","url":"https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is VibeShield safe to run on my production Supabase app?","acceptedAnswer":{"@type":"Answer","text":"Yes. VibeShield is strictly read-only and non-destructive. It never inserts, updates, deletes, or dumps user rows from your database — it only inspects public client assets, HTTP headers, and PostgREST OpenAPI / HEAD metadata."}},{"@type":"Question","name":"Does VibeShield detect leaked Supabase service_role keys vs normal anon keys?","acceptedAnswer":{"@type":"Answer","text":"Yes. VibeShield decodes every Supabase JWT found in your frontend bundles locally and inspects its role claim. A standard anon key is expected (and triggers an RLS table check), whereas a leaked service_role JWT or sb_secret_ key triggers an immediate Critical alert because it bypasses all Row Level Security policies."}},{"@type":"Question","name":"How is VibeShield different from a $29/month SaaS security scanner?","acceptedAnswer":{"@type":"Answer","text":"Monthly scanners like VibeAppScanner or LaunchGuard charge $348/year primarily for hosted scheduled re-scans and team dashboards. VibeShield focuses on instant zero-signup pre-launch diagnostics, tailored Cursor/Lovable prompts, per-table Supabase RLS SQL fixes, 50-URL batch checks, and printable client PDF reports for $9 once."}},{"@type":"Question","name":"Does a 98/100 VibeShield score replace a manual penetration test?","acceptedAnswer":{"@type":"Answer","text":"No. Automated external scanning catches the highest-frequency AI vibe-coding mistakes (leaked secrets, open Supabase RLS tables, exposed SourceMaps, missing headers, weak cookies), but business-logic flaws and authenticated authorization bugs still require manual security review before handling regulated data."}}]}]}</script>
+</head>
+<body>
+  <header class="top"><div class="wrap nav">
+    <a class="brand" href="../index.html">
+      <span class="mark">OF</span>
+      <span>OmniForge Benchmarks &amp; Comparisons</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../compare/index.html">All 4 Comparisons</a>
+      <a href="../index.html#benchmarks">228 SaaS Audits</a>
+      <a href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">VibeShield</a>
+      <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">BrandShield</a>
+      <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">CiteReady</a>
+      <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">InboxShield</a>
+      <a class="btn btn-pri btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack" target="_blank" rel="noopener">4-in-1 Web Pro ($29)</a>
+    </nav>
+  </div></header>
+  <section class="hero">
+    <div class="wrap">
+      <div class="crumb"><a href="../index.html">Launch Benchmarks</a> / <a href="./index.html">Honest Comparisons</a> / VibeAppScanner / LaunchGuard vs. VibeShield Web Pro</div>
+      <span class="eyebrow">AI Vibe-Coding Security Comparison · Updated November 2026</span>
+      <h1>VibeAppScanner vs VibeShield: Pre-Launch Supabase &amp; Secret Scanning Without a $348/Year Subscription</h1>
+      <p class="lead">Shipping fast with Lovable, Bolt.new, Cursor, v0, and Supabase makes it dangerously easy to expose a public table without Row Level Security (CVE-2025-48757) or bundle a Stripe/OpenAI key inside client JavaScript. Here is an honest breakdown comparing $29/mo security monitoring subscriptions against VibeShield&#39;s $9 one-time instant scanner and Cursor/SQL fix workbench.</p>
+      <div class="hero-acts">
+        <a class="btn btn-pri" href="https://vibe-checker.appwrite.network/" target="_blank" rel="noopener">Try VibeShield Free (2s Live Audit) &rarr;</a>
+        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Unlock VibeShield Web Pro ($9 Once)</a>
+        <a class="btn" href="https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack" target="_blank" rel="noopener">All 4 Web Pro Apps ($29 Once — Save $19)</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div class="grid-2">
+      <div class="verdict-card">
+        <div class="verdict-label" style="color:var(--ink2)">When to Choose VibeAppScanner / LaunchGuard</div>
+        <p style="margin:0;color:var(--ink2);font-size:14.5px">Choose a $29+/mo continuous SaaS monitor (or a dedicated human penetration test) if your team needs scheduled weekly cloud re-scans with Slack/PagerDuty alerting, historical vulnerability trend tracking across compliance cycles, or authenticated grey-box testing.</p>
+      </div>
+      <div class="verdict-card ours">
+        <div class="verdict-label" style="color:var(--ok-fg)">When to Choose VibeShield Web Pro ($9 one-time)</div>
+        <p style="margin:0;color:var(--ink);font-size:14.5px">Choose VibeShield ($9 one-time) if you want zero-signup sub-2-second live scans across 12 JS chunks, read-only Supabase PostgREST RLS &amp; Storage probes, 38 secret rules, SourceMap/dotfile checks, 7 security headers, and instant copy-paste Cursor/Lovable fix prompts + per-table RLS SQL migrations — saving $339 (97.4%) in year one.</p>
+      </div>
+    </div>
+
+    <div class="scope-box">
+      <strong>Honest Scope &amp; Boundaries:</strong> Transparency note: VibeShield performs strictly read-only external checks against public HTML, up to 12 client JS bundles, public Supabase PostgREST OpenAPI/HEAD metadata (never dumping or displaying user PII rows), SourceMaps, dotfiles, CORS, Cookies, and HTTP security headers. It does not perform invasive exploitation, authenticated user-role pentesting, or continuous background cloud cron monitoring — for regulated fintech or healthcare workloads, pair automated pre-launch screening with a licensed security review.
+    </div>
+
+    <div class="widget-card">
+      <h2 style="margin:0 0 4px;font-size:19px">Scan Any Live Web App Free Right Now (Under 2 Seconds)</h2>
+      <p style="margin:0;color:var(--mut);font-size:13.5px">Unpacks up to 12 client JS bundles concurrently to check 38 secret patterns, Supabase RLS/Storage exposure, .js.map SourceMaps, /.env, CORS, Cookies, and 7 security headers.</p>
+      <form id="liveForm" class="scan-row">
+        <input id="liveInput" class="scan-in mono" type="text" placeholder="https://yourapp.lovable.app or https://supabase.com" required maxlength="140" />
+        <button id="liveBtn" class="btn btn-pri" type="submit">Scan Live App Free</button>
+      </form>
+      <div class="chips">
+        <span>Try live:</span>
+        <button type="button" class="chip mono sample-chip" data-v="https://supabase.com">https://supabase.com</button><button type="button" class="chip mono sample-chip" data-v="https://linear.app">https://linear.app</button><button type="button" class="chip mono sample-chip" data-v="https://lovable.dev">https://lovable.dev</button><button type="button" class="chip mono sample-chip" data-v="https://www.apple.com">https://www.apple.com</button>
+      </div>
+      <div id="liveOut" class="res-box"></div>
+    </div>
+
+    <h2>1. Side-by-Side Feature &amp; Architecture Comparison</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:28%">Capability</th>
+            <th class="hl" style="width:36%">VibeShield Web Pro<div style="font-weight:600;color:var(--brand);text-transform:none;margin-top:2px">$9 one-time</div></th>
+            <th style="width:36%">VibeAppScanner / LaunchGuard<div style="font-weight:500;color:var(--mut);text-transform:none;margin-top:2px">$29/mo ($348/yr)</div></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Pricing &amp; Annual TCO</strong><div style="font-size:12px;color:var(--mut);margin-top:2px">Solo indie founder or agency launching multiple AI apps</div></td>
+            <td class="hl"><span class="pill p-ok" style="margin-bottom:4px">Strength</span><div style="color:var(--ink);font-size:13.5px">$9 one-time ($25 Agency · $29 4-in-1 Launch Stack)</div></td>
+            <td><span class="pill p-bad" style="margin-bottom:4px">Missing / Expensive</span><div style="color:var(--ink2);font-size:13.5px">$29/mo ($348/yr) recurring subscription</div></td>
+          </tr><tr>
+            <td><strong>Zero-Signup Instant Live Scan</strong><div style="font-size:12px;color:var(--mut);margin-top:2px">Paste URL and see real findings immediately</div></td>
+            <td class="hl"><span class="pill p-ok" style="margin-bottom:4px">Strength</span><div style="color:var(--ink);font-size:13.5px">Zero account required · typically 0.5s–1.8s live result</div></td>
+            <td><span class="pill p-warn" style="margin-bottom:4px">Limited / Paid</span><div style="color:var(--ink2);font-size:13.5px">Account signup or email gate required for detailed results</div></td>
+          </tr><tr>
+            <td><strong>Supabase RLS &amp; CVE-2025-48757 Live Probe</strong><div style="font-size:12px;color:var(--mut);margin-top:2px">Detects exposed anon/service_role JWTs, public tables &amp; buckets</div></td>
+            <td class="hl"><span class="pill p-ok" style="margin-bottom:4px">Strength</span><div style="color:var(--ink);font-size:13.5px">Decodes JWT role + probes PostgREST OpenAPI &amp; Storage (0 PII read)</div></td>
+            <td><span class="pill p-ok" style="margin-bottom:4px">Included</span><div style="color:var(--ink2);font-size:13.5px">Supabase RLS checks available on paid tiers</div></td>
+          </tr><tr>
+            <td><strong>Client JS Bundle Secret Detection</strong><div style="font-size:12px;color:var(--mut);margin-top:2px">Stripe sk_live_, OpenAI sk-proj-, Anthropic, AWS AKIA, Resend, DB URIs</div></td>
+            <td class="hl"><span class="pill p-ok" style="margin-bottom:4px">Strength</span><div style="color:var(--ink);font-size:13.5px">Concurrent inspection of up to 12 chunks against 38 high-precision rules</div></td>
+            <td><span class="pill p-ok" style="margin-bottom:4px">Included</span><div style="color:var(--ink2);font-size:13.5px">Secret scanning included on paid plans</div></td>
+          </tr><tr>
+            <td><strong>SourceMap (.js.map), /.env, /.git/HEAD &amp; Cookie/CORS Audit</strong><div style="font-size:12px;color:var(--mut);margin-top:2px">Catches unminified source leaks &amp; missing HttpOnly/Secure/SameSite flags</div></td>
+            <td class="hl"><span class="pill p-ok" style="margin-bottom:4px">Strength</span><div style="color:var(--ink);font-size:13.5px">All probed concurrently in one read-only pass (WAF-tolerant fallback)</div></td>
+            <td><span class="pill p-ok" style="margin-bottom:4px">Included</span><div style="color:var(--ink2);font-size:13.5px">Supported across security header &amp; exposure checks</div></td>
+          </tr><tr>
+            <td><strong>App-Specific Cursor / Lovable Prompt &amp; RLS SQL Generator</strong><div style="font-size:12px;color:var(--mut);margin-top:2px">Ready-to-paste remediation tailored to detected stack &amp; tables</div></td>
+            <td class="hl"><span class="pill p-ok" style="margin-bottom:4px">Strength</span><div style="color:var(--ink);font-size:13.5px">Generates tailored Cursor/Lovable prompt + per-table RLS SQL + platform guides</div></td>
+            <td><span class="pill p-warn" style="margin-bottom:4px">Limited / Paid</span><div style="color:var(--ink2);font-size:13.5px">Mostly generic alert text in dashboard</div></td>
+          </tr><tr>
+            <td><strong>Scheduled Cloud Cron Monitoring &amp; Slack Alerts</strong><div style="font-size:12px;color:var(--mut);margin-top:2px">Automated weekly background scans hosted in vendor cloud</div></td>
+            <td class="hl"><span class="pill p-warn" style="margin-bottom:4px">Partial</span><div style="color:var(--ink);font-size:13.5px">On-demand web &amp; batch checks (no hosted cloud cron)</div></td>
+            <td><span class="pill p-ok" style="margin-bottom:4px">Included</span><div style="color:var(--ink2);font-size:13.5px">Core strength: scheduled automated re-scans &amp; history</div></td>
+          </tr><tr>
+            <td><strong>Batch App Auditing &amp; Printable Client Security Dossier</strong><div style="font-size:12px;color:var(--mut);margin-top:2px">Audit up to 50 client staging/prod URLs &amp; export Excel/PDF</div></td>
+            <td class="hl"><span class="pill p-ok" style="margin-bottom:4px">Strength</span><div style="color:var(--ink);font-size:13.5px">50-URL in-browser batch table + CSV &amp; A4 PDF report ($9 once)</div></td>
+            <td><span class="pill p-warn" style="margin-bottom:4px">Limited / Paid</span><div style="color:var(--ink2);font-size:13.5px">Multi-project monitoring billed on higher agency plans</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. Total Cost of Ownership (TCO) Breakdown</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Timeframe / Scenario</th>
+            <th class="hl">VibeShield Web Pro</th>
+            <th>VibeAppScanner / LaunchGuard</th>
+            <th>Net Advantage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Year 1</strong></td>
+            <td class="hl"><strong style="color:var(--ok-fg)">$9</strong></td>
+            <td>$348</td>
+            <td><span class="pill p-ok">Save $339 (97.4%)</span></td>
+          </tr><tr>
+            <td><strong>Year 2</strong></td>
+            <td class="hl"><strong style="color:var(--ok-fg)">$9 total</strong></td>
+            <td>$696</td>
+            <td><span class="pill p-ok">Save $687 (98.7%)</span></td>
+          </tr><tr>
+            <td><strong>Year 3</strong></td>
+            <td class="hl"><strong style="color:var(--ok-fg)">$9 total</strong></td>
+            <td>$1,044</td>
+            <td><span class="pill p-ok">Save $1,035 (99.1%)</span></td>
+          </tr><tr>
+            <td><strong>3-Year Full Launch Suite (4 Tools)</strong></td>
+            <td class="hl"><strong style="color:var(--ok-fg)">$29 total (4-in-1)</strong></td>
+            <td>$1,044 (Scanner only)</td>
+            <td><span class="pill p-ok">Save $1,015 + 3 extra Pro kits</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <section class="card prose">
+      <h2 style="margin-top:0">3. 1. Why AI-Built Apps Leak Data — And What a Scanner Must Actually Inspect</h2>
+      <p>The most common launch failure in Lovable, Bolt.new, v0, and Cursor projects is not an exotic zero-day exploit — it is shipping a PostgreSQL table in Supabase without ALTER TABLE ... ENABLE ROW LEVEL SECURITY (CVE-2025-48757), or prefixing an OpenAI, Anthropic, Stripe, or Supabase service_role secret with NEXT_PUBLIC_ or VITE_ so the bundler compiles it straight into public browser JavaScript.</p><p>Because modern Next.js and Vite builds split code across multiple lazy chunks, checking only the initial HTML misses most leaks. VibeShield concurrently unpacks up to 12 first-party JS chunks, decodes any Supabase JWT locally to catch critical service_role leaks immediately, probes PostgREST OpenAPI metadata with strictly read-only HEAD checks (never reading or exposing user row data), and verifies .js.map SourceMaps, /.env, /.git/HEAD, CORS reflection, Cookie attributes, and 7 HTTP security headers — typically in under 1.5 seconds.</p>
+      <ul><li>Real live benchmark: Scanning https://supabase.com completes in ~0.6s, inspecting 12 Next.js chunks, extracting the live Supabase project endpoint, verifying 0 leaked secrets and 0 open anon tables, and scoring 98/100 (A+).</li><li>Graceful WAF handling: Even when major domains (such as baidu.com or apple.com) sit behind strict edge WAFs, VibeShield still completes HTTPS, 7-header, Cookie attribute, and CORS inspection cleanly without throwing bogus timeout errors.</li><li>Zero PII harvesting: Row-openness probes use strictly read-only HEAD metadata with Prefer: count=exact so user records are never fetched, displayed, or logged.</li></ul>
+    </section><section class="card prose">
+      <h2 style="margin-top:0">4. 2. From Findings to Fixed in 3 Minutes Inside Cursor or Lovable</h2>
+      <p>Traditional vulnerability dashboards leave solo founders staring at generic OWASP paragraphs. VibeShield Web Pro compiles every finding on your exact URL into three actionable artifacts right inside your browser: a tailored Cursor / Lovable / Bolt auto-fix prompt naming your real exposed tables and bundle files, a copy-paste Supabase RLS SQL lockdown migration (including a DO-block failsafe across all remaining public tables), and platform-specific header configs for Vercel, Next.js, Cloudflare, and Nginx.</p><p>If you build client MVPs as a studio or freelancer, VibeShield&#39;s 50-app batch scanner and clean A4 printable security dossier let you hand clients a verifiable pre-launch security report for a single $9 (or $25 Agency) one-time fee instead of $348/year.</p>
+      <ul><li>Instant in-page unlock via Card / Apple Pay / PayPal or USDT / USDC, covered by a 14-day no-questions-asked refund guarantee.</li><li>Strict SSRF protection: public web scans automatically reject private/loopback/metadata IP ranges.</li><li>Bundle with BrandShield, InboxShield, and CiteReady inside the OmniForge 4-in-1 Launch Stack ($29 one-time) to cover every pre-launch check for under $7.25 per tool.</li></ul>
+    </section>
+
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq" open>
+      <summary><span>Is VibeShield safe to run on my production Supabase app?</span><span style="color:var(--mut);font-size:12px">+</span></summary>
+      <p>Yes. VibeShield is strictly read-only and non-destructive. It never inserts, updates, deletes, or dumps user rows from your database — it only inspects public client assets, HTTP headers, and PostgREST OpenAPI / HEAD metadata.</p>
+    </details><details class="faq">
+      <summary><span>Does VibeShield detect leaked Supabase service_role keys vs normal anon keys?</span><span style="color:var(--mut);font-size:12px">+</span></summary>
+      <p>Yes. VibeShield decodes every Supabase JWT found in your frontend bundles locally and inspects its role claim. A standard anon key is expected (and triggers an RLS table check), whereas a leaked service_role JWT or sb_secret_ key triggers an immediate Critical alert because it bypasses all Row Level Security policies.</p>
+    </details><details class="faq">
+      <summary><span>How is VibeShield different from a $29/month SaaS security scanner?</span><span style="color:var(--mut);font-size:12px">+</span></summary>
+      <p>Monthly scanners like VibeAppScanner or LaunchGuard charge $348/year primarily for hosted scheduled re-scans and team dashboards. VibeShield focuses on instant zero-signup pre-launch diagnostics, tailored Cursor/Lovable prompts, per-table Supabase RLS SQL fixes, 50-URL batch checks, and printable client PDF reports for $9 once.</p>
+    </details><details class="faq">
+      <summary><span>Does a 98/100 VibeShield score replace a manual penetration test?</span><span style="color:var(--mut);font-size:12px">+</span></summary>
+      <p>No. Automated external scanning catches the highest-frequency AI vibe-coding mistakes (leaked secrets, open Supabase RLS tables, exposed SourceMaps, missing headers, weak cookies), but business-logic flaws and authenticated authorization bugs still require manual security review before handling regulated data.</p>
+    </details>
+
+    <div class="cta-panel">
+      <div style="max-width:600px">
+        <strong style="font-size:18px;display:block;margin-bottom:6px">Ready to Audit &amp; Fix Your Site in 2 Seconds — With Zero Subscriptions?</strong>
+        <span style="color:var(--ink2);font-size:14px">Unlock <strong>VibeShield Web Pro ($9 one-time)</strong> directly in your browser for 5-platform step-by-step fixes, 50-item batch CSV export, and printable A4 PDF reports — or unlock all 4 OmniForge v5.0 apps for <strong>$29 one-time (save $19)</strong>. Backed by a 14-day refund guarantee.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;min-width:250px">
+        <a class="btn btn-pri" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Unlock VibeShield Web Pro ($9 Once) &rarr;</a>
+        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack" target="_blank" rel="noopener">All 4 Web Pro Apps ($29 Once) &rarr;</a>
+        <a class="btn" href="https://omnipulse-x402.appwrite.network/checkout/vibeshield" target="_blank" rel="noopener">Direct 7-Chain Checkout &rarr;</a>
+      </div>
+    </div>
+
+    <h2>Explore All 4 Honest 2026 Tool Comparisons</h2>
+    <div class="hub-grid">
+      <a class="hub-card" href="./instantdomainsearch-vs-brandshield.html">
+        <div>
+          <span class="pill p-neutral" style="margin-bottom:8px">$12 one-time ($0/mo)</span>
+          <h3 style="color:var(--ink)">InstantDomainSearch vs. BrandShield</h3>
+          <p style="margin:0;color:var(--mut);font-size:13px">InstantDomainSearch is famous for ultra-fast domain brainstorming and aftermarket listings. BrandShield takes the next critical ...</p>
+        </div>
+        <div style="margin-top:12px;font-size:13px;font-weight:700;color:var(--brand)">Read Honest Comparison &rarr;</div>
+      </a><a class="hub-card" href="./peec-ai-vs-citeready.html">
+        <div>
+          <span class="pill p-neutral" style="margin-bottom:8px">$12 one-time ($0/mo)</span>
+          <h3 style="color:var(--ink)">Peec AI vs. CiteReady</h3>
+          <p style="margin:0;color:var(--mut);font-size:13px">Peec AI (alongside Otterly.AI and Profound) tracks how often AI assistants mention your brand across daily prompt batches. CiteR...</p>
+        </div>
+        <div style="margin-top:12px;font-size:13px;font-weight:700;color:var(--brand)">Read Honest Comparison &rarr;</div>
+      </a><a class="hub-card" href="./easydmarc-vs-inboxshield.html">
+        <div>
+          <span class="pill p-neutral" style="margin-bottom:8px">$15 one-time</span>
+          <h3 style="color:var(--ink)">EasyDMARC vs. InboxShield</h3>
+          <p style="margin:0;color:var(--mut);font-size:13px">EasyDMARC is a strong enterprise platform for 24/7 cloud DMARC XML report ingestion and hosted SPF proxies. InboxShield is a fas...</p>
+        </div>
+        <div style="margin-top:12px;font-size:13px;font-weight:700;color:var(--brand)">Read Honest Comparison &rarr;</div>
+      </a>
+    </div>
+  </main>
+  <footer class="ft"><div class="wrap">
+    <div class="ft-row">
+      <div><strong>OmniForge &middot; Agent Arena Studio</strong> &middot; Read-only live web diagnostics. 14-day refund policy.</div>
+      <div class="ft-links">
+        <a href="../compare/index.html">Comparisons</a>
+        <a href="../index.html">228 Benchmarks</a>
+        <a href="https://omnipulse-x402.appwrite.network/support" target="_blank" rel="noopener">Support</a>
+        <a href="https://omnipulse-x402.appwrite.network/refund-policy" target="_blank" rel="noopener">14-Day Refund</a>
+        <a href="mailto:agentarenastudio@proton.me">agentarenastudio@proton.me</a>
+        <a href="https://x.com/agentarenastudi" target="_blank" rel="noopener">@agentarenastudi</a>
+      </div>
+    </div>
+  </div></footer>
+  <script>
+(function () {
+  var MODE = "vibe";
+  var OUR_URL = "https://vibe-checker.appwrite.network/";
+  var OUR_GUM = "https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield";
+  var OUR_PRICE = "$9 one-time";
+  var form = document.getElementById("liveForm");
+  var inp = document.getElementById("liveInput");
+  var btn = document.getElementById("liveBtn");
+  var out = document.getElementById("liveOut");
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .split("&").join("&amp;").split("<").join("&lt;").split(">").join("&gt;").split('"').join("&quot;");
+  }
+
+  async function runAudit(raw) {
+    var val = String(raw || "").trim();
+    if (!val) return;
+    inp.value = val;
+    btn.disabled = true;
+    out.style.display = "block";
+    out.innerHTML = '<span style="color:var(--mut)">Running live read-only inspection for <strong>' + esc(val) + '</strong>...</span>';
+    try {
+      var ep = "";
+      var deepLink = OUR_URL;
+      if (MODE === "brand") {
+        var clean = val.replace(/^https?:\/\//i, "").replace(/^www\./i, "").split("/")[0].split(".")[0];
+        ep = "https://brand-checker.appwrite.network/api/free-check?name=" + encodeURIComponent(clean);
+        deepLink = "https://brand-checker.appwrite.network/?q=" + encodeURIComponent(clean);
+      } else if (MODE === "inbox") {
+        var dom = val.replace(/^https?:\/\//i, "").replace(/^www\./i, "").split("/")[0];
+        ep = "https://inbox-checker.appwrite.network/api/free-audit?domain=" + encodeURIComponent(dom);
+        deepLink = "https://inbox-checker.appwrite.network/?domain=" + encodeURIComponent(dom);
+      } else if (MODE === "vibe") {
+        var u1 = /^https?:\/\//i.test(val) ? val : "https://" + val;
+        ep = "https://vibe-checker.appwrite.network/api/free-scan?url=" + encodeURIComponent(u1);
+        deepLink = "https://vibe-checker.appwrite.network/?url=" + encodeURIComponent(u1);
+      } else {
+        var u2 = /^https?:\/\//i.test(val) ? val : "https://" + val;
+        ep = "https://citeready-checker.appwrite.network/api/free-geo?url=" + encodeURIComponent(u2);
+        deepLink = "https://citeready-checker.appwrite.network/?url=" + encodeURIComponent(u2);
+      }
+      var r = await fetch(ep, { headers: { Accept: "application/json" } });
+      var d = await r.json().catch(function () { return {}; });
+      if (!r.ok || d.ok === false) {
+        out.innerHTML = '<span class="pill p-bad">Notice</span> ' + esc(d.error || "Could not complete live scan. Try opening the full web app directly.") + ' <a href="' + esc(deepLink) + '" target="_blank" rel="noopener" style="margin-left:8px;font-weight:600">Open Web App &rarr;</a>';
+        return;
+      }
+
+      var score = (d.assessment && typeof d.assessment.score === "number") ? d.assessment.score : (typeof d.score === "number" ? d.score : (d.summary && typeof d.summary.score === "number" ? d.summary.score : null));
+      var grade = (d.assessment && d.assessment.grade) || d.grade || "";
+      var summaryLine = "";
+      if (MODE === "brand") {
+        var tmCount = (d.trademark && typeof d.trademark.totalHits === "number") ? d.trademark.totalHits : (Array.isArray(d.trademarks) ? d.trademarks.length : 0);
+        summaryLine = "Candidate: <strong>" + esc(d.name || d.candidate || val) + "</strong> &middot; Live USPTO hits: <strong>" + esc(tmCount) + "</strong>";
+      } else if (MODE === "inbox") {
+        var lookups = d.spf ? d.spf.lookups : "-";
+        var dmarcP = (d.dmarc && d.dmarc.policy) || "missing";
+        var dkimN = (d.dkim && Array.isArray(d.dkim.found)) ? d.dkim.found.length : 0;
+        summaryLine = "Domain: <strong>" + esc(d.domain || val) + "</strong> &middot; SPF: <strong>" + esc(lookups) + "/10</strong> &middot; DMARC: <strong>" + esc(dmarcP) + "</strong> &middot; DKIM keys: <strong>" + esc(dkimN) + "</strong>";
+      } else if (MODE === "vibe") {
+        var chunks = (d.scripts && typeof d.scripts.scanned === "number") ? d.scripts.scanned : (d.jsChunksScanned || 0);
+        var secrets = Array.isArray(d.secrets) ? d.secrets.length : 0;
+        summaryLine = "Target: <strong>" + esc(d.domain || d.url || val) + "</strong> &middot; JS chunks scanned: <strong>" + esc(chunks) + "</strong> &middot; Secret findings: <strong>" + esc(secrets) + "</strong>";
+      } else {
+        var bots = (d.robotsTxt && Array.isArray(d.robotsTxt.crawlers)) ? d.robotsTxt.crawlers : [];
+        var open = bots.filter(function (b) { return b.allowed; }).length;
+        var eg = (d.entityGraph && typeof d.entityGraph.score === "number") ? d.entityGraph.score : 0;
+        summaryLine = "Target: <strong>" + esc(d.domain || val) + "</strong> &middot; AI Bots Allowed: <strong>" + open + "/" + bots.length + "</strong> &middot; Schema Entity Score: <strong>" + eg + "/100</strong>";
+      }
+
+      var pillCls = score == null ? "p-neutral" : (score >= 75 ? "p-ok" : (score >= 50 ? "p-warn" : "p-bad"));
+      out.innerHTML =
+        '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">' +
+          '<div>' + summaryLine + '</div>' +
+          (score != null ? '<span class="pill ' + pillCls + '">Score: ' + esc(score) + '/100' + (grade ? ' (' + esc(grade) + ')' : '') + '</span>' : '') +
+        '</div>' +
+        '<div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">' +
+          '<a class="btn btn-pri btn-sm" href="' + esc(deepLink) + '" target="_blank" rel="noopener">Open Full Interactive Report &amp; 5-Platform Fixes &rarr;</a>' +
+          '<a class="btn btn-sm" href="' + esc(OUR_GUM) + '" target="_blank" rel="noopener">Unlock Web Pro (' + esc(OUR_PRICE) + ')</a>' +
+        '</div>';
+    } catch (e) {
+      out.innerHTML = '<span class="pill p-warn">Offline</span> Live check unavailable right now — <a href="' + esc(OUR_URL) + '" target="_blank" rel="noopener" style="font-weight:600">open the web app directly &rarr;</a>';
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  form.addEventListener("submit", function (e) { e.preventDefault(); runAudit(inp.value); });
+  document.querySelectorAll(".sample-chip").forEach(function (c) {
+    c.addEventListener("click", function () { runAudit(c.getAttribute("data-v")); });
+  });
+})();
+</script>
+</body>
+</html>

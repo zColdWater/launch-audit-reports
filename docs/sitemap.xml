@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/instantdomainsearch-vs-brandshield.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/peec-ai-vs-citeready.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/easydmarc-vs-inboxshield.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/vibeappscanner-vs-vibeshield.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/llms.txt</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/resend-emails-going-to-spam-fix.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/nextjs-llms-txt-generator.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/gmail-2026-dmarc-reject-policy.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/spf-permerror-too-many-dns-lookups-fix.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/allow-gptbot-claudebot-perplexitybot-robots-txt.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/startup-name-uspto-trademark-check-before-launch.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/google-workspace-dmarc-dkim-setup-guide.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/postmark-aws-ses-dmarc-alignment-fix.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/schema-json-ld-for-saas-ai-citations.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/domain-front-running-rdap-vs-registrar-search.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/startup-name-uspto-trademark-check-before-launch.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/google-workspace-dmarc-dkim-setup-guide.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/postmark-aws-ses-dmarc-alignment-fix.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/schema-json-ld-for-saas-ai-citations.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/domain-front-running-rdap-vs-registrar-search.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/report/openai.com.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/report/anthropic.com.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/report/perplexity.ai.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>

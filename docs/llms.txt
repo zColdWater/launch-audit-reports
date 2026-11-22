@@ -9,6 +9,13 @@
 - CiteReady v5.0 — Free 10-Bot AI Search (GEO) & /llms.txt Generator: https://citeready-checker.appwrite.network | https://citeready-checker.appwrite.network/generator
 - InboxShield v5.0 — Free SPF/DKIM/DMARC/DNSBL Audit & SPF Flattener: https://inbox-checker.appwrite.network | https://inbox-checker.appwrite.network/spf-flattener
 
+## Honest 2026 Competitor Comparisons
+- Comparisons Hub: https://zcoldwater.github.io/launch-audit-reports/compare/
+- [InstantDomainSearch vs. BrandShield](https://zcoldwater.github.io/launch-audit-reports/compare/instantdomainsearch-vs-brandshield.html): Honest 2026 comparison of InstantDomainSearch vs. BrandShield ($12 one-time). Compare zero-front-running IANA RDAP lookups, USPTO Class 009/042 trademark checks, App Store collisions, 60-idea AI Brand Namer, and 50-brand CSV exports.
+- [Peec AI vs. CiteReady](https://zcoldwater.github.io/launch-audit-reports/compare/peec-ai-vs-citeready.html): Honest 2026 comparison of Peec AI (€89+/mo) vs. CiteReady Web Pro ($12 one-time). Understand the difference between passive daily LLM prompt tracking and live 10-bot robots.txt, Schema.org Entity Graph, and /llms.txt technical fixes.
+- [EasyDMARC vs. InboxShield](https://zcoldwater.github.io/launch-audit-reports/compare/easydmarc-vs-inboxshield.html): Honest comparison of EasyDMARC ($36/mo / $432/yr) vs InboxShield ($15 one-time). Compare live SPF 10-lookup audits, online SPF flattening, 24-selector DKIM checks, 50-domain batch scoring, and where EasyDMARC's managed cloud wins.
+- [VibeAppScanner / LaunchGuard vs. VibeShield](https://zcoldwater.github.io/launch-audit-reports/compare/vibeappscanner-vs-vibeshield.html): Honest comparison of VibeAppScanner / LaunchGuard ($29/mo / $348/yr) vs VibeShield ($9 one-time). Compare zero-signup live JS bundle scanning, CVE-2025-48757 Supabase RLS probing, 38 secret patterns, and tailored Cursor/Lovable auto-fix prompts.
+
 ## Troubleshooting Guides
 - [Fix Resend Emails Going to Spam](https://zcoldwater.github.io/launch-audit-reports/guides/resend-emails-going-to-spam-fix.html): Most Resend spam-folder drops come from sending on a root domain with broken SPF lookup counts, missing DMARC alignment, or sharing reputation between marketing blasts and auth emails.
 - [Next.js llms.txt Generator Guide](https://zcoldwater.github.io/launch-audit-reports/guides/nextjs-llms-txt-generator.html): An /llms.txt file gives AI search assistants a curated, noise-free Markdown map of your product, docs, pricing, and API endpoints without forcing crawlers to parse megabytes of client-side JS bundles.

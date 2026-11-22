@@ -7,6 +7,7 @@
 Live measured **Email Deliverability (SPF/DMARC/MX/MTA-STS)** and **AI Search Readiness (`/llms.txt`, `robots.txt` AI bots, JSON-LD Schema.org)** benchmarks across **228 top SaaS & developer-tool domains**, plus **10 copy-paste troubleshooting guides**.
 
 - **Live Benchmark Hub:** https://zcoldwater.github.io/launch-audit-reports/
+- **2026 Honest Competitor Comparisons:** [All 4 Comparisons](https://zcoldwater.github.io/launch-audit-reports/compare/) · [InstantDomainSearch vs. BrandShield](https://zcoldwater.github.io/launch-audit-reports/compare/instantdomainsearch-vs-brandshield.html) · [EasyDMARC vs. InboxShield](https://zcoldwater.github.io/launch-audit-reports/compare/easydmarc-vs-inboxshield.html) · [VibeAppScanner vs. VibeShield](https://zcoldwater.github.io/launch-audit-reports/compare/vibeappscanner-vs-vibeshield.html) · [Peec AI vs. CiteReady](https://zcoldwater.github.io/launch-audit-reports/compare/peec-ai-vs-citeready.html)
 - **Free Online v5.0 Web Apps (Zero Install, 2-Second Live Audits):**
   - [VibeShield v5.0](https://vibe-checker.appwrite.network) — JS bundle secrets, 7 security headers & read-only Supabase RLS probe (Web Pro `$9` once)
   - [BrandShield v5.0](https://brand-checker.appwrite.network) & [AI Brand Namer](https://brand-checker.appwrite.network/namer) — 8-TLD IANA RDAP, USPTO Class 009/042 & App Store checks (Web Pro `$12` once)
