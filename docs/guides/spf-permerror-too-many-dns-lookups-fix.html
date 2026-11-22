@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fixing SPF PermError (Too Many DNS Lookups &gt; 10) for SaaS Domains | OmniForge Launch Guides</title>
+  <meta name="description" content="How to resolve RFC 7208&#39;s 10-DNS-lookup SPF limit when combining Google Workspace, HubSpot, SendGrid, Zendesk, and Postmark — without breaking inbox delivery." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://zcoldwater.github.io/launch-audit-reports/guides/spf-permerror-too-many-dns-lookups-fix.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Fixing SPF PermError (Too Many DNS Lookups &gt; 10) for SaaS Domains" />
+  <meta property="og:description" content="How to resolve RFC 7208&#39;s 10-DNS-lookup SPF limit when combining Google Workspace, HubSpot, SendGrid, Zendesk, and Postmark — without breaking inbox delivery." />
+  <meta property="og:url" content="https://zcoldwater.github.io/launch-audit-reports/guides/spf-permerror-too-many-dns-lookups-fix.html" />
+  <link rel="stylesheet" href="../style.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Launch Benchmarks & Guides","item":"https://zcoldwater.github.io/launch-audit-reports/"},{"@type":"ListItem","position":2,"name":"Fix SPF >10 DNS Lookup PermError","item":"https://zcoldwater.github.io/launch-audit-reports/guides/spf-permerror-too-many-dns-lookups-fix.html"}]},{"@type":"TechArticle","headline":"Fixing SPF PermError (Too Many DNS Lookups > 10) for SaaS Domains","description":"How to resolve RFC 7208's 10-DNS-lookup SPF limit when combining Google Workspace, HubSpot, SendGrid, Zendesk, and Postmark — without breaking inbox delivery.","datePublished":"2026-11-22","dateModified":"2026-11-22","url":"https://zcoldwater.github.io/launch-audit-reports/guides/spf-permerror-too-many-dns-lookups-fix.html","author":{"@type":"Organization","name":"OmniForge Studio"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do ip4: and ip6: directives count toward the 10 SPF DNS lookup limit?","acceptedAnswer":{"@type":"Answer","text":"No. Only DNS-querying mechanisms (include, a, mx, ptr, exists, redirect) count toward the 10-lookup ceiling."}},{"@type":"Question","name":"Can I publish two separate v=spf1 TXT records to get 20 lookups?","acceptedAnswer":{"@type":"Answer","text":"Never. Publishing two v=spf1 TXT records on the same host causes an instant RFC 7208 PermError on every mail server."}}]}]}</script>
+</head>
+<body>
+  <header><div class="wrap nav">
+    <a class="brand" href="../index.html"><span class="dot">O</span><span>OmniForge Launch Benchmarks</span></a>
+    <nav class="nav-links">
+      <a href="../index.html#benchmarks">220+ SaaS Reports</a>
+      <a href="../index.html#guides">Fix Guides</a>
+      <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">Free Email Audit</a>
+      <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">Free AI Audit</a>
+      <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">Free Name Check</a>
+      <a class="btn btn-cta" href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">3-in-1 Launch Stack ($49) &rarr;</a>
+    </nav>
+  </div></header>
+  <main class="wrap">
+    <div class="crumb"><a href="../index.html">Launch Benchmarks &amp; Guides</a> &rsaquo; Email Deliverability &rsaquo; <strong>Fix SPF &gt;10 DNS Lookup PermError</strong></div>
+    <span class="eyebrow">Email Deliverability &middot; 2026 Engineering Fix Guide</span>
+    <h1>Fixing SPF PermError (Too Many DNS Lookups &gt; 10) for SaaS Domains</h1>
+    <p class="sub">RFC 7208 caps SPF evaluation at 10 DNS-querying mechanisms including nested includes. Crossing 11 lookups causes immediate SPF PermError across Gmail and Microsoft 365.</p>
+
+    <div class="card">
+      <h2 style="margin-top:0">1. Why Common SaaS Stacks Blow Past 10 Lookups Fast</h2>
+      <p style="margin:0">A single <code>include:</code> statement often hides 3 to 5 nested DNS queries. Combining Google Workspace (3–4), HubSpot (2–3), Salesforce/Zendesk (3+), and Mailchimp easily hits 12–16 lookups.</p>
+      <pre><code># Typical broken apex SPF (13+ recursive lookups -&gt; PermError!):
+&quot;v=spf1 include:_spf.google.com include:spf.protection.outlook.com include:sendgrid.net include:mail.zendesk.com include:servers.mcsv.net ~all&quot;</code></pre>
+    </div><div class="card">
+      <h2 style="margin-top:0">2. Fix #1 — Move Third-Party Senders to Subdomains</h2>
+      <p style="margin:0">Send transactional mail from <code>mail.yourdomain.com</code> and marketing campaigns from <code>news.yourdomain.com</code>. Each subdomain gets its own fresh 10-lookup SPF budget and isolates sender reputation.</p>
+      
+    </div><div class="card">
+      <h2 style="margin-top:0">3. Fix #2 — Remove Dead Includes &amp; Flatten Static Ranges</h2>
+      <p style="margin:0">Strip legacy tools you no longer pay for, remove redundant <code>a</code>/<code>mx</code> mechanisms, and use an automated SPF flattener (included in InboxShield Pro's <code>flatten</code> compiler) with a scheduled GitHub Action to catch provider IP rotations.</p>
+      <pre><code># Audit exact recursive SPF lookup count right now:
+npx github:zColdWater/inboxshield-cli audit yourdomain.com</code></pre>
+    </div>
+
+    <div class="card">
+    <h3 style="margin-top:0">Audit Your Own Startup Domain Live (Free, Zero Signup)</h3>
+    <p class="mut" style="margin:0 0 12px;font-size:.92rem">Enter your domain or product name to open an instant live diagnostic on our read-only scanners:</p>
+    <form class="audit-bar" onsubmit="event.preventDefault();const v=this.dom.value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');if(!v)return;const t=this.tool.value;if(t==='inbox')window.open('https://inbox-checker.appwrite.network/?domain='+encodeURIComponent(v),'_blank');else if(t==='cite')window.open('https://citeready-checker.appwrite.network/?url='+encodeURIComponent('https://'+v),'_blank');else window.open('https://brand-checker.appwrite.network/report/'+encodeURIComponent(v.split('.')[0]),'_blank');">
+      <input name="dom" placeholder="yourdomain.com (or brand name)..." required maxlength="80" />
+      <select name="tool" aria-label="Diagnostic tool">
+        <option value="inbox">Email Deliverability (SPF/DMARC/MX)</option>
+        <option value="cite">AI Search &amp; llms.txt Audit</option>
+        <option value="brand">Brand Name &amp; USPTO Trademark Report</option>
+      </select>
+      <button type="submit" class="btn btn-cta">Run Free Live Audit &rarr;</button>
+    </form>
+  </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="card"><h3>Do ip4: and ip6: directives count toward the 10 SPF DNS lookup limit?</h3><p class="mut" style="margin:0">No. Only DNS-querying mechanisms (include, a, mx, ptr, exists, redirect) count toward the 10-lookup ceiling.</p></div><div class="card"><h3>Can I publish two separate v=spf1 TXT records to get 20 lookups?</h3><p class="mut" style="margin:0">Never. Publishing two v=spf1 TXT records on the same host causes an instant RFC 7208 PermError on every mail server.</p></div>
+
+    <div class="cta-box">
+    <div style="max-width:600px">
+      <strong style="font-size:1.12rem">Fix SPF/DMARC &amp; Monitor Deliverability Drift Automatically</strong>
+      <p class="mut" style="margin:6px 0 0;font-size:.93rem">InboxShield Pro ($29 Solo / $49 Agency) includes SPF 10-lookup flattening, 50-domain fleet audit CLI, DNSBL monitoring &amp; 24/7 GitHub Actions drift alerts — 100% local, zero subscription.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;min-width:260px">
+      <a class="btn btn-cta" href="https://agentarenastudi.gumroad.com/l/omniforge-inboxshield" target="_blank" rel="noopener">Get InboxShield Pro ($29 / $49) →</a>
+      <a class="btn" href="https://omnipulse-x402.appwrite.network/checkout/inboxshield" target="_blank" rel="noopener">&#9889; Instant Direct Checkout (24/7 ZIP) &rarr;</a>
+      <a class="btn" style="border-color:var(--acc);color:var(--acc)" href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">Save $38: 3-in-1 Launch Stack ($49/$89) &rarr;</a>
+    </div>
+  </div>
+
+    <h2>Live SaaS Benchmark Examples</h2>
+    <div class="chip-row">
+      <a class="chip" href="../report/cursor.com.html">Cursor (cursor.com · 90/100)</a><a class="chip" href="../report/vercel.com.html">Vercel (vercel.com · 79/100)</a><a class="chip" href="../report/supabase.com.html">Supabase (supabase.com · 95/100)</a><a class="chip" href="../report/resend.com.html">Resend (resend.com · 95/100)</a><a class="chip" href="../report/stripe.com.html">Stripe (stripe.com · 95/100)</a><a class="chip" href="../report/cal.com.html">Cal.com (cal.com · 90/100)</a><a class="chip" href="../report/posthog.com.html">PostHog (posthog.com · 78/100)</a><a class="chip" href="../report/linear.app.html">Linear (linear.app · 86/100)</a>
+    </div>
+
+    <h2>More Launch Troubleshooting Guides</h2>
+    <div class="chip-row">
+      <a class="chip" href="./resend-emails-going-to-spam-fix.html">Fix Resend Emails Going to Spam</a><a class="chip" href="./nextjs-llms-txt-generator.html">Next.js llms.txt Generator Guide</a><a class="chip" href="./gmail-2026-dmarc-reject-policy.html">Gmail 2026 DMARC p=reject Rollout</a><a class="chip" href="./allow-gptbot-claudebot-perplexitybot-robots-txt.html">AI Crawler robots.txt Guide (2026)</a><a class="chip" href="./startup-name-uspto-trademark-check-before-launch.html">USPTO Class 9 &amp; 42 Trademark Check</a><a class="chip" href="./google-workspace-dmarc-dkim-setup-guide.html">Google Workspace SPF/DKIM/DMARC</a><a class="chip" href="./postmark-aws-ses-dmarc-alignment-fix.html">Fix AWS SES / Postmark DMARC Alignment</a><a class="chip" href="./schema-json-ld-for-saas-ai-citations.html">SaaS JSON-LD Schema for AI Search</a><a class="chip" href="./domain-front-running-rdap-vs-registrar-search.html">Avoid Domain Front-Running via RDAP</a>
+    </div>
+  </main>
+  <footer><div class="wrap">
+    <p style="margin:0 0 8px">Live read-only DNS &amp; HTTP benchmarks measured directly against public records. Informational diagnostics, not legal advice.</p>
+    <p style="margin:0">
+      <a href="../index.html">Benchmark Index</a> &middot;
+      <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">BrandShield Web</a> &middot;
+      <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">InboxShield Web</a> &middot;
+      <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">CiteReady Web</a> &middot;
+      <a href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">Launch Stack on Gumroad</a> &middot;
+      <a href="https://omnipulse-x402.appwrite.network/checkout/launch-stack" target="_blank" rel="noopener">Instant Direct Checkout</a> &middot;
+      <a href="../llms.txt">llms.txt</a>
+    </p>
+  </div></footer>
+</body>
+</html>

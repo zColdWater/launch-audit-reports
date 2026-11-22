@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Avoiding Domain Front-Running: Direct IANA RDAP vs. Registrar Search Bars | OmniForge Launch Guides</title>
+  <meta name="description" content="How authoritative IANA RDAP registry queries let founders verify .com, .io, .ai, .app, and .dev availability privately from the terminal with zero registrar broker logging." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://zcoldwater.github.io/launch-audit-reports/guides/domain-front-running-rdap-vs-registrar-search.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Avoiding Domain Front-Running: Direct IANA RDAP vs. Registrar Search Bars" />
+  <meta property="og:description" content="How authoritative IANA RDAP registry queries let founders verify .com, .io, .ai, .app, and .dev availability privately from the terminal with zero registrar broker logging." />
+  <meta property="og:url" content="https://zcoldwater.github.io/launch-audit-reports/guides/domain-front-running-rdap-vs-registrar-search.html" />
+  <link rel="stylesheet" href="../style.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Launch Benchmarks & Guides","item":"https://zcoldwater.github.io/launch-audit-reports/"},{"@type":"ListItem","position":2,"name":"Avoid Domain Front-Running via RDAP","item":"https://zcoldwater.github.io/launch-audit-reports/guides/domain-front-running-rdap-vs-registrar-search.html"}]},{"@type":"TechArticle","headline":"Avoiding Domain Front-Running: Direct IANA RDAP vs. Registrar Search Bars","description":"How authoritative IANA RDAP registry queries let founders verify .com, .io, .ai, .app, and .dev availability privately from the terminal with zero registrar broker logging.","datePublished":"2026-11-22","dateModified":"2026-11-22","url":"https://zcoldwater.github.io/launch-audit-reports/guides/domain-front-running-rdap-vs-registrar-search.html","author":{"@type":"Organization","name":"OmniForge Studio"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does every TLD support RDAP?","acceptedAnswer":{"@type":"Answer","text":"Major gTLDs (.com, .net, .org, .app, .dev, .io, .ai, .xyz) publish official RDAP servers via IANA's dns.json bootstrap; legacy ccTLDs like .co fall back cleanly to registry port-43 WHOIS."}}]}]}</script>
+</head>
+<body>
+  <header><div class="wrap nav">
+    <a class="brand" href="../index.html"><span class="dot">O</span><span>OmniForge Launch Benchmarks</span></a>
+    <nav class="nav-links">
+      <a href="../index.html#benchmarks">220+ SaaS Reports</a>
+      <a href="../index.html#guides">Fix Guides</a>
+      <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">Free Email Audit</a>
+      <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">Free AI Audit</a>
+      <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">Free Name Check</a>
+      <a class="btn btn-cta" href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">3-in-1 Launch Stack ($49) &rarr;</a>
+    </nav>
+  </div></header>
+  <main class="wrap">
+    <div class="crumb"><a href="../index.html">Launch Benchmarks &amp; Guides</a> &rsaquo; Startup Naming &rsaquo; <strong>Avoid Domain Front-Running via RDAP</strong></div>
+    <span class="eyebrow">Startup Naming &middot; 2026 Engineering Fix Guide</span>
+    <h1>Avoiding Domain Front-Running: Direct IANA RDAP vs. Registrar Search Bars</h1>
+    <p class="sub">RDAP (Registration Data Access Protocol) is ICANN&#39;s official JSON replacement for port-43 WHOIS. Querying registry RDAP endpoints directly removes commercial middlemen when vetting startup names.</p>
+
+    <div class="card">
+      <h2 style="margin-top:0">1. Query Verisign &amp; Google Registry RDAP Directly</h2>
+      <p style="margin:0">An HTTP <code>404</code> from an authoritative TLD RDAP server means the domain is unregistered in the central zone database; HTTP <code>200</code> returns structured registration and expiration timestamps.</p>
+      <pre><code># Authoritative .com RDAP lookup (zero intermediary):
+curl -i https://rdap.verisign.com/com/v1/domain/your-startup-name.com
+
+# Or check .com/.io/.ai/.co/.app/.dev + handles + USPTO in one CLI call:
+npx github:zColdWater/brandshield-cli check YourStartupName</code></pre>
+    </div><div class="card">
+      <h2 style="margin-top:0">2. Watch Out for Registry-Reserved Premium Domains</h2>
+      <p style="margin:0">For newer gTLDs like <code>.ai</code>, <code>.io</code>, and <code>.app</code>, a short 3–4 letter unregistered domain may still carry a registry premium tier price at checkout. Always verify final checkout pricing before announcing a brand.</p>
+      
+    </div>
+
+    <div class="card">
+    <h3 style="margin-top:0">Audit Your Own Startup Domain Live (Free, Zero Signup)</h3>
+    <p class="mut" style="margin:0 0 12px;font-size:.92rem">Enter your domain or product name to open an instant live diagnostic on our read-only scanners:</p>
+    <form class="audit-bar" onsubmit="event.preventDefault();const v=this.dom.value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');if(!v)return;const t=this.tool.value;if(t==='inbox')window.open('https://inbox-checker.appwrite.network/?domain='+encodeURIComponent(v),'_blank');else if(t==='cite')window.open('https://citeready-checker.appwrite.network/?url='+encodeURIComponent('https://'+v),'_blank');else window.open('https://brand-checker.appwrite.network/report/'+encodeURIComponent(v.split('.')[0]),'_blank');">
+      <input name="dom" placeholder="yourdomain.com (or brand name)..." required maxlength="80" />
+      <select name="tool" aria-label="Diagnostic tool">
+        <option value="inbox">Email Deliverability (SPF/DMARC/MX)</option>
+        <option value="cite">AI Search &amp; llms.txt Audit</option>
+        <option value="brand">Brand Name &amp; USPTO Trademark Report</option>
+      </select>
+      <button type="submit" class="btn btn-cta">Run Free Live Audit &rarr;</button>
+    </form>
+  </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="card"><h3>Does every TLD support RDAP?</h3><p class="mut" style="margin:0">Major gTLDs (.com, .net, .org, .app, .dev, .io, .ai, .xyz) publish official RDAP servers via IANA&#39;s dns.json bootstrap; legacy ccTLDs like .co fall back cleanly to registry port-43 WHOIS.</p></div>
+
+    <div class="cta-box">
+    <div style="max-width:600px">
+      <strong style="font-size:1.12rem">Screen 500 Startup Names &amp; 60+ Verified Variations Offline</strong>
+      <p class="mut" style="margin:6px 0 0;font-size:.93rem">BrandShield Pro ($19 Solo / $39 Agency) screens 500 names via direct RDAP + USPTO Nice Class 9/35/42 phonetic scoring + local HTML decision workbench — zero registrar front-running.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;min-width:260px">
+      <a class="btn btn-cta" href="https://agentarenastudi.gumroad.com/l/omniforge-brandshield" target="_blank" rel="noopener">Get BrandShield Pro ($19 / $39) →</a>
+      <a class="btn" href="https://omnipulse-x402.appwrite.network/checkout/brandshield" target="_blank" rel="noopener">&#9889; Instant Direct Checkout (24/7 ZIP) &rarr;</a>
+      <a class="btn" style="border-color:var(--acc);color:var(--acc)" href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">Save $38: 3-in-1 Launch Stack ($49/$89) &rarr;</a>
+    </div>
+  </div>
+
+    <h2>Live SaaS Benchmark Examples</h2>
+    <div class="chip-row">
+      <a class="chip" href="../report/cursor.com.html">Cursor (cursor.com · 90/100)</a><a class="chip" href="../report/vercel.com.html">Vercel (vercel.com · 79/100)</a><a class="chip" href="../report/supabase.com.html">Supabase (supabase.com · 95/100)</a><a class="chip" href="../report/resend.com.html">Resend (resend.com · 95/100)</a><a class="chip" href="../report/stripe.com.html">Stripe (stripe.com · 95/100)</a><a class="chip" href="../report/cal.com.html">Cal.com (cal.com · 90/100)</a><a class="chip" href="../report/posthog.com.html">PostHog (posthog.com · 78/100)</a><a class="chip" href="../report/linear.app.html">Linear (linear.app · 86/100)</a>
+    </div>
+
+    <h2>More Launch Troubleshooting Guides</h2>
+    <div class="chip-row">
+      <a class="chip" href="./resend-emails-going-to-spam-fix.html">Fix Resend Emails Going to Spam</a><a class="chip" href="./nextjs-llms-txt-generator.html">Next.js llms.txt Generator Guide</a><a class="chip" href="./gmail-2026-dmarc-reject-policy.html">Gmail 2026 DMARC p=reject Rollout</a><a class="chip" href="./spf-permerror-too-many-dns-lookups-fix.html">Fix SPF &gt;10 DNS Lookup PermError</a><a class="chip" href="./allow-gptbot-claudebot-perplexitybot-robots-txt.html">AI Crawler robots.txt Guide (2026)</a><a class="chip" href="./startup-name-uspto-trademark-check-before-launch.html">USPTO Class 9 &amp; 42 Trademark Check</a><a class="chip" href="./google-workspace-dmarc-dkim-setup-guide.html">Google Workspace SPF/DKIM/DMARC</a><a class="chip" href="./postmark-aws-ses-dmarc-alignment-fix.html">Fix AWS SES / Postmark DMARC Alignment</a><a class="chip" href="./schema-json-ld-for-saas-ai-citations.html">SaaS JSON-LD Schema for AI Search</a>
+    </div>
+  </main>
+  <footer><div class="wrap">
+    <p style="margin:0 0 8px">Live read-only DNS &amp; HTTP benchmarks measured directly against public records. Informational diagnostics, not legal advice.</p>
+    <p style="margin:0">
+      <a href="../index.html">Benchmark Index</a> &middot;
+      <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">BrandShield Web</a> &middot;
+      <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">InboxShield Web</a> &middot;
+      <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">CiteReady Web</a> &middot;
+      <a href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">Launch Stack on Gumroad</a> &middot;
+      <a href="https://omnipulse-x402.appwrite.network/checkout/launch-stack" target="_blank" rel="noopener">Instant Direct Checkout</a> &middot;
+      <a href="../llms.txt">llms.txt</a>
+    </p>
+  </div></footer>
+</body>
+</html>

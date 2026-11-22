@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Next.js llms.txt Generator Guide (App Router &amp; Static Export) for AI Search Citations | OmniForge Launch Guides</title>
+  <meta name="description" content="How to generate and serve a clean /llms.txt index in Next.js App Router or Pages Router so ChatGPT, Claude, and Perplexity accurately cite your docs and pricing." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://zcoldwater.github.io/launch-audit-reports/guides/nextjs-llms-txt-generator.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Next.js llms.txt Generator Guide (App Router &amp; Static Export) for AI Search Citations" />
+  <meta property="og:description" content="How to generate and serve a clean /llms.txt index in Next.js App Router or Pages Router so ChatGPT, Claude, and Perplexity accurately cite your docs and pricing." />
+  <meta property="og:url" content="https://zcoldwater.github.io/launch-audit-reports/guides/nextjs-llms-txt-generator.html" />
+  <link rel="stylesheet" href="../style.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Launch Benchmarks & Guides","item":"https://zcoldwater.github.io/launch-audit-reports/"},{"@type":"ListItem","position":2,"name":"Next.js llms.txt Generator Guide","item":"https://zcoldwater.github.io/launch-audit-reports/guides/nextjs-llms-txt-generator.html"}]},{"@type":"TechArticle","headline":"Next.js llms.txt Generator Guide (App Router & Static Export) for AI Search Citations","description":"How to generate and serve a clean /llms.txt index in Next.js App Router or Pages Router so ChatGPT, Claude, and Perplexity accurately cite your docs and pricing.","datePublished":"2026-11-22","dateModified":"2026-11-22","url":"https://zcoldwater.github.io/launch-audit-reports/guides/nextjs-llms-txt-generator.html","author":{"@type":"Organization","name":"OmniForge Studio"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Next.js App Router support a route folder literally named llms.txt?","acceptedAnswer":{"@type":"Answer","text":"Yes. Creating app/llms.txt/route.ts serves GET /llms.txt with full control over Content-Type and ISR caching."}},{"@type":"Question","name":"Should /llms.txt return text/plain or text/markdown?","acceptedAnswer":{"@type":"Answer","text":"text/plain; charset=utf-8 or text/markdown; charset=utf-8 are both accepted by AI crawlers; never return text/html."}}]}]}</script>
+</head>
+<body>
+  <header><div class="wrap nav">
+    <a class="brand" href="../index.html"><span class="dot">O</span><span>OmniForge Launch Benchmarks</span></a>
+    <nav class="nav-links">
+      <a href="../index.html#benchmarks">220+ SaaS Reports</a>
+      <a href="../index.html#guides">Fix Guides</a>
+      <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">Free Email Audit</a>
+      <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">Free AI Audit</a>
+      <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">Free Name Check</a>
+      <a class="btn btn-cta" href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">3-in-1 Launch Stack ($49) &rarr;</a>
+    </nav>
+  </div></header>
+  <main class="wrap">
+    <div class="crumb"><a href="../index.html">Launch Benchmarks &amp; Guides</a> &rsaquo; AI Search &amp; GEO &rsaquo; <strong>Next.js llms.txt Generator Guide</strong></div>
+    <span class="eyebrow">AI Search &amp; GEO &middot; 2026 Engineering Fix Guide</span>
+    <h1>Next.js llms.txt Generator Guide (App Router &amp; Static Export) for AI Search Citations</h1>
+    <p class="sub">An /llms.txt file gives AI search assistants a curated, noise-free Markdown map of your product, docs, pricing, and API endpoints without forcing crawlers to parse megabytes of client-side JS bundles.</p>
+
+    <div class="card">
+      <h2 style="margin-top:0">1. Minimal Static /llms.txt (public/llms.txt)</h2>
+      <p style="margin:0">For marketing sites or static exports, place a UTF-8 Markdown file at <code>public/llms.txt</code>. Follow the official <code>llmstxt.org</code> format: H1 brand name, blockquote one-sentence summary, then H2 sections with Markdown links and concise descriptions.</p>
+      <pre><code># Acme Analytics
+
+&gt; Privacy-first product analytics and session replay for SaaS engineering teams.
+
+## Core Docs
+- [Quickstart Guide](https://acme.example/docs/quickstart): Install the 4 KB script in 2 minutes
+- [Pricing](https://acme.example/pricing): Free up to 100k events/mo; Pro starts at $29/mo
+- [REST API Reference](https://acme.example/docs/api): Event ingestion &amp; cohort export endpoints</code></pre>
+    </div><div class="card">
+      <h2 style="margin-top:0">2. Dynamic Next.js App Router Route (app/llms.txt/route.ts)</h2>
+      <p style="margin:0">If your docs or changelog update frequently, serve <code>/llms.txt</code> from a Next.js Route Handler with <code>Content-Type: text/plain; charset=utf-8</code> and proper cache headers:</p>
+      <pre><code>// app/llms.txt/route.ts
+import { NextResponse } from &quot;next/server&quot;;
+
+export const revalidate = 3600;
+
+export async function GET() {
+  const md = [
+    &quot;# Acme Analytics&quot;,
+    &quot;&quot;,
+    &quot;&gt; Privacy-first product analytics for SaaS teams.&quot;,
+    &quot;&quot;,
+    &quot;## Key Pages&quot;,
+    &quot;- [Docs](https://acme.example/docs): SDK setup &amp; SQL query guide&quot;,
+    &quot;- [Pricing](https://acme.example/pricing): Transparent self-serve tiers&quot;,
+  ].join(&quot;\n&quot;);
+
+  return new NextResponse(md, {
+    headers: { &quot;Content-Type&quot;: &quot;text/plain; charset=utf-8&quot; },
+  });
+}</code></pre>
+    </div><div class="card">
+      <h2 style="margin-top:0">3. Verify AI Crawlers Aren&#39;t Blocked in robots.txt</h2>
+      <p style="margin:0">An <code>llms.txt</code> file cannot help if your <code>robots.txt</code> disallows <code>OAI-SearchBot</code>, <code>PerplexityBot</code>, or <code>ClaudeBot</code>. Audit your live site in 3 seconds with CiteReady or auto-generate your full <code>llms.txt</code> from your sitemap with CiteReady Pro.</p>
+      <pre><code># Verify your Next.js site&#39;s AI readiness from your terminal:
+npx github:zColdWater/citeready-cli audit https://yourdomain.com</code></pre>
+    </div>
+
+    <div class="card">
+    <h3 style="margin-top:0">Audit Your Own Startup Domain Live (Free, Zero Signup)</h3>
+    <p class="mut" style="margin:0 0 12px;font-size:.92rem">Enter your domain or product name to open an instant live diagnostic on our read-only scanners:</p>
+    <form class="audit-bar" onsubmit="event.preventDefault();const v=this.dom.value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');if(!v)return;const t=this.tool.value;if(t==='inbox')window.open('https://inbox-checker.appwrite.network/?domain='+encodeURIComponent(v),'_blank');else if(t==='cite')window.open('https://citeready-checker.appwrite.network/?url='+encodeURIComponent('https://'+v),'_blank');else window.open('https://brand-checker.appwrite.network/report/'+encodeURIComponent(v.split('.')[0]),'_blank');">
+      <input name="dom" placeholder="yourdomain.com (or brand name)..." required maxlength="80" />
+      <select name="tool" aria-label="Diagnostic tool">
+        <option value="inbox">Email Deliverability (SPF/DMARC/MX)</option>
+        <option value="cite">AI Search &amp; llms.txt Audit</option>
+        <option value="brand">Brand Name &amp; USPTO Trademark Report</option>
+      </select>
+      <button type="submit" class="btn btn-cta">Run Free Live Audit &rarr;</button>
+    </form>
+  </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="card"><h3>Does Next.js App Router support a route folder literally named llms.txt?</h3><p class="mut" style="margin:0">Yes. Creating app/llms.txt/route.ts serves GET /llms.txt with full control over Content-Type and ISR caching.</p></div><div class="card"><h3>Should /llms.txt return text/plain or text/markdown?</h3><p class="mut" style="margin:0">text/plain; charset=utf-8 or text/markdown; charset=utf-8 are both accepted by AI crawlers; never return text/html.</p></div>
+
+    <div class="cta-box">
+    <div style="max-width:600px">
+      <strong style="font-size:1.12rem">Auto-Generate llms.txt &amp; JSON-LD Schema Across Your Whole Site</strong>
+      <p class="mut" style="margin:6px 0 0;font-size:.93rem">CiteReady Pro ($19 Solo / $39 Agency) crawls your sitemap locally, generates llmstxt.org-compliant /llms.txt + SoftwareApplication/FAQPage JSON-LD &amp; monitors AI crawler access in CI.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;min-width:260px">
+      <a class="btn btn-cta" href="https://agentarenastudi.gumroad.com/l/omniforge-citeready" target="_blank" rel="noopener">Get CiteReady Pro ($19 / $39) →</a>
+      <a class="btn" href="https://omnipulse-x402.appwrite.network/checkout/citeready" target="_blank" rel="noopener">&#9889; Instant Direct Checkout (24/7 ZIP) &rarr;</a>
+      <a class="btn" style="border-color:var(--acc);color:var(--acc)" href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">Save $38: 3-in-1 Launch Stack ($49/$89) &rarr;</a>
+    </div>
+  </div>
+
+    <h2>Live SaaS Benchmark Examples</h2>
+    <div class="chip-row">
+      <a class="chip" href="../report/cursor.com.html">Cursor (cursor.com · 90/100)</a><a class="chip" href="../report/vercel.com.html">Vercel (vercel.com · 79/100)</a><a class="chip" href="../report/supabase.com.html">Supabase (supabase.com · 95/100)</a><a class="chip" href="../report/resend.com.html">Resend (resend.com · 95/100)</a><a class="chip" href="../report/stripe.com.html">Stripe (stripe.com · 95/100)</a><a class="chip" href="../report/cal.com.html">Cal.com (cal.com · 90/100)</a><a class="chip" href="../report/posthog.com.html">PostHog (posthog.com · 78/100)</a><a class="chip" href="../report/linear.app.html">Linear (linear.app · 86/100)</a>
+    </div>
+
+    <h2>More Launch Troubleshooting Guides</h2>
+    <div class="chip-row">
+      <a class="chip" href="./resend-emails-going-to-spam-fix.html">Fix Resend Emails Going to Spam</a><a class="chip" href="./gmail-2026-dmarc-reject-policy.html">Gmail 2026 DMARC p=reject Rollout</a><a class="chip" href="./spf-permerror-too-many-dns-lookups-fix.html">Fix SPF &gt;10 DNS Lookup PermError</a><a class="chip" href="./allow-gptbot-claudebot-perplexitybot-robots-txt.html">AI Crawler robots.txt Guide (2026)</a><a class="chip" href="./startup-name-uspto-trademark-check-before-launch.html">USPTO Class 9 &amp; 42 Trademark Check</a><a class="chip" href="./google-workspace-dmarc-dkim-setup-guide.html">Google Workspace SPF/DKIM/DMARC</a><a class="chip" href="./postmark-aws-ses-dmarc-alignment-fix.html">Fix AWS SES / Postmark DMARC Alignment</a><a class="chip" href="./schema-json-ld-for-saas-ai-citations.html">SaaS JSON-LD Schema for AI Search</a><a class="chip" href="./domain-front-running-rdap-vs-registrar-search.html">Avoid Domain Front-Running via RDAP</a>
+    </div>
+  </main>
+  <footer><div class="wrap">
+    <p style="margin:0 0 8px">Live read-only DNS &amp; HTTP benchmarks measured directly against public records. Informational diagnostics, not legal advice.</p>
+    <p style="margin:0">
+      <a href="../index.html">Benchmark Index</a> &middot;
+      <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">BrandShield Web</a> &middot;
+      <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">InboxShield Web</a> &middot;
+      <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">CiteReady Web</a> &middot;
+      <a href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">Launch Stack on Gumroad</a> &middot;
+      <a href="https://omnipulse-x402.appwrite.network/checkout/launch-stack" target="_blank" rel="noopener">Instant Direct Checkout</a> &middot;
+      <a href="../llms.txt">llms.txt</a>
+    </p>
+  </div></footer>
+</body>
+</html>

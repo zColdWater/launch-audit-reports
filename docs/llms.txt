@@ -1,0 +1,37 @@
+# OmniForge Launch Readiness Benchmarks & Fix Guides (228 Live SaaS Audits)
+
+> Live measured SPF/DMARC/MX email deliverability and /llms.txt, robots.txt AI crawler & JSON-LD Schema readiness across 228 top SaaS & developer-tool domains, plus 10 copy-paste troubleshooting guides.
+
+## Benchmark Hub & Live Scanners
+- Interactive Benchmark Directory (228 Companies): https://zcoldwater.github.io/launch-audit-reports/
+- Free Brand Name & USPTO Trademark Scanner: https://brand-checker.appwrite.network
+- Free Email Deliverability Scanner (SPF/DMARC/MX): https://inbox-checker.appwrite.network
+- Free AI Search & llms.txt Readiness Scanner: https://citeready-checker.appwrite.network
+
+## Troubleshooting Guides
+- [Fix Resend Emails Going to Spam](https://zcoldwater.github.io/launch-audit-reports/guides/resend-emails-going-to-spam-fix.html): Most Resend spam-folder drops come from sending on a root domain with broken SPF lookup counts, missing DMARC alignment, or sharing reputation between marketing blasts and auth emails.
+- [Next.js llms.txt Generator Guide](https://zcoldwater.github.io/launch-audit-reports/guides/nextjs-llms-txt-generator.html): An /llms.txt file gives AI search assistants a curated, noise-free Markdown map of your product, docs, pricing, and API endpoints without forcing crawlers to parse megabytes of client-side JS bundles.
+- [Gmail 2026 DMARC p=reject Rollout](https://zcoldwater.github.io/launch-audit-reports/guides/gmail-2026-dmarc-reject-policy.html): Over 40% of growing SaaS domains still leave DMARC stuck at p=none or missing completely, leaving them vulnerable to brand spoofing and strict Gmail/Yahoo bulk-sender penalties.
+- [Fix SPF >10 DNS Lookup PermError](https://zcoldwater.github.io/launch-audit-reports/guides/spf-permerror-too-many-dns-lookups-fix.html): RFC 7208 caps SPF evaluation at 10 DNS-querying mechanisms including nested includes. Crossing 11 lookups causes immediate SPF PermError across Gmail and Microsoft 365.
+- [AI Crawler robots.txt Guide (2026)](https://zcoldwater.github.io/launch-audit-reports/guides/allow-gptbot-claudebot-perplexitybot-robots-txt.html): Blocking OAI-SearchBot or PerplexityBot in robots.txt makes your SaaS invisible in AI search answers. Learn the exact user-agent split between search citation bots and training bots.
+- [USPTO Class 9 & 42 Trademark Check](https://zcoldwater.github.io/launch-audit-reports/guides/startup-name-uspto-trademark-check-before-launch.html): An available .ai or .io domain offers zero legal protection if a live federal USPTO registration exists in Nice Class 009 (downloadable apps/software) or Class 042 (SaaS/cloud platforms).
+- [Google Workspace SPF/DKIM/DMARC](https://zcoldwater.github.io/launch-audit-reports/guides/google-workspace-dmarc-dkim-setup-guide.html): New Google Workspace domains ship with DKIM disabled by default. Turning on 2048-bit DKIM and pairing it with clean SPF + DMARC is the fastest way to protect cold outreach and team email deliverability.
+- [Fix AWS SES / Postmark DMARC Alignment](https://zcoldwater.github.io/launch-audit-reports/guides/postmark-aws-ses-dmarc-alignment-fix.html): DMARC does not pass just because SPF passes — the Return-Path domain (SPF) or d= signing domain (DKIM) must match the visible From: header domain.
+- [SaaS JSON-LD Schema for AI Search](https://zcoldwater.github.io/launch-audit-reports/guides/schema-json-ld-for-saas-ai-citations.html): Over half of SaaS homepages ship zero structured JSON-LD data, forcing AI search models to guess pricing tiers and feature sets from unstructured marketing copy.
+- [Avoid Domain Front-Running via RDAP](https://zcoldwater.github.io/launch-audit-reports/guides/domain-front-running-rdap-vs-registrar-search.html): RDAP (Registration Data Access Protocol) is ICANN's official JSON replacement for port-43 WHOIS. Querying registry RDAP endpoints directly removes commercial middlemen when vetting startup names.
+
+## Sample Public SaaS Reports
+- [Cursor (cursor.com) — 90/100](https://zcoldwater.github.io/launch-audit-reports/report/cursor.com.html): Email 82/100 (DMARC quarantine, SPF 3/10), AI Search 100/100 (llms.txt present)
+- [Vercel (vercel.com) — 79/100](https://zcoldwater.github.io/launch-audit-reports/report/vercel.com.html): Email 78/100 (DMARC quarantine, SPF 10/10), AI Search 80/100 (llms.txt present)
+- [Supabase (supabase.com) — 95/100](https://zcoldwater.github.io/launch-audit-reports/report/supabase.com.html): Email 90/100 (DMARC reject, SPF 2/10), AI Search 100/100 (llms.txt present)
+- [Resend (resend.com) — 95/100](https://zcoldwater.github.io/launch-audit-reports/report/resend.com.html): Email 90/100 (DMARC reject, SPF 1/10), AI Search 100/100 (llms.txt present)
+- [Stripe (stripe.com) — 95/100](https://zcoldwater.github.io/launch-audit-reports/report/stripe.com.html): Email 90/100 (DMARC reject, SPF 7/10), AI Search 100/100 (llms.txt present)
+- [Cal.com (cal.com) — 90/100](https://zcoldwater.github.io/launch-audit-reports/report/cal.com.html): Email 82/100 (DMARC quarantine, SPF 3/10), AI Search 100/100 (llms.txt present)
+- [PostHog (posthog.com) — 78/100](https://zcoldwater.github.io/launch-audit-reports/report/posthog.com.html): Email 88/100 (DMARC quarantine, SPF 10/10), AI Search 65/100 (llms.txt present)
+- [Linear (linear.app) — 86/100](https://zcoldwater.github.io/launch-audit-reports/report/linear.app.html): Email 90/100 (DMARC reject, SPF 4/10), AI Search 80/100 (llms.txt present)
+
+## Pro Toolkits (One-Time Offline Node.js Kits)
+- 3-in-1 Founder Launch Stack ($49 Solo / $89 Agency): https://agentarenastudi.gumroad.com/l/omniforge-launch-stack | Direct: https://omnipulse-x402.appwrite.network/checkout/launch-stack
+- BrandShield Pro ($19/$39): https://agentarenastudi.gumroad.com/l/omniforge-brandshield | Direct: https://omnipulse-x402.appwrite.network/checkout/brandshield
+- InboxShield Pro ($29/$49): https://agentarenastudi.gumroad.com/l/omniforge-inboxshield | Direct: https://omnipulse-x402.appwrite.network/checkout/inboxshield
+- CiteReady Pro ($19/$39): https://agentarenastudi.gumroad.com/l/omniforge-citeready | Direct: https://omnipulse-x402.appwrite.network/checkout/citeready

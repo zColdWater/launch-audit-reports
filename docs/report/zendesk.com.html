@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zendesk (zendesk.com) Email Deliverability (SPF/DMARC) &amp; AI Search (llms.txt) Audit — 83/100</title>
+  <meta name="description" content="Live 2026-11-22 launch readiness audit for Zendesk (zendesk.com): InboxShield 85/100 (DMARC reject, SPF 6/10 lookups, Google Workspace) &amp; CiteReady 80/100 (llms.txt present, Schema.org 0 types)." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://zcoldwater.github.io/launch-audit-reports/report/zendesk.com.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Zendesk (zendesk.com) Email Deliverability (SPF/DMARC) &amp; AI Search (llms.txt) Audit — 83/100" />
+  <meta property="og:description" content="Live 2026-11-22 launch readiness audit for Zendesk (zendesk.com): InboxShield 85/100 (DMARC reject, SPF 6/10 lookups, Google Workspace) &amp; CiteReady 80/100 (llms.txt present, Schema.org 0 types)." />
+  <meta property="og:url" content="https://zcoldwater.github.io/launch-audit-reports/report/zendesk.com.html" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../style.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SaaS Launch Benchmarks","item":"https://zcoldwater.github.io/launch-audit-reports/"},{"@type":"ListItem","position":2,"name":"Zendesk (zendesk.com) Audit","item":"https://zcoldwater.github.io/launch-audit-reports/report/zendesk.com.html"}]},{"@type":"TechArticle","headline":"Zendesk (zendesk.com) Email Deliverability (SPF/DMARC) & AI Search (llms.txt) Audit — 83/100","description":"Live 2026-11-22 launch readiness audit for Zendesk (zendesk.com): InboxShield 85/100 (DMARC reject, SPF 6/10 lookups, Google Workspace) & CiteReady 80/100 (llms.txt present, Schema.org 0 types).","datePublished":"2026-11-22T02:56:46Z","dateModified":"2026-11-22T02:56:46Z","url":"https://zcoldwater.github.io/launch-audit-reports/report/zendesk.com.html","author":{"@type":"Organization","name":"OmniForge Studio"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does zendesk.com have a valid DMARC and SPF record?","acceptedAnswer":{"@type":"Answer","text":"As of 2026-11-22, zendesk.com uses Google Workspace, has DMARC policy \"reject\", and an SPF record requiring 6 recursive DNS lookups (RFC 7208 limit is 10)."}},{"@type":"Question","name":"Does zendesk.com publish /llms.txt and allow AI search crawlers?","acceptedAnswer":{"@type":"Answer","text":"As of 2026-11-22, https://zendesk.com/llms.txt is present (16384 bytes). robots.txt does not block GPTBot, OAI-SearchBot, ClaudeBot, or PerplexityBot."}}]}]}</script>
+</head>
+<body>
+  <header><div class="wrap nav">
+    <a class="brand" href="../index.html"><span class="dot">O</span><span>OmniForge Launch Benchmarks</span></a>
+    <nav class="nav-links">
+      <a href="../index.html#benchmarks">220+ SaaS Reports</a>
+      <a href="../index.html#guides">Fix Guides</a>
+      <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">Free Email Audit</a>
+      <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">Free AI Audit</a>
+      <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">Free Name Check</a>
+      <a class="btn btn-cta" href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">3-in-1 Launch Stack ($49) &rarr;</a>
+    </nav>
+  </div></header>
+  <main class="wrap">
+    <div class="crumb"><a href="../index.html">Launch Benchmarks</a> &rsaquo; Product &amp; Design &rsaquo; <strong>zendesk.com</strong></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:18px">
+      <div>
+        <span class="eyebrow">Product &amp; Design &middot; Live Benchmark Audit (2026-11-22)</span>
+        <h1>Zendesk (<code>zendesk.com</code>) Launch Audit</h1>
+        <p class="sub" style="margin-bottom:0">Measured directly against live DNS (SPF/DMARC/MX/MTA-STS) and live HTTPS (<code>/llms.txt</code>, <code>/robots.txt</code>, JSON-LD Schema.org).</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button type="button" class="btn" id="copyReportBtn">Copy Shareable Report Link</button>
+        <a class="btn btn-cta" href="https://brand-checker.appwrite.network/report/Zendesk" target="_blank" rel="noopener">Live USPTO Trademark Check &rarr;</a>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="num"><span class="pill ok" style="font-size:1.25rem;padding:4px 12px">83/100 (B)</span></div>
+        <div class="lbl">Overall Launch Readiness</div>
+      </div>
+      <div class="kpi">
+        <div class="num"><span class="pill ok" style="font-size:1.1rem">85/100</span></div>
+        <div class="lbl">Email Deliverability (InboxShield)</div>
+      </div>
+      <div class="kpi">
+        <div class="num"><span class="pill warn" style="font-size:1.1rem">80/100</span></div>
+        <div class="lbl">AI Search Readiness (CiteReady)</div>
+      </div>
+      <div class="kpi">
+        <div class="num" style="font-size:1.15rem">Google Workspace</div>
+        <div class="lbl">Detected MX Mail Provider</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Flagged Findings (3)</h3>
+      <ul style="margin:6px 0 0;padding-left:18px"><li style="margin:5px 0"><span class="pill warn">Email</span> DMARC record lacks rua= aggregate reporting address</li><li style="margin:5px 0"><span class="pill warn">Email</span> No MTA-STS (_mta-sts) TLS enforcement record</li><li style="margin:5px 0"><span class="pill warn">AI Search</span> No JSON-LD Schema.org structured data on homepage</li></ul>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2 style="margin-top:0">1. Email Deliverability (DNS)</h2>
+        <table>
+          <tbody>
+            <tr><td><strong>MX Provider</strong></td><td>Google Workspace (6 MX)</td></tr>
+            <tr><td><strong>SPF Record</strong></td><td><span class="pill ok">Present (6/10 lookups)</span></td></tr>
+            <tr><td><strong>SPF Qualifier</strong></td><td><code>~all</code></td></tr>
+            <tr><td><strong>DMARC Policy</strong></td><td><span class="pill ok">reject</span> </td></tr>
+            <tr><td><strong>MTA-STS TLS</strong></td><td><span class="pill warn">Not detected</span></td></tr>
+          </tbody>
+        </table>
+        <pre><code>SPF: v=spf1 ip4:103.151.192.0/23 ip4:104.43.243.237 ip4:149.97.173.180 ip4:163.116.128.0/17 ip4:170.10.128.0/24 ip4:170.10.129.0/24 ip4:170.10.132.56/29 ip4:170.10.132.64/29 ip4:170.10.133.0/24 ip4:18.194.95.56 ip4:18.198.96.88 include:_spf1.zendesk.com ~all</code></pre>
+        <pre><code>DMARC: v=DMARC1; p=reject</code></pre>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top:0">2. AI Search &amp; GEO Readiness</h2>
+        <table>
+          <tbody>
+            <tr><td><strong><code>/llms.txt</code></strong></td><td><span class="pill ok">Present (16,384 B)</span></td></tr>
+            <tr><td><strong><code>robots.txt</code> Sitemap</strong></td><td><span class="pill ok">Declared</span></td></tr>
+            <tr><td><strong>Schema.org JSON-LD</strong></td><td><span class="pill warn">None detected</span></td></tr>
+            <tr><td><strong>Title &amp; Meta Desc</strong></td><td><span class="pill ok">Complete</span></td></tr>
+          </tbody>
+        </table>
+        <h3 style="margin-top:16px">AI Crawler Access (<code>robots.txt</code>)</h3><table><tbody><tr><td><code>GPTBot</code></td><td><span class="pill ok">allowed</span></td></tr><tr><td><code>OAI-SearchBot</code></td><td><span class="pill ok">allowed</span></td></tr><tr><td><code>ClaudeBot</code></td><td><span class="pill ok">allowed</span></td></tr><tr><td><code>PerplexityBot</code></td><td><span class="pill ok">allowed</span></td></tr></tbody></table>
+      </div>
+    </div>
+
+    <div class="card">
+    <h3 style="margin-top:0">Audit Your Own Startup Domain Live (Free, Zero Signup)</h3>
+    <p class="mut" style="margin:0 0 12px;font-size:.92rem">Enter your domain or product name to open an instant live diagnostic on our read-only scanners:</p>
+    <form class="audit-bar" onsubmit="event.preventDefault();const v=this.dom.value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');if(!v)return;const t=this.tool.value;if(t==='inbox')window.open('https://inbox-checker.appwrite.network/?domain='+encodeURIComponent(v),'_blank');else if(t==='cite')window.open('https://citeready-checker.appwrite.network/?url='+encodeURIComponent('https://'+v),'_blank');else window.open('https://brand-checker.appwrite.network/report/'+encodeURIComponent(v.split('.')[0]),'_blank');">
+      <input name="dom" placeholder="yourdomain.com (or brand name)..." required maxlength="80" />
+      <select name="tool" aria-label="Diagnostic tool">
+        <option value="inbox">Email Deliverability (SPF/DMARC/MX)</option>
+        <option value="cite">AI Search &amp; llms.txt Audit</option>
+        <option value="brand">Brand Name &amp; USPTO Trademark Report</option>
+      </select>
+      <button type="submit" class="btn btn-cta">Run Free Live Audit &rarr;</button>
+    </form>
+  </div>
+
+    <h2>Recommended Fix Guides for This Profile</h2>
+    <div class="grid-3">
+      <a class="card" href="../guides/schema-json-ld-for-saas-ai-citations.html" style="display:block;text-decoration:none;color:var(--fg)">
+        <span class="pill ok" style="margin-bottom:8px">AI Search &amp; GEO</span>
+        <h3>SaaS JSON-LD Schema for AI Search</h3>
+        <p class="mut" style="margin:0;font-size:.88rem">Over half of SaaS homepages ship zero structured JSON-LD data, forcing AI search models to guess pricing tiers and feature sets from unstructured marketing copy.</p>
+      </a><a class="card" href="../guides/resend-emails-going-to-spam-fix.html" style="display:block;text-decoration:none;color:var(--fg)">
+        <span class="pill ok" style="margin-bottom:8px">Email Deliverability</span>
+        <h3>Fix Resend Emails Going to Spam</h3>
+        <p class="mut" style="margin:0;font-size:.88rem">Most Resend spam-folder drops come from sending on a root domain with broken SPF lookup counts, missing DMARC alignment, or sharing reputation between marketing blasts and auth emails.</p>
+      </a><a class="card" href="../guides/nextjs-llms-txt-generator.html" style="display:block;text-decoration:none;color:var(--fg)">
+        <span class="pill ok" style="margin-bottom:8px">AI Search &amp; GEO</span>
+        <h3>Next.js llms.txt Generator Guide</h3>
+        <p class="mut" style="margin:0;font-size:.88rem">An /llms.txt file gives AI search assistants a curated, noise-free Markdown map of your product, docs, pricing, and API endpoints without forcing crawlers to parse megabytes of client-side JS bundles.</p>
+      </a>
+    </div>
+
+    <div class="cta-box">
+    <div style="max-width:600px">
+      <strong style="font-size:1.12rem">Auto-Generate llms.txt &amp; JSON-LD Schema Across Your Whole Site</strong>
+      <p class="mut" style="margin:6px 0 0;font-size:.93rem">CiteReady Pro ($19 Solo / $39 Agency) crawls your sitemap locally, generates llmstxt.org-compliant /llms.txt + SoftwareApplication/FAQPage JSON-LD &amp; monitors AI crawler access in CI.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;min-width:260px">
+      <a class="btn btn-cta" href="https://agentarenastudi.gumroad.com/l/omniforge-citeready" target="_blank" rel="noopener">Get CiteReady Pro ($19 / $39) →</a>
+      <a class="btn" href="https://omnipulse-x402.appwrite.network/checkout/citeready" target="_blank" rel="noopener">&#9889; Instant Direct Checkout (24/7 ZIP) &rarr;</a>
+      <a class="btn" style="border-color:var(--acc);color:var(--acc)" href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">Save $38: 3-in-1 Launch Stack ($49/$89) &rarr;</a>
+    </div>
+  </div>
+
+    <h2>Related Product &amp; Design Benchmarks</h2>
+    <div class="chip-row">
+      <a class="chip" href="./linear.app.html">Linear (86/100)</a><a class="chip" href="./figma.com.html">Figma (54/100)</a><a class="chip" href="./framer.com.html">Framer (87/100)</a><a class="chip" href="./webflow.com.html">Webflow (72/100)</a><a class="chip" href="./notion.so.html">Notion (82/100)</a><a class="chip" href="./coda.io.html">Coda (72/100)</a><a class="chip" href="./airtable.com.html">Airtable (70/100)</a><a class="chip" href="./retool.com.html">Retool (83/100)</a>
+    </div>
+  </main>
+  <footer><div class="wrap">
+    <p style="margin:0 0 8px">Live read-only DNS &amp; HTTP benchmarks measured directly against public records. Informational diagnostics, not legal advice.</p>
+    <p style="margin:0">
+      <a href="../index.html">Benchmark Index</a> &middot;
+      <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">BrandShield Web</a> &middot;
+      <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">InboxShield Web</a> &middot;
+      <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">CiteReady Web</a> &middot;
+      <a href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">Launch Stack on Gumroad</a> &middot;
+      <a href="https://omnipulse-x402.appwrite.network/checkout/launch-stack" target="_blank" rel="noopener">Instant Direct Checkout</a> &middot;
+      <a href="../llms.txt">llms.txt</a>
+    </p>
+  </div></footer>
+  <script>
+    document.getElementById("copyReportBtn").addEventListener("click", function() {
+      const b = this;
+      navigator.clipboard?.writeText(location.href).then(() => {
+        b.textContent = "Report Link Copied!";
+        setTimeout(() => (b.textContent = "Copy Shareable Report Link"), 2000);
+      });
+    });
+  </script>
+</body>
+</html>

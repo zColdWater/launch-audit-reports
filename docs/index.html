@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2026 SaaS Launch Readiness Benchmarks (228 Domains) — SPF/DMARC, llms.txt &amp; Brand Audits</title>
+  <meta name="description" content="Live public email deliverability (SPF/DMARC/MX) and AI search readiness (llms.txt, GPTBot/ClaudeBot, Schema.org) audit reports across 228 top SaaS &amp; developer-tool domains, plus 10 copy-paste troubleshooting guides." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://zcoldwater.github.io/launch-audit-reports/" />
+  <link rel="stylesheet" href="./style.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"2026 SaaS Launch Readiness Benchmark Dataset (228 Domains)","description":"Live measured SPF/DMARC/MX email deliverability and /llms.txt, robots.txt AI crawler, and JSON-LD Schema.org readiness across 228 top SaaS and developer-tool domains.","url":"https://zcoldwater.github.io/launch-audit-reports/","dateModified":"2026-11-22T03:01:28Z","creator":{"@type":"Organization","name":"OmniForge Studio"}}</script>
+</head>
+<body>
+  <header><div class="wrap nav">
+    <a class="brand" href="./index.html"><span class="dot">O</span><span>OmniForge Launch Benchmarks</span></a>
+    <nav class="nav-links">
+      <a href="./index.html#benchmarks">220+ SaaS Reports</a>
+      <a href="./index.html#guides">Fix Guides</a>
+      <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">Free Email Audit</a>
+      <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">Free AI Audit</a>
+      <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">Free Name Check</a>
+      <a class="btn btn-cta" href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">3-in-1 Launch Stack ($49) &rarr;</a>
+    </nav>
+  </div></header>
+  <main class="wrap">
+    <span class="eyebrow">Live Measured Dataset (2026-11-22) &middot; 228 Top SaaS &amp; Dev Domains</span>
+    <h1>2026 SaaS Launch Readiness Benchmarks &amp; Fix Guides</h1>
+    <p class="sub">
+      We ran live, read-only DNS (SPF recursion, DMARC enforcement, MX, MTA-STS) and AI-search (<code>/llms.txt</code>, <code>robots.txt</code> crawlers, JSON-LD Schema) audits across <strong>228</strong> real SaaS, AI, and developer-tool domains. Inspect any report, share it with your team, or audit your own domain free.
+    </p>
+
+    <div class="kpi-grid">
+      <div class="kpi"><div class="num" style="color:var(--bad)">29%</div><div class="lbl">Missing <code>/llms.txt</code> (66/228)</div></div>
+      <div class="kpi"><div class="num" style="color:var(--warn)">12%</div><div class="lbl">Weak/Missing DMARC (27/228)</div></div>
+      <div class="kpi"><div class="num" style="color:var(--acc)">2</div><div class="lbl">Domains Over SPF 10-Lookup Cap</div></div>
+      <div class="kpi"><div class="num" style="color:#a7f3d0">81/100</div><div class="lbl">Mean Launch Readiness Score</div></div>
+    </div>
+
+    <div class="card">
+    <h3 style="margin-top:0">Audit Your Own Startup Domain Live (Free, Zero Signup)</h3>
+    <p class="mut" style="margin:0 0 12px;font-size:.92rem">Enter your domain or product name to open an instant live diagnostic on our read-only scanners:</p>
+    <form class="audit-bar" onsubmit="event.preventDefault();const v=this.dom.value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');if(!v)return;const t=this.tool.value;if(t==='inbox')window.open('https://inbox-checker.appwrite.network/?domain='+encodeURIComponent(v),'_blank');else if(t==='cite')window.open('https://citeready-checker.appwrite.network/?url='+encodeURIComponent('https://'+v),'_blank');else window.open('https://brand-checker.appwrite.network/report/'+encodeURIComponent(v.split('.')[0]),'_blank');">
+      <input name="dom" placeholder="yourdomain.com (or brand name)..." required maxlength="80" />
+      <select name="tool" aria-label="Diagnostic tool">
+        <option value="inbox">Email Deliverability (SPF/DMARC/MX)</option>
+        <option value="cite">AI Search &amp; llms.txt Audit</option>
+        <option value="brand">Brand Name &amp; USPTO Trademark Report</option>
+      </select>
+      <button type="submit" class="btn btn-cta">Run Free Live Audit &rarr;</button>
+    </form>
+  </div>
+
+    <h2 id="guides">High-Intent Launch Troubleshooting Guides (2026)</h2>
+    <div class="grid-3">
+      <a class="card" href="./guides/resend-emails-going-to-spam-fix.html" style="display:block;text-decoration:none;color:var(--fg)">
+        <span class="pill ok" style="margin-bottom:8px">Email Deliverability</span>
+        <h3>Fix Resend Emails Going to Spam</h3>
+        <p class="mut" style="margin:0;font-size:.87rem">Most Resend spam-folder drops come from sending on a root domain with broken SPF lookup counts, missing DMARC alignment, or sharing reputation between marketing blasts and auth emails.</p>
+      </a><a class="card" href="./guides/nextjs-llms-txt-generator.html" style="display:block;text-decoration:none;color:var(--fg)">
+        <span class="pill ok" style="margin-bottom:8px">AI Search &amp; GEO</span>
+        <h3>Next.js llms.txt Generator Guide</h3>
+        <p class="mut" style="margin:0;font-size:.87rem">An /llms.txt file gives AI search assistants a curated, noise-free Markdown map of your product, docs, pricing, and API endpoints without forcing crawlers to parse megabytes of client-side JS bundles.</p>
+      </a><a class="card" href="./guides/gmail-2026-dmarc-reject-policy.html" style="display:block;text-decoration:none;color:var(--fg)">
+        <span class="pill ok" style="margin-bottom:8px">Email Deliverability</span>
+        <h3>Gmail 2026 DMARC p=reject Rollout</h3>
+        <p class="mut" style="margin:0;font-size:.87rem">Over 40% of growing SaaS domains still leave DMARC stuck at p=none or missing completely, leaving them vulnerable to brand spoofing and strict Gmail/Yahoo bulk-sender penalties.</p>
+      </a><a class="card" href="./guides/spf-permerror-too-many-dns-lookups-fix.html" style="display:block;text-decoration:none;color:var(--fg)">
+        <span class="pill ok" style="margin-bottom:8px">Email Deliverability</span>
+        <h3>Fix SPF &gt;10 DNS Lookup PermError</h3>
+        <p class="mut" style="margin:0;font-size:.87rem">RFC 7208 caps SPF evaluation at 10 DNS-querying mechanisms including nested includes. Crossing 11 lookups causes immediate SPF PermError across Gmail and Microsoft 365.</p>
+      </a><a class="card" href="./guides/allow-gptbot-claudebot-perplexitybot-robots-txt.html" style="display:block;text-decoration:none;color:var(--fg)">
+        <span class="pill ok" style="margin-bottom:8px">AI Search &amp; GEO</span>
+        <h3>AI Crawler robots.txt Guide (2026)</h3>
+        <p class="mut" style="margin:0;font-size:.87rem">Blocking OAI-SearchBot or PerplexityBot in robots.txt makes your SaaS invisible in AI search answers. Learn the exact user-agent split between search citation bots and training bots.</p>
+      </a><a class="card" href="./guides/startup-name-uspto-trademark-check-before-launch.html" style="display:block;text-decoration:none;color:var(--fg)">
+        <span class="pill ok" style="margin-bottom:8px">Startup Naming</span>
+        <h3>USPTO Class 9 &amp; 42 Trademark Check</h3>
+        <p class="mut" style="margin:0;font-size:.87rem">An available .ai or .io domain offers zero legal protection if a live federal USPTO registration exists in Nice Class 009 (downloadable apps/software) or Class 042 (SaaS/cloud platforms).</p>
+      </a><a class="card" href="./guides/google-workspace-dmarc-dkim-setup-guide.html" style="display:block;text-decoration:none;color:var(--fg)">
+        <span class="pill ok" style="margin-bottom:8px">Email Deliverability</span>
+        <h3>Google Workspace SPF/DKIM/DMARC</h3>
+        <p class="mut" style="margin:0;font-size:.87rem">New Google Workspace domains ship with DKIM disabled by default. Turning on 2048-bit DKIM and pairing it with clean SPF + DMARC is the fastest way to protect cold outreach and team email deliverability.</p>
+      </a><a class="card" href="./guides/postmark-aws-ses-dmarc-alignment-fix.html" style="display:block;text-decoration:none;color:var(--fg)">
+        <span class="pill ok" style="margin-bottom:8px">Email Deliverability</span>
+        <h3>Fix AWS SES / Postmark DMARC Alignment</h3>
+        <p class="mut" style="margin:0;font-size:.87rem">DMARC does not pass just because SPF passes — the Return-Path domain (SPF) or d= signing domain (DKIM) must match the visible From: header domain.</p>
+      </a><a class="card" href="./guides/schema-json-ld-for-saas-ai-citations.html" style="display:block;text-decoration:none;color:var(--fg)">
+        <span class="pill ok" style="margin-bottom:8px">AI Search &amp; GEO</span>
+        <h3>SaaS JSON-LD Schema for AI Search</h3>
+        <p class="mut" style="margin:0;font-size:.87rem">Over half of SaaS homepages ship zero structured JSON-LD data, forcing AI search models to guess pricing tiers and feature sets from unstructured marketing copy.</p>
+      </a><a class="card" href="./guides/domain-front-running-rdap-vs-registrar-search.html" style="display:block;text-decoration:none;color:var(--fg)">
+        <span class="pill ok" style="margin-bottom:8px">Startup Naming</span>
+        <h3>Avoid Domain Front-Running via RDAP</h3>
+        <p class="mut" style="margin:0;font-size:.87rem">RDAP (Registration Data Access Protocol) is ICANN&#39;s official JSON replacement for port-43 WHOIS. Querying registry RDAP endpoints directly removes commercial middlemen when vetting startup names.</p>
+      </a>
+    </div>
+
+    <h2 id="benchmarks">All 228 Public SaaS Audit Reports</h2>
+    <div class="controls">
+      <input id="q" placeholder="Search domain, brand, or mail provider (e.g. linear, stripe, resend, google)..." />
+      <select id="cat">
+        <option value="">All Categories (228)</option>
+        <option value="AI &amp; LLM">AI &amp; LLM</option><option value="Cloud &amp; Databases">Cloud &amp; Databases</option><option value="Email &amp; Auth">Email &amp; Auth</option><option value="Payments &amp; Billing">Payments &amp; Billing</option><option value="Analytics &amp; DevOps">Analytics &amp; DevOps</option><option value="Product &amp; Design">Product &amp; Design</option><option value="Frameworks &amp; Docs">Frameworks &amp; Docs</option><option value="Security &amp; Growth">Security &amp; Growth</option>
+      </select>
+      <select id="sort">
+        <option value="desc">Sort: Highest Overall Score</option>
+        <option value="asc">Sort: Lowest Overall Score (Most Issues)</option>
+        <option value="inbox">Sort: Email Score</option>
+        <option value="cite">Sort: AI Search Score</option>
+        <option value="name">Sort: Domain A–Z</option>
+      </select>
+    </div>
+    <div class="chip-row" id="filters">
+      <button class="chip active" data-f="all" type="button">All (228)</button>
+      <button class="chip" data-f="no-llms" type="button">Missing llms.txt (66)</button>
+      <button class="chip" data-f="has-llms" type="button">Has llms.txt (162)</button>
+      <button class="chip" data-f="weak-dmarc" type="button">DMARC p=none / Missing (27)</button>
+      <button class="chip" data-f="spf-over" type="button">SPF &gt; 10 Lookups (2)</button>
+      <button class="chip" data-f="ai-blocked" type="button">Blocking AI Bots (4)</button>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Domain &amp; Brand</th><th>Category</th><th>Overall</th><th>Email (SPF/DMARC)</th><th>AI Search</th><th><code>/llms.txt</code></th><th>DMARC</th><th>Report</th></tr>
+        </thead>
+        <tbody id="tbody">
+          <tr>
+            <td><strong><a href="./report/cloudflare.com.html">Cloudflare</a></strong><div class="mut" style="font-size:.82rem">cloudflare.com</div></td>
+            <td class="mut">Cloud &amp; Databases</td>
+            <td><span class="pill ok">100 (A)</span></td>
+            <td><span class="pill ok">100/100</span> <span class="mut" style="font-size:.8rem">7/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/cloudflare.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/dodopayments.com.html">Dodo Payments</a></strong><div class="mut" style="font-size:.82rem">dodopayments.com</div></td>
+            <td class="mut">Payments &amp; Billing</td>
+            <td><span class="pill ok">100 (A)</span></td>
+            <td><span class="pill ok">100/100</span> <span class="mut" style="font-size:.8rem">3/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/dodopayments.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/mixpanel.com.html">Mixpanel</a></strong><div class="mut" style="font-size:.82rem">mixpanel.com</div></td>
+            <td class="mut">Analytics &amp; DevOps</td>
+            <td><span class="pill ok">100 (A)</span></td>
+            <td><span class="pill ok">100/100</span> <span class="mut" style="font-size:.8rem">3/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/mixpanel.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/pagerduty.com.html">PagerDuty</a></strong><div class="mut" style="font-size:.82rem">pagerduty.com</div></td>
+            <td class="mut">Analytics &amp; DevOps</td>
+            <td><span class="pill ok">100 (A)</span></td>
+            <td><span class="pill ok">100/100</span> <span class="mut" style="font-size:.8rem">7/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/pagerduty.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/render.com.html">Render</a></strong><div class="mut" style="font-size:.82rem">render.com</div></td>
+            <td class="mut">Cloud &amp; Databases</td>
+            <td><span class="pill ok">100 (A)</span></td>
+            <td><span class="pill ok">100/100</span> <span class="mut" style="font-size:.8rem">5/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/render.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/descript.com.html">Descript</a></strong><div class="mut" style="font-size:.82rem">descript.com</div></td>
+            <td class="mut">Security &amp; Growth</td>
+            <td><span class="pill ok">98 (A)</span></td>
+            <td><span class="pill ok">96/100</span> <span class="mut" style="font-size:.8rem">8/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/descript.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/zapier.com.html">Zapier</a></strong><div class="mut" style="font-size:.82rem">zapier.com</div></td>
+            <td class="mut">Analytics &amp; DevOps</td>
+            <td><span class="pill ok">98 (A)</span></td>
+            <td><span class="pill ok">96/100</span> <span class="mut" style="font-size:.8rem">9/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/zapier.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/supertokens.com.html">SuperTokens</a></strong><div class="mut" style="font-size:.82rem">supertokens.com</div></td>
+            <td class="mut">Email &amp; Auth</td>
+            <td><span class="pill ok">97 (A)</span></td>
+            <td><span class="pill ok">95/100</span> <span class="mut" style="font-size:.8rem">1/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/supertokens.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/asana.com.html">Asana</a></strong><div class="mut" style="font-size:.82rem">asana.com</div></td>
+            <td class="mut">Product &amp; Design</td>
+            <td><span class="pill ok">96 (A)</span></td>
+            <td><span class="pill ok">92/100</span> <span class="mut" style="font-size:.8rem">6/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill warn">quarantine</span></td>
+            <td><a href="./report/asana.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/openrouter.ai.html">OpenRouter</a></strong><div class="mut" style="font-size:.82rem">openrouter.ai</div></td>
+            <td class="mut">AI &amp; LLM</td>
+            <td><span class="pill ok">96 (A)</span></td>
+            <td><span class="pill ok">92/100</span> <span class="mut" style="font-size:.8rem">4/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill warn">quarantine</span></td>
+            <td><a href="./report/openrouter.ai.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/timescale.com.html">Timescale</a></strong><div class="mut" style="font-size:.82rem">timescale.com</div></td>
+            <td class="mut">Cloud &amp; Databases</td>
+            <td><span class="pill ok">96 (A)</span></td>
+            <td><span class="pill ok">92/100</span> <span class="mut" style="font-size:.8rem">5/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill warn">quarantine</span></td>
+            <td><a href="./report/timescale.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/attio.com.html">Attio</a></strong><div class="mut" style="font-size:.82rem">attio.com</div></td>
+            <td class="mut">Product &amp; Design</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">2/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/attio.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/beehiiv.com.html">beehiiv</a></strong><div class="mut" style="font-size:.82rem">beehiiv.com</div></td>
+            <td class="mut">Email &amp; Auth</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">2/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/beehiiv.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/braintrust.dev.html">Braintrust</a></strong><div class="mut" style="font-size:.82rem">braintrust.dev</div></td>
+            <td class="mut">AI &amp; LLM</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">1/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/braintrust.dev.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/brevo.com.html">Brevo</a></strong><div class="mut" style="font-size:.82rem">brevo.com</div></td>
+            <td class="mut">Email &amp; Auth</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">2/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/brevo.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/brex.com.html">Brex</a></strong><div class="mut" style="font-size:.82rem">brex.com</div></td>
+            <td class="mut">Payments &amp; Billing</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">2/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/brex.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/buffer.com.html">Buffer</a></strong><div class="mut" style="font-size:.82rem">buffer.com</div></td>
+            <td class="mut">Security &amp; Growth</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">3/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/buffer.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/clerk.com.html">Clerk</a></strong><div class="mut" style="font-size:.82rem">clerk.com</div></td>
+            <td class="mut">Email &amp; Auth</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">1/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/clerk.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/craft.do.html">Craft</a></strong><div class="mut" style="font-size:.82rem">craft.do</div></td>
+            <td class="mut">Product &amp; Design</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">2/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/craft.do.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/e2b.dev.html">E2B</a></strong><div class="mut" style="font-size:.82rem">e2b.dev</div></td>
+            <td class="mut">AI &amp; LLM</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">2/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/e2b.dev.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/fal.ai.html">fal.ai</a></strong><div class="mut" style="font-size:.82rem">fal.ai</div></td>
+            <td class="mut">AI &amp; LLM</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">4/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/fal.ai.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/fastly.com.html">Fastly</a></strong><div class="mut" style="font-size:.82rem">fastly.com</div></td>
+            <td class="mut">Cloud &amp; Databases</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">3/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/fastly.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/folk.app.html">Folk</a></strong><div class="mut" style="font-size:.82rem">folk.app</div></td>
+            <td class="mut">Product &amp; Design</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">3/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/folk.app.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/front.com.html">Front</a></strong><div class="mut" style="font-size:.82rem">front.com</div></td>
+            <td class="mut">Product &amp; Design</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">2/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/front.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/knock.app.html">Knock</a></strong><div class="mut" style="font-size:.82rem">knock.app</div></td>
+            <td class="mut">Email &amp; Auth</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">1/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/knock.app.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/mailchimp.com.html">Mailchimp</a></strong><div class="mut" style="font-size:.82rem">mailchimp.com</div></td>
+            <td class="mut">Email &amp; Auth</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">7/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/mailchimp.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/make.com.html">Make</a></strong><div class="mut" style="font-size:.82rem">make.com</div></td>
+            <td class="mut">Analytics &amp; DevOps</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">5/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/make.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/modal.com.html">Modal</a></strong><div class="mut" style="font-size:.82rem">modal.com</div></td>
+            <td class="mut">AI &amp; LLM</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">3/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/modal.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/monday.com.html">monday.com</a></strong><div class="mut" style="font-size:.82rem">monday.com</div></td>
+            <td class="mut">Product &amp; Design</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">7/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/monday.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/mongodb.com.html">MongoDB</a></strong><div class="mut" style="font-size:.82rem">mongodb.com</div></td>
+            <td class="mut">Cloud &amp; Databases</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">1/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/mongodb.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/neon.tech.html">Neon</a></strong><div class="mut" style="font-size:.82rem">neon.tech</div></td>
+            <td class="mut">Cloud &amp; Databases</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">4/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/neon.tech.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/netlify.com.html">Netlify</a></strong><div class="mut" style="font-size:.82rem">netlify.com</div></td>
+            <td class="mut">Cloud &amp; Databases</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">3/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/netlify.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/pika.art.html">Pika</a></strong><div class="mut" style="font-size:.82rem">pika.art</div></td>
+            <td class="mut">AI &amp; LLM</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">2/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/pika.art.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/plain.com.html">Plain</a></strong><div class="mut" style="font-size:.82rem">plain.com</div></td>
+            <td class="mut">Product &amp; Design</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">7/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/plain.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/planetscale.com.html">PlanetScale</a></strong><div class="mut" style="font-size:.82rem">planetscale.com</div></td>
+            <td class="mut">Cloud &amp; Databases</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">6/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/planetscale.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/polar.sh.html">Polar</a></strong><div class="mut" style="font-size:.82rem">polar.sh</div></td>
+            <td class="mut">Payments &amp; Billing</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">1/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/polar.sh.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/postmarkapp.com.html">Postmark</a></strong><div class="mut" style="font-size:.82rem">postmarkapp.com</div></td>
+            <td class="mut">Email &amp; Auth</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">7/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/postmarkapp.com.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/prisma.io.html">Prisma</a></strong><div class="mut" style="font-size:.82rem">prisma.io</div></td>
+            <td class="mut">Frameworks &amp; Docs</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">3/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/prisma.io.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/railway.app.html">Railway</a></strong><div class="mut" style="font-size:.82rem">railway.app</div></td>
+            <td class="mut">Cloud &amp; Databases</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">1/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/railway.app.html">Open &rarr;</a></td>
+          </tr><tr>
+            <td><strong><a href="./report/raycast.com.html">Raycast</a></strong><div class="mut" style="font-size:.82rem">raycast.com</div></td>
+            <td class="mut">Product &amp; Design</td>
+            <td><span class="pill ok">95 (A)</span></td>
+            <td><span class="pill ok">90/100</span> <span class="mut" style="font-size:.8rem">1/10 SPF</span></td>
+            <td><span class="pill ok">100/100</span></td>
+            <td><span class="pill ok">Present</span></td>
+            <td><span class="pill ok">reject</span></td>
+            <td><a href="./report/raycast.com.html">Open &rarr;</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p id="countNote" class="mut" style="font-size:.86rem;margin-top:10px">Showing 228 live-audited SaaS reports.</p>
+
+    <div class="cta-box">
+    <div style="max-width:600px">
+      <strong style="font-size:1.12rem">Ship With Zero Naming, Deliverability, or AI-Search Blind Spots</strong>
+      <p class="mut" style="margin:6px 0 0;font-size:.93rem">OmniForge Founder Launch Stack bundles BrandShield Pro + InboxShield Pro + CiteReady Pro (all 3 offline Node.js toolkits + white-label reports). Save $38 with one-time pricing.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;min-width:260px">
+      <a class="btn btn-cta" href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">Get 3-in-1 Launch Stack ($49 Solo / $89 Agency) →</a>
+      <a class="btn" href="https://omnipulse-x402.appwrite.network/checkout/launch-stack" target="_blank" rel="noopener">&#9889; Instant Direct Checkout (24/7 ZIP) &rarr;</a>
+      
+    </div>
+  </div>
+
+    <noscript>
+      <h2>Full Directory of Audited SaaS Reports</h2>
+      <ul><li><a href="./report/cloudflare.com.html">Cloudflare (cloudflare.com) — 100/100</a></li><li><a href="./report/dodopayments.com.html">Dodo Payments (dodopayments.com) — 100/100</a></li><li><a href="./report/mixpanel.com.html">Mixpanel (mixpanel.com) — 100/100</a></li><li><a href="./report/pagerduty.com.html">PagerDuty (pagerduty.com) — 100/100</a></li><li><a href="./report/render.com.html">Render (render.com) — 100/100</a></li><li><a href="./report/descript.com.html">Descript (descript.com) — 98/100</a></li><li><a href="./report/zapier.com.html">Zapier (zapier.com) — 98/100</a></li><li><a href="./report/supertokens.com.html">SuperTokens (supertokens.com) — 97/100</a></li><li><a href="./report/asana.com.html">Asana (asana.com) — 96/100</a></li><li><a href="./report/openrouter.ai.html">OpenRouter (openrouter.ai) — 96/100</a></li><li><a href="./report/timescale.com.html">Timescale (timescale.com) — 96/100</a></li><li><a href="./report/attio.com.html">Attio (attio.com) — 95/100</a></li><li><a href="./report/beehiiv.com.html">beehiiv (beehiiv.com) — 95/100</a></li><li><a href="./report/braintrust.dev.html">Braintrust (braintrust.dev) — 95/100</a></li><li><a href="./report/brevo.com.html">Brevo (brevo.com) — 95/100</a></li><li><a href="./report/brex.com.html">Brex (brex.com) — 95/100</a></li><li><a href="./report/buffer.com.html">Buffer (buffer.com) — 95/100</a></li><li><a href="./report/clerk.com.html">Clerk (clerk.com) — 95/100</a></li><li><a href="./report/craft.do.html">Craft (craft.do) — 95/100</a></li><li><a href="./report/e2b.dev.html">E2B (e2b.dev) — 95/100</a></li><li><a href="./report/fal.ai.html">fal.ai (fal.ai) — 95/100</a></li><li><a href="./report/fastly.com.html">Fastly (fastly.com) — 95/100</a></li><li><a href="./report/folk.app.html">Folk (folk.app) — 95/100</a></li><li><a href="./report/front.com.html">Front (front.com) — 95/100</a></li><li><a href="./report/knock.app.html">Knock (knock.app) — 95/100</a></li><li><a href="./report/mailchimp.com.html">Mailchimp (mailchimp.com) — 95/100</a></li><li><a href="./report/make.com.html">Make (make.com) — 95/100</a></li><li><a href="./report/modal.com.html">Modal (modal.com) — 95/100</a></li><li><a href="./report/monday.com.html">monday.com (monday.com) — 95/100</a></li><li><a href="./report/mongodb.com.html">MongoDB (mongodb.com) — 95/100</a></li><li><a href="./report/neon.tech.html">Neon (neon.tech) — 95/100</a></li><li><a href="./report/netlify.com.html">Netlify (netlify.com) — 95/100</a></li><li><a href="./report/pika.art.html">Pika (pika.art) — 95/100</a></li><li><a href="./report/plain.com.html">Plain (plain.com) — 95/100</a></li><li><a href="./report/planetscale.com.html">PlanetScale (planetscale.com) — 95/100</a></li><li><a href="./report/polar.sh.html">Polar (polar.sh) — 95/100</a></li><li><a href="./report/postmarkapp.com.html">Postmark (postmarkapp.com) — 95/100</a></li><li><a href="./report/prisma.io.html">Prisma (prisma.io) — 95/100</a></li><li><a href="./report/railway.app.html">Railway (railway.app) — 95/100</a></li><li><a href="./report/raycast.com.html">Raycast (raycast.com) — 95/100</a></li><li><a href="./report/replit.com.html">Replit (replit.com) — 95/100</a></li><li><a href="./report/resend.com.html">Resend (resend.com) — 95/100</a></li><li><a href="./report/sentry.io.html">Sentry (sentry.io) — 95/100</a></li><li><a href="./report/stripe.com.html">Stripe (stripe.com) — 95/100</a></li><li><a href="./report/supabase.com.html">Supabase (supabase.com) — 95/100</a></li><li><a href="./report/tally.so.html">Tally (tally.so) — 95/100</a></li><li><a href="./report/trigger.dev.html">Trigger.dev (trigger.dev) — 95/100</a></li><li><a href="./report/ngrok.com.html">ngrok (ngrok.com) — 92/100</a></li><li><a href="./report/plaid.com.html">Plaid (plaid.com) — 92/100</a></li><li><a href="./report/prefect.io.html">Prefect (prefect.io) — 92/100</a></li><li><a href="./report/recurly.com.html">Recurly (recurly.com) — 92/100</a></li><li><a href="./report/typeform.com.html">Typeform (typeform.com) — 92/100</a></li><li><a href="./report/loom.com.html">Loom (loom.com) — 91/100</a></li><li><a href="./report/loops.so.html">Loops (loops.so) — 91/100</a></li><li><a href="./report/revenuecat.com.html">RevenueCat (revenuecat.com) — 91/100</a></li><li><a href="./report/auth0.com.html">Auth0 (auth0.com) — 90/100</a></li><li><a href="./report/buttondown.com.html">Buttondown (buttondown.com) — 90/100</a></li><li><a href="./report/cal.com.html">Cal.com (cal.com) — 90/100</a></li><li><a href="./report/chainguard.dev.html">Chainguard (chainguard.dev) — 90/100</a></li><li><a href="./report/checklyhq.com.html">Checkly (checklyhq.com) — 90/100</a></li><li><a href="./report/clickhouse.com.html">ClickHouse (clickhouse.com) — 90/100</a></li><li><a href="./report/cohere.com.html">Cohere (cohere.com) — 90/100</a></li><li><a href="./report/convex.dev.html">Convex (convex.dev) — 90/100</a></li><li><a href="./report/cursor.com.html">Cursor (cursor.com) — 90/100</a></li><li><a href="./report/customer.io.html">Customer.io (customer.io) — 90/100</a></li><li><a href="./report/dub.co.html">Dub (dub.co) — 90/100</a></li><li><a href="./report/fireworks.ai.html">Fireworks AI (fireworks.ai) — 90/100</a></li><li><a href="./report/fly.io.html">Fly.io (fly.io) — 90/100</a></li><li><a href="./report/getlago.com.html">Lago (getlago.com) — 90/100</a></li><li><a href="./report/grafana.com.html">Grafana (grafana.com) — 90/100</a></li><li><a href="./report/incident.io.html">incident.io (incident.io) — 90/100</a></li><li><a href="./report/infisical.com.html">Infisical (infisical.com) — 90/100</a></li><li><a href="./report/livekit.io.html">LiveKit (livekit.io) — 90/100</a></li><li><a href="./report/llamaindex.ai.html">LlamaIndex (llamaindex.ai) — 90/100</a></li><li><a href="./report/mintlify.com.html">Mintlify (mintlify.com) — 90/100</a></li><li><a href="./report/mistral.ai.html">Mistral AI (mistral.ai) — 90/100</a></li><li><a href="./report/pinecone.io.html">Pinecone (pinecone.io) — 90/100</a></li><li><a href="./report/rewardful.com.html">Rewardful (rewardful.com) — 90/100</a></li><li><a href="./report/temporal.io.html">Temporal (temporal.io) — 90/100</a></li><li><a href="./report/tigrisdata.com.html">Tigris Data (tigrisdata.com) — 90/100</a></li><li><a href="./report/together.ai.html">Together AI (together.ai) — 90/100</a></li><li><a href="./report/turso.tech.html">Turso (turso.tech) — 90/100</a></li><li><a href="./report/twilio.com.html">Twilio (twilio.com) — 90/100</a></li><li><a href="./report/umami.is.html">Umami (umami.is) — 90/100</a></li><li><a href="./report/usefathom.com.html">Fathom Analytics (usefathom.com) — 90/100</a></li><li><a href="./report/weaviate.io.html">Weaviate (weaviate.io) — 90/100</a></li><li><a href="./report/whop.com.html">Whop (whop.com) — 90/100</a></li><li><a href="./report/xata.io.html">Xata (xata.io) — 90/100</a></li><li><a href="./report/amplitude.com.html">Amplitude (amplitude.com) — 88/100</a></li><li><a href="./report/appwrite.io.html">Appwrite (appwrite.io) — 88/100</a></li><li><a href="./report/baremetrics.com.html">Baremetrics (baremetrics.com) — 88/100</a></li><li><a href="./report/getstream.io.html">Stream (getstream.io) — 88/100</a></li><li><a href="./report/semrush.com.html">Semrush (semrush.com) — 88/100</a></li><li><a href="./report/framer.com.html">Framer (framer.com) — 87/100</a></li><li><a href="./report/gitbook.com.html">GitBook (gitbook.com) — 87/100</a></li><li><a href="./report/postman.com.html">Postman (postman.com) — 87/100</a></li><li><a href="./report/upstash.com.html">Upstash (upstash.com) — 87/100</a></li><li><a href="./report/wise.com.html">Wise (wise.com) — 87/100</a></li><li><a href="./report/bitwarden.com.html">Bitwarden (bitwarden.com) — 86/100</a></li><li><a href="./report/browserbase.com.html">Browserbase (browserbase.com) — 86/100</a></li><li><a href="./report/digitalocean.com.html">DigitalOcean (digitalocean.com) — 86/100</a></li><li><a href="./report/elastic.co.html">Elastic (elastic.co) — 86/100</a></li><li><a href="./report/fivetran.com.html">Fivetran (fivetran.com) — 86/100</a></li><li><a href="./report/linear.app.html">Linear (linear.app) — 86/100</a></li><li><a href="./report/nextjs.org.html">Next.js (nextjs.org) — 86/100</a></li><li><a href="./report/nx.dev.html">Nx (nx.dev) — 86/100</a></li><li><a href="./report/redis.io.html">Redis (redis.io) — 86/100</a></li><li><a href="./report/slack.com.html">Slack (slack.com) — 86/100</a></li><li><a href="./report/socket.dev.html">Socket (socket.dev) — 86/100</a></li><li><a href="./report/tailscale.com.html">Tailscale (tailscale.com) — 86/100</a></li><li><a href="./report/workos.com.html">WorkOS (workos.com) — 86/100</a></li><li><a href="./report/dagster.io.html">Dagster (dagster.io) — 83/100</a></li><li><a href="./report/pipedream.com.html">Pipedream (pipedream.com) — 83/100</a></li><li><a href="./report/retool.com.html">Retool (retool.com) — 83/100</a></li><li><a href="./report/zendesk.com.html">Zendesk (zendesk.com) — 83/100</a></li><li><a href="./report/chargebee.com.html">Chargebee (chargebee.com) — 82/100</a></li><li><a href="./report/notion.so.html">Notion (notion.so) — 82/100</a></li><li><a href="./report/airbyte.com.html">Airbyte (airbyte.com) — 81/100</a></li><li><a href="./report/honeycomb.io.html">Honeycomb (honeycomb.io) — 81/100</a></li><li><a href="./report/mercury.com.html">Mercury (mercury.com) — 81/100</a></li><li><a href="./report/novu.co.html">Novu (novu.co) — 81/100</a></li><li><a href="./report/readme.com.html">ReadMe (readme.com) — 81/100</a></li><li><a href="./report/replicate.com.html">Replicate (replicate.com) — 81/100</a></li><li><a href="./report/scalar.com.html">Scalar (scalar.com) — 81/100</a></li><li><a href="./report/shopify.com.html">Shopify (shopify.com) — 81/100</a></li><li><a href="./report/snyk.io.html">Snyk (snyk.io) — 81/100</a></li><li><a href="./report/stytch.com.html">Stytch (stytch.com) — 81/100</a></li><li><a href="./report/windsurf.com.html">Windsurf (windsurf.com) — 81/100</a></li><li><a href="./report/wiz.io.html">Wiz (wiz.io) — 81/100</a></li><li><a href="./report/assemblyai.com.html">AssemblyAI (assemblyai.com) — 80/100</a></li><li><a href="./report/datadoghq.com.html">Datadog (datadoghq.com) — 80/100</a></li><li><a href="./report/gumroad.com.html">Gumroad (gumroad.com) — 80/100</a></li><li><a href="./report/inngest.com.html">Inngest (inngest.com) — 80/100</a></li><li><a href="./report/n8n.io.html">n8n (n8n.io) — 80/100</a></li><li><a href="./report/warp.dev.html">Warp (warp.dev) — 80/100</a></li><li><a href="./report/databricks.com.html">Databricks (databricks.com) — 79/100</a></li><li><a href="./report/deepgram.com.html">Deepgram (deepgram.com) — 79/100</a></li><li><a href="./report/github.com.html">GitHub (github.com) — 79/100</a></li><li><a href="./report/klaviyo.com.html">Klaviyo (klaviyo.com) — 79/100</a></li><li><a href="./report/mailgun.com.html">Mailgun (mailgun.com) — 79/100</a></li><li><a href="./report/mailjet.com.html">Mailjet (mailjet.com) — 79/100</a></li><li><a href="./report/proton.me.html">Proton (proton.me) — 79/100</a></li><li><a href="./report/substack.com.html">Substack (substack.com) — 79/100</a></li><li><a href="./report/vercel.com.html">Vercel (vercel.com) — 79/100</a></li><li><a href="./report/chartmogul.com.html">ChartMogul (chartmogul.com) — 78/100</a></li><li><a href="./report/hubspot.com.html">HubSpot (hubspot.com) — 78/100</a></li><li><a href="./report/launchdarkly.com.html">LaunchDarkly (launchdarkly.com) — 78/100</a></li><li><a href="./report/posthog.com.html">PostHog (posthog.com) — 78/100</a></li><li><a href="./report/creem.io.html">Creem (creem.io) — 77/100</a></li><li><a href="./report/ghost.org.html">Ghost (ghost.org) — 77/100</a></li><li><a href="./report/pitch.com.html">Pitch (pitch.com) — 77/100</a></li><li><a href="./report/plausible.io.html">Plausible (plausible.io) — 77/100</a></li><li><a href="./report/clickup.com.html">ClickUp (clickup.com) — 75/100</a></li><li><a href="./report/coolify.io.html">Coolify (coolify.io) — 75/100</a></li><li><a href="./report/lovable.dev.html">Lovable (lovable.dev) — 75/100</a></li><li><a href="./report/axiom.co.html">Axiom (axiom.co) — 74/100</a></li><li><a href="./report/elevenlabs.io.html">ElevenLabs (elevenlabs.io) — 74/100</a></li><li><a href="./report/gamma.app.html">Gamma (gamma.app) — 74/100</a></li><li><a href="./report/intercom.com.html">Intercom (intercom.com) — 74/100</a></li><li><a href="./report/runwayml.com.html">Runway (runwayml.com) — 74/100</a></li><li><a href="./report/sparkpost.com.html">SparkPost (sparkpost.com) — 74/100</a></li><li><a href="./report/ahrefs.com.html">Ahrefs (ahrefs.com) — 72/100</a></li><li><a href="./report/anthropic.com.html">Anthropic (anthropic.com) — 72/100</a></li><li><a href="./report/coda.io.html">Coda (coda.io) — 72/100</a></li><li><a href="./report/discord.com.html">Discord (discord.com) — 72/100</a></li><li><a href="./report/doppler.com.html">Doppler (doppler.com) — 72/100</a></li><li><a href="./report/excalidraw.com.html">Excalidraw (excalidraw.com) — 72/100</a></li><li><a href="./report/fastmail.com.html">Fastmail (fastmail.com) — 72/100</a></li><li><a href="./report/groq.com.html">Groq (groq.com) — 72/100</a></li><li><a href="./report/kit.com.html">Kit (kit.com) — 72/100</a></li><li><a href="./report/langchain.com.html">LangChain (langchain.com) — 72/100</a></li><li><a href="./report/lemonsqueezy.com.html">Lemon Squeezy (lemonsqueezy.com) — 72/100</a></li><li><a href="./report/linode.com.html">Linode (linode.com) — 72/100</a></li><li><a href="./report/openai.com.html">OpenAI (openai.com) — 72/100</a></li><li><a href="./report/paddle.com.html">Paddle (paddle.com) — 72/100</a></li><li><a href="./report/ramp.com.html">Ramp (ramp.com) — 72/100</a></li><li><a href="./report/stainless.com.html">Stainless (stainless.com) — 72/100</a></li><li><a href="./report/superhuman.com.html">Superhuman (superhuman.com) — 72/100</a></li><li><a href="./report/vanta.com.html">Vanta (vanta.com) — 72/100</a></li><li><a href="./report/wandb.ai.html">Weights &amp; Biases (wandb.ai) — 72/100</a></li><li><a href="./report/webflow.com.html">Webflow (webflow.com) — 72/100</a></li><li><a href="./report/qdrant.tech.html">Qdrant (qdrant.tech) — 71/100</a></li><li><a href="./report/submagic.co.html">Submagic (submagic.co) — 71/100</a></li><li><a href="./report/airtable.com.html">Airtable (airtable.com) — 70/100</a></li><li><a href="./report/hetzner.com.html">Hetzner (hetzner.com) — 70/100</a></li><li><a href="./report/hey.com.html">HEY (hey.com) — 70/100</a></li><li><a href="./report/1password.com.html">1Password (1password.com) — 68/100</a></li><li><a href="./report/deno.com.html">Deno (deno.com) — 68/100</a></li><li><a href="./report/docker.com.html">Docker (docker.com) — 68/100</a></li><li><a href="./report/gitlab.com.html">GitLab (gitlab.com) — 68/100</a></li><li><a href="./report/miro.com.html">Miro (miro.com) — 68/100</a></li><li><a href="./report/moz.com.html">Moz (moz.com) — 68/100</a></li><li><a href="./report/nuxt.com.html">Nuxt (nuxt.com) — 68/100</a></li><li><a href="./report/pusher.com.html">Pusher (pusher.com) — 68/100</a></li><li><a href="./report/segment.com.html">Segment (segment.com) — 68/100</a></li><li><a href="./report/sendgrid.com.html">SendGrid (sendgrid.com) — 68/100</a></li><li><a href="./report/sourcegraph.com.html">Sourcegraph (sourcegraph.com) — 68/100</a></li><li><a href="./report/stigg.io.html">Stigg (stigg.io) — 68/100</a></li><li><a href="./report/bolt.new.html">Bolt.new (bolt.new) — 67/100</a></li><li><a href="./report/cockroachlabs.com.html">CockroachDB (cockroachlabs.com) — 67/100</a></li><li><a href="./report/perplexity.ai.html">Perplexity (perplexity.ai) — 67/100</a></li><li><a href="./report/snowflake.com.html">Snowflake (snowflake.com) — 67/100</a></li><li><a href="./report/turborepo.com.html">Turborepo (turborepo.com) — 67/100</a></li><li><a href="./report/bun.sh.html">Bun (bun.sh) — 65/100</a></li><li><a href="./report/canva.com.html">Canva (canva.com) — 64/100</a></li><li><a href="./report/typefully.com.html">Typefully (typefully.com) — 64/100</a></li><li><a href="./report/statsig.com.html">Statsig (statsig.com) — 63/100</a></li><li><a href="./report/tailwindcss.com.html">Tailwind CSS (tailwindcss.com) — 63/100</a></li><li><a href="./report/riverside.fm.html">Riverside (riverside.fm) — 62/100</a></li><li><a href="./report/zod.dev.html">Zod (zod.dev) — 61/100</a></li><li><a href="./report/midjourney.com.html">Midjourney (midjourney.com) — 60/100</a></li><li><a href="./report/obsidian.md.html">Obsidian (obsidian.md) — 60/100</a></li><li><a href="./report/betterstack.com.html">Better Stack (betterstack.com) — 58/100</a></li><li><a href="./report/helpscout.com.html">Help Scout (helpscout.com) — 58/100</a></li><li><a href="./report/huggingface.co.html">Hugging Face (huggingface.co) — 58/100</a></li><li><a href="./report/drata.com.html">Drata (drata.com) — 56/100</a></li><li><a href="./report/figma.com.html">Figma (figma.com) — 54/100</a></li><li><a href="./report/svelte.dev.html">Svelte (svelte.dev) — 54/100</a></li><li><a href="./report/profitwell.com.html">ProfitWell (profitwell.com) — 53/100</a></li><li><a href="./report/tldraw.com.html">tldraw (tldraw.com) — 53/100</a></li><li><a href="./report/trpc.io.html">tRPC (trpc.io) — 53/100</a></li><li><a href="./report/playwright.dev.html">Playwright (playwright.dev) — 40/100</a></li><li><a href="./report/orm.drizzle.team.html">Drizzle ORM (orm.drizzle.team) — 36/100</a></li><li><a href="./report/storybook.js.org.html">Storybook (storybook.js.org) — 36/100</a></li><li><a href="./report/v0.dev.html">v0 by Vercel (v0.dev) — 32/100</a></li><li><a href="./report/vitest.dev.html">Vitest (vitest.dev) — 32/100</a></li><li><a href="./report/astro.build.html">Astro (astro.build) — 31/100</a></li><li><a href="./report/orb.com.html">Orb (orb.com) — 18/100</a></li></ul>
+    </noscript>
+  </main>
+  <footer><div class="wrap">
+    <p style="margin:0 0 8px">Live read-only DNS &amp; HTTP benchmarks measured directly against public records. Informational diagnostics, not legal advice.</p>
+    <p style="margin:0">
+      <a href="./index.html">Benchmark Index</a> &middot;
+      <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">BrandShield Web</a> &middot;
+      <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">InboxShield Web</a> &middot;
+      <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">CiteReady Web</a> &middot;
+      <a href="https://agentarenastudi.gumroad.com/l/omniforge-launch-stack" target="_blank" rel="noopener">Launch Stack on Gumroad</a> &middot;
+      <a href="https://omnipulse-x402.appwrite.network/checkout/launch-stack" target="_blank" rel="noopener">Instant Direct Checkout</a> &middot;
+      <a href="./llms.txt">llms.txt</a>
+    </p>
+  </div></footer>
+  <script>
+    const ROWS = [{"d":"cloudflare.com","b":"Cloudflare","c":"Cloud & Databases","o":100,"g":"A","i":100,"a":100,"p":"reject","s":7,"l":1,"k":0,"m":"mxa-canary.global.inbound.cf-emailsecurity.net"},{"d":"dodopayments.com","b":"Dodo Payments","c":"Payments & Billing","o":100,"g":"A","i":100,"a":100,"p":"reject","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"mixpanel.com","b":"Mixpanel","c":"Analytics & DevOps","o":100,"g":"A","i":100,"a":100,"p":"reject","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"pagerduty.com","b":"PagerDuty","c":"Analytics & DevOps","o":100,"g":"A","i":100,"a":100,"p":"reject","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"render.com","b":"Render","c":"Cloud & Databases","o":100,"g":"A","i":100,"a":100,"p":"reject","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"descript.com","b":"Descript","c":"Security & Growth","o":98,"g":"A","i":96,"a":100,"p":"reject","s":8,"l":1,"k":0,"m":"Google Workspace"},{"d":"zapier.com","b":"Zapier","c":"Analytics & DevOps","o":98,"g":"A","i":96,"a":100,"p":"reject","s":9,"l":1,"k":0,"m":"Google Workspace"},{"d":"supertokens.com","b":"SuperTokens","c":"Email & Auth","o":97,"g":"A","i":95,"a":100,"p":"reject","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"asana.com","b":"Asana","c":"Product & Design","o":96,"g":"A","i":92,"a":100,"p":"quarantine","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"openrouter.ai","b":"OpenRouter","c":"AI & LLM","o":96,"g":"A","i":92,"a":100,"p":"quarantine","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"timescale.com","b":"Timescale","c":"Cloud & Databases","o":96,"g":"A","i":92,"a":100,"p":"quarantine","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"attio.com","b":"Attio","c":"Product & Design","o":95,"g":"A","i":90,"a":100,"p":"reject","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"beehiiv.com","b":"beehiiv","c":"Email & Auth","o":95,"g":"A","i":90,"a":100,"p":"reject","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"braintrust.dev","b":"Braintrust","c":"AI & LLM","o":95,"g":"A","i":90,"a":100,"p":"reject","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"brevo.com","b":"Brevo","c":"Email & Auth","o":95,"g":"A","i":90,"a":100,"p":"reject","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"brex.com","b":"Brex","c":"Payments & Billing","o":95,"g":"A","i":90,"a":100,"p":"reject","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"buffer.com","b":"Buffer","c":"Security & Growth","o":95,"g":"A","i":90,"a":100,"p":"reject","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"clerk.com","b":"Clerk","c":"Email & Auth","o":95,"g":"A","i":90,"a":100,"p":"reject","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"craft.do","b":"Craft","c":"Product & Design","o":95,"g":"A","i":90,"a":100,"p":"reject","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"e2b.dev","b":"E2B","c":"AI & LLM","o":95,"g":"A","i":90,"a":100,"p":"reject","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"fal.ai","b":"fal.ai","c":"AI & LLM","o":95,"g":"A","i":90,"a":100,"p":"reject","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"fastly.com","b":"Fastly","c":"Cloud & Databases","o":95,"g":"A","i":90,"a":100,"p":"reject","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"folk.app","b":"Folk","c":"Product & Design","o":95,"g":"A","i":90,"a":100,"p":"reject","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"front.com","b":"Front","c":"Product & Design","o":95,"g":"A","i":90,"a":100,"p":"reject","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"knock.app","b":"Knock","c":"Email & Auth","o":95,"g":"A","i":90,"a":100,"p":"reject","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"mailchimp.com","b":"Mailchimp","c":"Email & Auth","o":95,"g":"A","i":90,"a":100,"p":"reject","s":7,"l":1,"k":0,"m":"mx1.intuit.iphmx.com"},{"d":"make.com","b":"Make","c":"Analytics & DevOps","o":95,"g":"A","i":90,"a":100,"p":"reject","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"modal.com","b":"Modal","c":"AI & LLM","o":95,"g":"A","i":90,"a":100,"p":"reject","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"monday.com","b":"monday.com","c":"Product & Design","o":95,"g":"A","i":90,"a":100,"p":"reject","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"mongodb.com","b":"MongoDB","c":"Cloud & Databases","o":95,"g":"A","i":90,"a":100,"p":"reject","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"neon.tech","b":"Neon","c":"Cloud & Databases","o":95,"g":"A","i":90,"a":100,"p":"reject","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"netlify.com","b":"Netlify","c":"Cloud & Databases","o":95,"g":"A","i":90,"a":100,"p":"reject","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"pika.art","b":"Pika","c":"AI & LLM","o":95,"g":"A","i":90,"a":100,"p":"reject","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"plain.com","b":"Plain","c":"Product & Design","o":95,"g":"A","i":90,"a":100,"p":"reject","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"planetscale.com","b":"PlanetScale","c":"Cloud & Databases","o":95,"g":"A","i":90,"a":100,"p":"reject","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"polar.sh","b":"Polar","c":"Payments & Billing","o":95,"g":"A","i":90,"a":100,"p":"reject","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"postmarkapp.com","b":"Postmark","c":"Email & Auth","o":95,"g":"A","i":90,"a":100,"p":"reject","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"prisma.io","b":"Prisma","c":"Frameworks & Docs","o":95,"g":"A","i":90,"a":100,"p":"reject","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"railway.app","b":"Railway","c":"Cloud & Databases","o":95,"g":"A","i":90,"a":100,"p":"reject","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"raycast.com","b":"Raycast","c":"Product & Design","o":95,"g":"A","i":90,"a":100,"p":"reject","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"replit.com","b":"Replit","c":"Frameworks & Docs","o":95,"g":"A","i":90,"a":100,"p":"reject","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"resend.com","b":"Resend","c":"Email & Auth","o":95,"g":"A","i":90,"a":100,"p":"reject","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"sentry.io","b":"Sentry","c":"Analytics & DevOps","o":95,"g":"A","i":90,"a":100,"p":"reject","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"stripe.com","b":"Stripe","c":"Payments & Billing","o":95,"g":"A","i":90,"a":100,"p":"reject","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"supabase.com","b":"Supabase","c":"Cloud & Databases","o":95,"g":"A","i":90,"a":100,"p":"reject","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"tally.so","b":"Tally","c":"Product & Design","o":95,"g":"A","i":90,"a":100,"p":"reject","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"trigger.dev","b":"Trigger.dev","c":"Analytics & DevOps","o":95,"g":"A","i":90,"a":100,"p":"reject","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"ngrok.com","b":"ngrok","c":"Cloud & Databases","o":92,"g":"A","i":86,"a":100,"p":"reject","s":8,"l":1,"k":0,"m":"Google Workspace"},{"d":"plaid.com","b":"Plaid","c":"Payments & Billing","o":92,"g":"A","i":86,"a":100,"p":"reject","s":8,"l":1,"k":0,"m":"Google Workspace"},{"d":"prefect.io","b":"Prefect","c":"Analytics & DevOps","o":92,"g":"A","i":86,"a":100,"p":"reject","s":8,"l":1,"k":0,"m":"Google Workspace"},{"d":"recurly.com","b":"Recurly","c":"Payments & Billing","o":92,"g":"A","i":86,"a":100,"p":"reject","s":8,"l":1,"k":0,"m":"Google Workspace"},{"d":"typeform.com","b":"Typeform","c":"Product & Design","o":92,"g":"A","i":86,"a":100,"p":"reject","s":9,"l":1,"k":0,"m":"Google Workspace"},{"d":"loom.com","b":"Loom","c":"Product & Design","o":91,"g":"A","i":90,"a":93,"p":"reject","s":4,"l":1,"k":1,"m":"Proofpoint (Enterprise)"},{"d":"loops.so","b":"Loops","c":"Email & Auth","o":91,"g":"A","i":100,"a":80,"p":"reject","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"revenuecat.com","b":"RevenueCat","c":"Payments & Billing","o":91,"g":"A","i":100,"a":80,"p":"reject","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"auth0.com","b":"Auth0","c":"Email & Auth","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":5,"l":1,"k":0,"m":"Proofpoint (Enterprise)"},{"d":"buttondown.com","b":"Buttondown","c":"Email & Auth","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":1,"l":1,"k":0,"m":"Cloudflare Email Routing"},{"d":"cal.com","b":"Cal.com","c":"Payments & Billing","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"chainguard.dev","b":"Chainguard","c":"Security & Growth","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"checklyhq.com","b":"Checkly","c":"Analytics & DevOps","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"clickhouse.com","b":"ClickHouse","c":"Cloud & Databases","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"cohere.com","b":"Cohere","c":"AI & LLM","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"convex.dev","b":"Convex","c":"Cloud & Databases","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"cursor.com","b":"Cursor","c":"AI & LLM","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"customer.io","b":"Customer.io","c":"Email & Auth","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"dub.co","b":"Dub","c":"Payments & Billing","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"fireworks.ai","b":"Fireworks AI","c":"AI & LLM","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"fly.io","b":"Fly.io","c":"Cloud & Databases","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"getlago.com","b":"Lago","c":"Payments & Billing","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"grafana.com","b":"Grafana","c":"Analytics & DevOps","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"incident.io","b":"incident.io","c":"Analytics & DevOps","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"infisical.com","b":"Infisical","c":"Cloud & Databases","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"livekit.io","b":"LiveKit","c":"Email & Auth","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"llamaindex.ai","b":"LlamaIndex","c":"AI & LLM","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"mintlify.com","b":"Mintlify","c":"Frameworks & Docs","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"mistral.ai","b":"Mistral AI","c":"AI & LLM","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"pinecone.io","b":"Pinecone","c":"AI & LLM","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"rewardful.com","b":"Rewardful","c":"Payments & Billing","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"temporal.io","b":"Temporal","c":"Analytics & DevOps","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"tigrisdata.com","b":"Tigris Data","c":"Cloud & Databases","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"together.ai","b":"Together AI","c":"AI & LLM","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"turso.tech","b":"Turso","c":"Cloud & Databases","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"twilio.com","b":"Twilio","c":"Email & Auth","o":90,"g":"A","i":90,"a":90,"p":"reject","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"umami.is","b":"Umami","c":"Analytics & DevOps","o":90,"g":"A","i":81,"a":100,"p":"reject","s":9,"l":1,"k":0,"m":"Google Workspace"},{"d":"usefathom.com","b":"Fathom Analytics","c":"Analytics & DevOps","o":90,"g":"A","i":81,"a":100,"p":"reject","s":8,"l":1,"k":0,"m":"Fastmail"},{"d":"weaviate.io","b":"Weaviate","c":"AI & LLM","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"whop.com","b":"Whop","c":"Payments & Billing","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"xata.io","b":"Xata","c":"Cloud & Databases","o":90,"g":"A","i":82,"a":100,"p":"quarantine","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"amplitude.com","b":"Amplitude","c":"Analytics & DevOps","o":88,"g":"B","i":78,"a":100,"p":"quarantine","s":8,"l":1,"k":0,"m":"Google Workspace"},{"d":"appwrite.io","b":"Appwrite","c":"Cloud & Databases","o":88,"g":"B","i":78,"a":100,"p":"quarantine","s":8,"l":1,"k":0,"m":"Google Workspace"},{"d":"baremetrics.com","b":"Baremetrics","c":"Payments & Billing","o":88,"g":"B","i":78,"a":100,"p":"quarantine","s":8,"l":1,"k":0,"m":"Google Workspace"},{"d":"getstream.io","b":"Stream","c":"Email & Auth","o":88,"g":"B","i":78,"a":100,"p":"quarantine","s":10,"l":1,"k":0,"m":"Google Workspace"},{"d":"semrush.com","b":"Semrush","c":"Security & Growth","o":88,"g":"B","i":78,"a":100,"p":"quarantine","s":9,"l":1,"k":0,"m":"Mimecast (Enterprise)"},{"d":"framer.com","b":"Framer","c":"Product & Design","o":87,"g":"B","i":100,"a":70,"p":"reject","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"gitbook.com","b":"GitBook","c":"Frameworks & Docs","o":87,"g":"B","i":92,"a":80,"p":"quarantine","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"postman.com","b":"Postman","c":"Frameworks & Docs","o":87,"g":"B","i":92,"a":80,"p":"quarantine","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"upstash.com","b":"Upstash","c":"Cloud & Databases","o":87,"g":"B","i":77,"a":100,"p":"quarantine","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"wise.com","b":"Wise","c":"Payments & Billing","o":87,"g":"B","i":100,"a":70,"p":"reject","s":6,"l":0,"k":0,"m":"Google Workspace"},{"d":"bitwarden.com","b":"Bitwarden","c":"Security & Growth","o":86,"g":"B","i":90,"a":80,"p":"reject","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"browserbase.com","b":"Browserbase","c":"Analytics & DevOps","o":86,"g":"B","i":90,"a":80,"p":"reject","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"digitalocean.com","b":"DigitalOcean","c":"Cloud & Databases","o":86,"g":"B","i":90,"a":80,"p":"reject","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"elastic.co","b":"Elastic","c":"Cloud & Databases","o":86,"g":"B","i":82,"a":90,"p":"quarantine","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"fivetran.com","b":"Fivetran","c":"Analytics & DevOps","o":86,"g":"B","i":90,"a":80,"p":"reject","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"linear.app","b":"Linear","c":"Product & Design","o":86,"g":"B","i":90,"a":80,"p":"reject","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"nextjs.org","b":"Next.js","c":"Frameworks & Docs","o":86,"g":"B","i":82,"a":90,"p":"quarantine","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"nx.dev","b":"Nx","c":"Frameworks & Docs","o":86,"g":"B","i":90,"a":80,"p":"reject","s":0,"l":1,"k":0,"m":"Google Workspace"},{"d":"redis.io","b":"Redis","c":"Cloud & Databases","o":86,"g":"B","i":90,"a":80,"p":"reject","s":3,"l":1,"k":0,"m":"Mimecast (Enterprise)"},{"d":"slack.com","b":"Slack","c":"Product & Design","o":86,"g":"B","i":90,"a":80,"p":"reject","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"socket.dev","b":"Socket","c":"Security & Growth","o":86,"g":"B","i":90,"a":80,"p":"reject","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"tailscale.com","b":"Tailscale","c":"Cloud & Databases","o":86,"g":"B","i":90,"a":80,"p":"reject","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"workos.com","b":"WorkOS","c":"Email & Auth","o":86,"g":"B","i":90,"a":80,"p":"reject","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"dagster.io","b":"Dagster","c":"Analytics & DevOps","o":83,"g":"B","i":85,"a":80,"p":"reject","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"pipedream.com","b":"Pipedream","c":"Analytics & DevOps","o":83,"g":"B","i":85,"a":80,"p":"reject","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"retool.com","b":"Retool","c":"Product & Design","o":83,"g":"B","i":86,"a":80,"p":"reject","s":8,"l":1,"k":0,"m":"Google Workspace"},{"d":"zendesk.com","b":"Zendesk","c":"Product & Design","o":83,"g":"B","i":85,"a":80,"p":"reject","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"chargebee.com","b":"Chargebee","c":"Payments & Billing","o":82,"g":"B","i":90,"a":73,"p":"reject","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"notion.so","b":"Notion","c":"Product & Design","o":82,"g":"B","i":67,"a":100,"p":"quarantine","s":0,"l":1,"k":0,"m":"No MX record"},{"d":"airbyte.com","b":"Airbyte","c":"Analytics & DevOps","o":81,"g":"B","i":82,"a":80,"p":"quarantine","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"honeycomb.io","b":"Honeycomb","c":"Analytics & DevOps","o":81,"g":"B","i":82,"a":80,"p":"quarantine","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"mercury.com","b":"Mercury","c":"Payments & Billing","o":81,"g":"B","i":90,"a":70,"p":"reject","s":7,"l":0,"k":0,"m":"Google Workspace"},{"d":"novu.co","b":"Novu","c":"Email & Auth","o":81,"g":"B","i":82,"a":80,"p":"quarantine","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"readme.com","b":"ReadMe","c":"Frameworks & Docs","o":81,"g":"B","i":82,"a":80,"p":"quarantine","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"replicate.com","b":"Replicate","c":"AI & LLM","o":81,"g":"B","i":82,"a":80,"p":"quarantine","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"scalar.com","b":"Scalar","c":"Frameworks & Docs","o":81,"g":"B","i":82,"a":80,"p":"quarantine","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"shopify.com","b":"Shopify","c":"Payments & Billing","o":81,"g":"B","i":90,"a":70,"p":"reject","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"snyk.io","b":"Snyk","c":"Security & Growth","o":81,"g":"B","i":82,"a":80,"p":"quarantine","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"stytch.com","b":"Stytch","c":"Email & Auth","o":81,"g":"B","i":82,"a":80,"p":"quarantine","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"windsurf.com","b":"Windsurf","c":"AI & LLM","o":81,"g":"B","i":90,"a":70,"p":"reject","s":7,"l":0,"k":0,"m":"Google Workspace"},{"d":"wiz.io","b":"Wiz","c":"Security & Growth","o":81,"g":"B","i":90,"a":70,"p":"reject","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"assemblyai.com","b":"AssemblyAI","c":"AI & LLM","o":80,"g":"B","i":92,"a":65,"p":"quarantine","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"datadoghq.com","b":"Datadog","c":"Analytics & DevOps","o":80,"g":"B","i":86,"a":73,"p":"reject","s":9,"l":1,"k":0,"m":"Google Workspace"},{"d":"gumroad.com","b":"Gumroad","c":"Payments & Billing","o":80,"g":"B","i":64,"a":100,"p":"none","s":6,"l":1,"k":0,"m":"Google Workspace"},{"d":"inngest.com","b":"Inngest","c":"Analytics & DevOps","o":80,"g":"B","i":64,"a":100,"p":"none","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"n8n.io","b":"n8n","c":"Analytics & DevOps","o":80,"g":"B","i":86,"a":73,"p":"reject","s":8,"l":1,"k":0,"m":"Google Workspace"},{"d":"warp.dev","b":"Warp","c":"Product & Design","o":80,"g":"B","i":64,"a":100,"p":"none","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"databricks.com","b":"Databricks","c":"Cloud & Databases","o":79,"g":"B","i":90,"a":65,"p":"reject","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"deepgram.com","b":"Deepgram","c":"AI & LLM","o":79,"g":"B","i":78,"a":80,"p":"quarantine","s":8,"l":1,"k":0,"m":"Google Workspace"},{"d":"github.com","b":"GitHub","c":"Frameworks & Docs","o":79,"g":"B","i":78,"a":80,"p":"quarantine","s":10,"l":1,"k":0,"m":"Microsoft 365"},{"d":"klaviyo.com","b":"Klaviyo","c":"Email & Auth","o":79,"g":"B","i":90,"a":65,"p":"reject","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"mailgun.com","b":"Mailgun","c":"Email & Auth","o":79,"g":"B","i":86,"a":70,"p":"reject","s":8,"l":0,"k":0,"m":"Microsoft 365"},{"d":"mailjet.com","b":"Mailjet","c":"Email & Auth","o":79,"g":"B","i":86,"a":70,"p":"reject","s":9,"l":0,"k":0,"m":"Microsoft 365"},{"d":"proton.me","b":"Proton","c":"Email & Auth","o":79,"g":"B","i":87,"a":70,"p":"quarantine","s":2,"l":0,"k":0,"m":"Proton Mail"},{"d":"substack.com","b":"Substack","c":"Security & Growth","o":79,"g":"B","i":90,"a":65,"p":"reject","s":7,"l":1,"k":0,"m":"Mailgun"},{"d":"vercel.com","b":"Vercel","c":"Cloud & Databases","o":79,"g":"B","i":78,"a":80,"p":"quarantine","s":10,"l":1,"k":0,"m":"Google Workspace"},{"d":"chartmogul.com","b":"ChartMogul","c":"Payments & Billing","o":78,"g":"B","i":60,"a":100,"p":"none","s":10,"l":1,"k":0,"m":"Google Workspace"},{"d":"hubspot.com","b":"HubSpot","c":"Product & Design","o":78,"g":"B","i":85,"a":70,"p":"reject","s":4,"l":1,"k":0,"m":"Google Workspace"},{"d":"launchdarkly.com","b":"LaunchDarkly","c":"Analytics & DevOps","o":78,"g":"B","i":100,"a":50,"p":"reject","s":7,"l":0,"k":0,"m":"Google Workspace"},{"d":"posthog.com","b":"PostHog","c":"Analytics & DevOps","o":78,"g":"B","i":88,"a":65,"p":"quarantine","s":10,"l":1,"k":0,"m":"Google Workspace"},{"d":"creem.io","b":"Creem","c":"Payments & Billing","o":77,"g":"C","i":82,"a":70,"p":"quarantine","s":1,"l":0,"k":0,"m":"Google Workspace"},{"d":"ghost.org","b":"Ghost","c":"Security & Growth","o":77,"g":"C","i":82,"a":70,"p":"quarantine","s":4,"l":0,"k":0,"m":"Google Workspace"},{"d":"pitch.com","b":"Pitch","c":"Security & Growth","o":77,"g":"C","i":82,"a":70,"p":"quarantine","s":5,"l":0,"k":0,"m":"Google Workspace"},{"d":"plausible.io","b":"Plausible","c":"Analytics & DevOps","o":77,"g":"C","i":82,"a":70,"p":"quarantine","s":2,"l":0,"k":0,"m":"work-mx.app.hey.com"},{"d":"clickup.com","b":"ClickUp","c":"Product & Design","o":75,"g":"C","i":70,"a":80,"p":"reject","s":11,"l":1,"k":0,"m":"Google Workspace"},{"d":"coolify.io","b":"Coolify","c":"Cloud & Databases","o":75,"g":"C","i":70,"a":80,"p":"reject","s":0,"l":1,"k":0,"m":"No MX record"},{"d":"lovable.dev","b":"Lovable","c":"AI & LLM","o":75,"g":"C","i":77,"a":73,"p":"quarantine","s":7,"l":1,"k":0,"m":"Google Workspace"},{"d":"axiom.co","b":"Axiom","c":"Analytics & DevOps","o":74,"g":"C","i":82,"a":65,"p":"quarantine","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"elevenlabs.io","b":"ElevenLabs","c":"AI & LLM","o":74,"g":"C","i":82,"a":65,"p":"quarantine","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"gamma.app","b":"Gamma","c":"Security & Growth","o":74,"g":"C","i":82,"a":65,"p":"quarantine","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"intercom.com","b":"Intercom","c":"Product & Design","o":74,"g":"C","i":82,"a":65,"p":"quarantine","s":5,"l":1,"k":0,"m":"Google Workspace"},{"d":"runwayml.com","b":"Runway","c":"AI & LLM","o":74,"g":"C","i":82,"a":65,"p":"quarantine","s":3,"l":1,"k":0,"m":"Google Workspace"},{"d":"sparkpost.com","b":"SparkPost","c":"Email & Auth","o":74,"g":"C","i":85,"a":60,"p":"reject","s":1,"l":0,"k":0,"m":"Google Workspace"},{"d":"ahrefs.com","b":"Ahrefs","c":"Security & Growth","o":72,"g":"C","i":82,"a":60,"p":"quarantine","s":6,"l":0,"k":0,"m":"Google Workspace"},{"d":"anthropic.com","b":"Anthropic","c":"AI & LLM","o":72,"g":"C","i":90,"a":50,"p":"reject","s":1,"l":0,"k":0,"m":"Google Workspace"},{"d":"coda.io","b":"Coda","c":"Product & Design","o":72,"g":"C","i":90,"a":50,"p":"reject","s":6,"l":0,"k":0,"m":"Google Workspace"},{"d":"discord.com","b":"Discord","c":"Product & Design","o":72,"g":"C","i":90,"a":50,"p":"reject","s":5,"l":0,"k":0,"m":"Google Workspace"},{"d":"doppler.com","b":"Doppler","c":"Cloud & Databases","o":72,"g":"C","i":90,"a":50,"p":"reject","s":6,"l":0,"k":0,"m":"Google Workspace"},{"d":"excalidraw.com","b":"Excalidraw","c":"Product & Design","o":72,"g":"C","i":90,"a":50,"p":"reject","s":4,"l":0,"k":0,"m":"Google Workspace"},{"d":"fastmail.com","b":"Fastmail","c":"Email & Auth","o":72,"g":"C","i":74,"a":70,"p":"none","s":1,"l":1,"k":0,"m":"Fastmail"},{"d":"groq.com","b":"Groq","c":"AI & LLM","o":72,"g":"C","i":90,"a":50,"p":"reject","s":5,"l":0,"k":0,"m":"Google Workspace"},{"d":"kit.com","b":"Kit","c":"Email & Auth","o":72,"g":"C","i":90,"a":50,"p":"reject","s":3,"l":0,"k":0,"m":"Google Workspace"},{"d":"langchain.com","b":"LangChain","c":"AI & LLM","o":72,"g":"C","i":90,"a":50,"p":"reject","s":3,"l":0,"k":0,"m":"Google Workspace"},{"d":"lemonsqueezy.com","b":"Lemon Squeezy","c":"Payments & Billing","o":72,"g":"C","i":90,"a":50,"p":"reject","s":3,"l":0,"k":0,"m":"Google Workspace"},{"d":"linode.com","b":"Linode","c":"Cloud & Databases","o":72,"g":"C","i":90,"a":50,"p":"reject","s":5,"l":0,"k":0,"m":"Proofpoint (Enterprise)"},{"d":"openai.com","b":"OpenAI","c":"AI & LLM","o":72,"g":"C","i":90,"a":50,"p":"reject","s":7,"l":0,"k":0,"m":"Google Workspace"},{"d":"paddle.com","b":"Paddle","c":"Payments & Billing","o":72,"g":"C","i":90,"a":50,"p":"reject","s":5,"l":0,"k":0,"m":"Google Workspace"},{"d":"ramp.com","b":"Ramp","c":"Payments & Billing","o":72,"g":"C","i":90,"a":50,"p":"reject","s":5,"l":0,"k":0,"m":"Google Workspace"},{"d":"stainless.com","b":"Stainless","c":"Frameworks & Docs","o":72,"g":"C","i":90,"a":50,"p":"reject","s":1,"l":0,"k":0,"m":"Cloudflare Email Routing"},{"d":"superhuman.com","b":"Superhuman","c":"Product & Design","o":72,"g":"C","i":90,"a":50,"p":"reject","s":5,"l":0,"k":0,"m":"Google Workspace"},{"d":"vanta.com","b":"Vanta","c":"Security & Growth","o":72,"g":"C","i":90,"a":50,"p":"reject","s":4,"l":0,"k":0,"m":"Google Workspace"},{"d":"wandb.ai","b":"Weights & Biases","c":"AI & LLM","o":72,"g":"C","i":90,"a":50,"p":"reject","s":2,"l":0,"k":0,"m":"Google Workspace"},{"d":"webflow.com","b":"Webflow","c":"Product & Design","o":72,"g":"C","i":81,"a":60,"p":"reject","s":10,"l":0,"k":0,"m":"Google Workspace"},{"d":"qdrant.tech","b":"Qdrant","c":"AI & LLM","o":71,"g":"C","i":69,"a":73,"p":"none","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"submagic.co","b":"Submagic","c":"Security & Growth","o":71,"g":"C","i":64,"a":80,"p":"none","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"airtable.com","b":"Airtable","c":"Product & Design","o":70,"g":"C","i":86,"a":50,"p":"reject","s":8,"l":0,"k":0,"m":"Google Workspace"},{"d":"hetzner.com","b":"Hetzner","c":"Cloud & Databases","o":70,"g":"C","i":86,"a":50,"p":"reject","s":8,"l":0,"k":0,"m":"mail.hetzner.company"},{"d":"hey.com","b":"HEY","c":"Email & Auth","o":70,"g":"C","i":87,"a":50,"p":"quarantine","s":1,"l":0,"k":0,"m":"home-mx.app.hey.com"},{"d":"1password.com","b":"1Password","c":"Security & Growth","o":68,"g":"C","i":82,"a":50,"p":"quarantine","s":7,"l":0,"k":0,"m":"Google Workspace"},{"d":"deno.com","b":"Deno","c":"Cloud & Databases","o":68,"g":"C","i":90,"a":40,"p":"reject","s":3,"l":0,"k":0,"m":"Google Workspace"},{"d":"docker.com","b":"Docker","c":"Frameworks & Docs","o":68,"g":"C","i":82,"a":50,"p":"quarantine","s":6,"l":0,"k":0,"m":"Google Workspace"},{"d":"gitlab.com","b":"GitLab","c":"Frameworks & Docs","o":68,"g":"C","i":90,"a":40,"p":"reject","s":1,"l":0,"k":0,"m":"Google Workspace"},{"d":"miro.com","b":"Miro","c":"Product & Design","o":68,"g":"C","i":82,"a":50,"p":"quarantine","s":5,"l":0,"k":0,"m":"Google Workspace"},{"d":"moz.com","b":"Moz","c":"Security & Growth","o":68,"g":"C","i":82,"a":50,"p":"quarantine","s":7,"l":0,"k":0,"m":"Google Workspace"},{"d":"nuxt.com","b":"Nuxt","c":"Frameworks & Docs","o":68,"g":"C","i":59,"a":80,"p":"none","s":1,"l":1,"k":0,"m":"Cloudflare Email Routing"},{"d":"pusher.com","b":"Pusher","c":"Email & Auth","o":68,"g":"C","i":82,"a":50,"p":"quarantine","s":6,"l":0,"k":0,"m":"Google Workspace"},{"d":"segment.com","b":"Segment","c":"Analytics & DevOps","o":68,"g":"C","i":90,"a":40,"p":"reject","s":1,"l":0,"k":0,"m":"Google Workspace"},{"d":"sendgrid.com","b":"SendGrid","c":"Email & Auth","o":68,"g":"C","i":90,"a":40,"p":"reject","s":3,"l":0,"k":0,"m":"Google Workspace"},{"d":"sourcegraph.com","b":"Sourcegraph","c":"Frameworks & Docs","o":68,"g":"C","i":82,"a":50,"p":"quarantine","s":4,"l":0,"k":0,"m":"Google Workspace"},{"d":"stigg.io","b":"Stigg","c":"Payments & Billing","o":68,"g":"C","i":82,"a":50,"p":"quarantine","s":4,"l":0,"k":0,"m":"Google Workspace"},{"d":"bolt.new","b":"Bolt.new","c":"AI & LLM","o":67,"g":"C","i":64,"a":70,"p":"none","s":2,"l":0,"k":0,"m":"Google Workspace"},{"d":"cockroachlabs.com","b":"CockroachDB","c":"Cloud & Databases","o":67,"g":"C","i":81,"a":50,"p":"reject","s":9,"l":0,"k":0,"m":"Google Workspace"},{"d":"perplexity.ai","b":"Perplexity","c":"AI & LLM","o":67,"g":"C","i":86,"a":43,"p":"reject","s":8,"l":0,"k":0,"m":"Google Workspace"},{"d":"snowflake.com","b":"Snowflake","c":"Cloud & Databases","o":67,"g":"C","i":86,"a":43,"p":"reject","s":8,"l":0,"k":0,"m":"Google Workspace"},{"d":"turborepo.com","b":"Turborepo","c":"Frameworks & Docs","o":67,"g":"C","i":40,"a":100,"p":"missing","s":1,"l":1,"k":0,"m":"Fastmail"},{"d":"bun.sh","b":"Bun","c":"Cloud & Databases","o":65,"g":"C","i":45,"a":90,"p":"missing","s":2,"l":1,"k":0,"m":"Google Workspace"},{"d":"canva.com","b":"Canva","c":"Security & Growth","o":64,"g":"C","i":86,"a":36,"p":"reject","s":9,"l":0,"k":2,"m":"Google Workspace"},{"d":"typefully.com","b":"Typefully","c":"Security & Growth","o":64,"g":"C","i":64,"a":65,"p":"none","s":1,"l":1,"k":0,"m":"Google Workspace"},{"d":"statsig.com","b":"Statsig","c":"Analytics & DevOps","o":63,"g":"C","i":82,"a":40,"p":"quarantine","s":2,"l":0,"k":0,"m":"Google Workspace"},{"d":"tailwindcss.com","b":"Tailwind CSS","c":"Frameworks & Docs","o":63,"g":"C","i":82,"a":40,"p":"quarantine","s":1,"l":0,"k":0,"m":"Fastmail"},{"d":"riverside.fm","b":"Riverside","c":"Security & Growth","o":62,"g":"C","i":64,"a":60,"p":"none","s":7,"l":0,"k":0,"m":"Google Workspace"},{"d":"zod.dev","b":"Zod","c":"Frameworks & Docs","o":61,"g":"D","i":45,"a":80,"p":"missing","s":1,"l":1,"k":0,"m":"Cloudflare Email Routing"},{"d":"midjourney.com","b":"Midjourney","c":"AI & LLM","o":60,"g":"D","i":82,"a":33,"p":"quarantine","s":3,"l":0,"k":0,"m":"Google Workspace"},{"d":"obsidian.md","b":"Obsidian","c":"Product & Design","o":60,"g":"D","i":77,"a":40,"p":"quarantine","s":5,"l":0,"k":0,"m":"Mailgun"},{"d":"betterstack.com","b":"Better Stack","c":"Analytics & DevOps","o":58,"g":"D","i":64,"a":50,"p":"none","s":5,"l":0,"k":0,"m":"Google Workspace"},{"d":"helpscout.com","b":"Help Scout","c":"Product & Design","o":58,"g":"D","i":64,"a":50,"p":"none","s":6,"l":0,"k":0,"m":"Google Workspace"},{"d":"huggingface.co","b":"Hugging Face","c":"AI & LLM","o":58,"g":"D","i":64,"a":50,"p":"none","s":4,"l":0,"k":0,"m":"Google Workspace"},{"d":"drata.com","b":"Drata","c":"Security & Growth","o":56,"g":"D","i":75,"a":33,"p":"reject","s":11,"l":0,"k":0,"m":"Google Workspace"},{"d":"figma.com","b":"Figma","c":"Product & Design","o":54,"g":"D","i":77,"a":26,"p":"quarantine","s":4,"l":0,"k":2,"m":"Google Workspace"},{"d":"svelte.dev","b":"Svelte","c":"Frameworks & Docs","o":54,"g":"D","i":40,"a":70,"p":"missing","s":1,"l":1,"k":0,"m":"Fastmail"},{"d":"profitwell.com","b":"ProfitWell","c":"Payments & Billing","o":53,"g":"D","i":64,"a":40,"p":"none","s":4,"l":0,"k":0,"m":"Google Workspace"},{"d":"tldraw.com","b":"tldraw","c":"Product & Design","o":53,"g":"D","i":59,"a":45,"p":"none","s":3,"l":0,"k":4,"m":"Google Workspace"},{"d":"trpc.io","b":"tRPC","c":"Frameworks & Docs","o":53,"g":"D","i":15,"a":100,"p":"missing","s":0,"l":1,"k":0,"m":"Google Workspace"},{"d":"playwright.dev","b":"Playwright","c":"Frameworks & Docs","o":40,"g":"F","i":45,"a":33,"p":"reject","s":0,"l":0,"k":0,"m":"No MX record"},{"d":"orm.drizzle.team","b":"Drizzle ORM","c":"Frameworks & Docs","o":36,"g":"F","i":0,"a":80,"p":"missing","s":0,"l":1,"k":0,"m":"No MX record"},{"d":"storybook.js.org","b":"Storybook","c":"Frameworks & Docs","o":36,"g":"F","i":0,"a":80,"p":"missing","s":0,"l":1,"k":0,"m":"No MX record"},{"d":"v0.dev","b":"v0 by Vercel","c":"AI & LLM","o":32,"g":"F","i":0,"a":70,"p":"missing","s":0,"l":0,"k":0,"m":"No MX record"},{"d":"vitest.dev","b":"Vitest","c":"Frameworks & Docs","o":32,"g":"F","i":0,"a":70,"p":"missing","s":0,"l":1,"k":0,"m":"No MX record"},{"d":"astro.build","b":"Astro","c":"Frameworks & Docs","o":31,"g":"F","i":15,"a":50,"p":"missing","s":0,"l":0,"k":0,"m":"Google Workspace"},{"d":"orb.com","b":"Orb","c":"Payments & Billing","o":18,"g":"F","i":0,"a":40,"p":"missing","s":0,"l":0,"k":0,"m":"No MX record"}];
+    let activeFilter = "all";
+    const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+    const pc = n => n >= 82 ? "ok" : n >= 58 ? "warn" : "bad";
+    const gc = g => (g === "A" || g === "B") ? "ok" : g === "C" ? "warn" : "bad";
+    const qEl = document.getElementById("q"), catEl = document.getElementById("cat"), sortEl = document.getElementById("sort"), tbody = document.getElementById("tbody"), note = document.getElementById("countNote");
+
+    function render() {
+      const q = qEl.value.trim().toLowerCase(), cat = catEl.value, sort = sortEl.value;
+      let list = ROWS.filter(x => {
+        if (cat && x.c !== cat) return false;
+        if (q && !(x.d.includes(q) || x.b.toLowerCase().includes(q) || x.m.toLowerCase().includes(q))) return false;
+        if (activeFilter === "no-llms" && x.l) return false;
+        if (activeFilter === "has-llms" && !x.l) return false;
+        if (activeFilter === "weak-dmarc" && !(x.p === "none" || x.p === "missing")) return false;
+        if (activeFilter === "spf-over" && x.s <= 10) return false;
+        if (activeFilter === "ai-blocked" && x.k === 0) return false;
+        return true;
+      });
+      if (sort === "asc") list.sort((a,b) => a.o - b.o);
+      else if (sort === "inbox") list.sort((a,b) => b.i - a.i);
+      else if (sort === "cite") list.sort((a,b) => b.a - a.a);
+      else if (sort === "name") list.sort((a,b) => a.d.localeCompare(b.d));
+      else list.sort((a,b) => b.o - a.o || a.d.localeCompare(b.d));
+
+      tbody.innerHTML = list.map(x => '<tr>' +
+        '<td><strong><a href="./report/' + esc(x.d) + '.html">' + esc(x.b) + '</a></strong><div class="mut" style="font-size:.82rem">' + esc(x.d) + '</div></td>' +
+        '<td class="mut">' + esc(x.c) + '</td>' +
+        '<td><span class="pill ' + gc(x.g) + '">' + x.o + ' (' + x.g + ')</span></td>' +
+        '<td><span class="pill ' + pc(x.i) + '">' + x.i + '/100</span> <span class="mut" style="font-size:.8rem">' + x.s + '/10 SPF</span></td>' +
+        '<td><span class="pill ' + pc(x.a) + '">' + x.a + '/100</span></td>' +
+        '<td><span class="pill ' + (x.l ? "ok" : "bad") + '">' + (x.l ? "Present" : "Missing") + '</span></td>' +
+        '<td><span class="pill ' + (x.p === "reject" ? "ok" : x.p === "quarantine" ? "warn" : "bad") + '">' + esc(x.p) + '</span></td>' +
+        '<td><a href="./report/' + esc(x.d) + '.html">Open &rarr;</a></td>' +
+      '</tr>').join("");
+      note.textContent = "Showing " + list.length + " of " + ROWS.length + " live-audited SaaS reports.";
+    }
+    qEl.addEventListener("input", render);
+    catEl.addEventListener("change", render);
+    sortEl.addEventListener("change", render);
+    document.querySelectorAll("#filters .chip").forEach(btn => btn.addEventListener("click", () => {
+      document.querySelectorAll("#filters .chip").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeFilter = btn.dataset.f;
+      render();
+    }));
+    render();
+  </script>
+</body>
+</html>
