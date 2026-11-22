@@ -6,7 +6,9 @@
 - Interactive Benchmark Directory (228 Companies): https://zcoldwater.github.io/launch-audit-reports/
 - Free Brand Name & USPTO Trademark Scanner: https://brand-checker.appwrite.network
 - Free Email Deliverability Scanner (SPF/DMARC/MX): https://inbox-checker.appwrite.network
+- Free Online SPF >10 Lookup Flattener: https://inbox-checker.appwrite.network/spf-flattener
 - Free AI Search & llms.txt Readiness Scanner: https://citeready-checker.appwrite.network
+- Free Live /llms.txt Starter Generator: https://citeready-checker.appwrite.network/generator
 
 ## Troubleshooting Guides
 - [Fix Resend Emails Going to Spam](https://zcoldwater.github.io/launch-audit-reports/guides/resend-emails-going-to-spam-fix.html): Most Resend spam-folder drops come from sending on a root domain with broken SPF lookup counts, missing DMARC alignment, or sharing reputation between marketing blasts and auth emails.

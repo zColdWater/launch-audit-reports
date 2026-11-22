@@ -21,8 +21,8 @@
     <nav class="nav-links">
       <a href="../index.html#benchmarks">220+ SaaS Reports</a>
       <a href="../index.html#guides">Fix Guides</a>
-      <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">Free Email Audit</a>
-      <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">Free AI Audit</a>
+      <a href="https://inbox-checker.appwrite.network/spf-flattener" target="_blank" rel="noopener">Free SPF Flattener</a>
+      <a href="https://citeready-checker.appwrite.network/generator" target="_blank" rel="noopener">Free llms.txt Generator</a>
       <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">Free Name Check</a>
       <a class="btn btn-cta" href="https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack" target="_blank" rel="noopener">3-in-1 Launch Stack ($49) &rarr;</a>
     </nav>
@@ -79,6 +79,10 @@
         </table>
         <pre><code>SPF: v=spf1 include:helpscoutemail.com include:_spf.google.com include:servers.mcsv.net include:amazonses.com include:mail.zendesk.com ~all</code></pre>
         <pre><code>DMARC: v=DMARC1; p=quarantine; sp=quarantine; rua=mailto:re+a0b40970b63a@inbound.dmarcdigests.com,mailto:dmarc@rp.laneful.net; aspf=r; pct=100</code></pre>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <a class="btn" href="https://inbox-checker.appwrite.network/spf-flattener?domain=customer.io" target="_blank" rel="noopener">Flatten customer.io SPF Live &rarr;</a>
+          <a class="btn" href="https://inbox-checker.appwrite.network/?domain=customer.io" target="_blank" rel="noopener">Re-Scan Email Live &rarr;</a>
+        </div>
       </div>
 
       <div class="card">
@@ -92,20 +96,26 @@
           </tbody>
         </table>
         <h3 style="margin-top:16px">AI Crawler Access (<code>robots.txt</code>)</h3><table><tbody><tr><td><code>GPTBot</code></td><td><span class="pill ok">allowed</span></td></tr><tr><td><code>OAI-SearchBot</code></td><td><span class="pill ok">allowed</span></td></tr><tr><td><code>ClaudeBot</code></td><td><span class="pill ok">allowed</span></td></tr><tr><td><code>PerplexityBot</code></td><td><span class="pill ok">allowed</span></td></tr></tbody></table>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <a class="btn" href="https://citeready-checker.appwrite.network/generator?url=https%3A%2F%2Fcustomer.io" target="_blank" rel="noopener">Generate Starter /llms.txt Live &rarr;</a>
+          <a class="btn" href="https://citeready-checker.appwrite.network/?url=https%3A%2F%2Fcustomer.io" target="_blank" rel="noopener">Re-Scan AI Search Live &rarr;</a>
+        </div>
       </div>
     </div>
 
     <div class="card">
-    <h3 style="margin-top:0">Audit Your Own Startup Domain Live (Free, Zero Signup)</h3>
-    <p class="mut" style="margin:0 0 12px;font-size:.92rem">Enter your domain or product name to open an instant live diagnostic on our read-only scanners:</p>
-    <form class="audit-bar" onsubmit="event.preventDefault();const v=this.dom.value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');if(!v)return;const t=this.tool.value;if(t==='inbox')window.open('https://inbox-checker.appwrite.network/?domain='+encodeURIComponent(v),'_blank');else if(t==='cite')window.open('https://citeready-checker.appwrite.network/?url='+encodeURIComponent('https://'+v),'_blank');else window.open('https://brand-checker.appwrite.network/report/'+encodeURIComponent(v.split('.')[0]),'_blank');">
+    <h3 style="margin-top:0">Audit or Fix Your Own Startup Domain Live (Free, Zero Signup)</h3>
+    <p class="mut" style="margin:0 0 12px;font-size:.92rem">Enter your domain or product name to run a live scanner, flatten an SPF &gt;10 record, or generate a starter <code>/llms.txt</code>:</p>
+    <form class="audit-bar" onsubmit="event.preventDefault();const v=this.dom.value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');if(!v)return;const t=this.tool.value;if(t==='inbox')window.open('https://inbox-checker.appwrite.network/?domain='+encodeURIComponent(v),'_blank');else if(t==='spf')window.open('https://inbox-checker.appwrite.network/spf-flattener?domain='+encodeURIComponent(v),'_blank');else if(t==='cite')window.open('https://citeready-checker.appwrite.network/?url='+encodeURIComponent('https://'+v),'_blank');else if(t==='llms')window.open('https://citeready-checker.appwrite.network/generator?url='+encodeURIComponent('https://'+v),'_blank');else window.open('https://brand-checker.appwrite.network/report/'+encodeURIComponent(v.split('.')[0]),'_blank');">
       <input name="dom" placeholder="yourdomain.com (or brand name)..." required maxlength="80" />
       <select name="tool" aria-label="Diagnostic tool">
-        <option value="inbox">Email Deliverability (SPF/DMARC/MX)</option>
-        <option value="cite">AI Search &amp; llms.txt Audit</option>
+        <option value="llms">Free /llms.txt Starter Generator (CiteReady)</option>
+        <option value="spf">Free SPF &gt;10 Lookup Flattener (InboxShield)</option>
+        <option value="inbox">Email Deliverability Audit (SPF/DMARC/MX)</option>
+        <option value="cite">AI Search &amp; GEO Full Audit</option>
         <option value="brand">Brand Name &amp; USPTO Trademark Report</option>
       </select>
-      <button type="submit" class="btn btn-cta">Run Free Live Audit &rarr;</button>
+      <button type="submit" class="btn btn-cta">Run Free Live Tool &rarr;</button>
     </form>
   </div>
 
@@ -149,7 +159,9 @@
       <a href="../index.html">Benchmark Index</a> &middot;
       <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">BrandShield Web</a> &middot;
       <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">InboxShield Web</a> &middot;
+      <a href="https://inbox-checker.appwrite.network/spf-flattener" target="_blank" rel="noopener">Free SPF Flattener</a> &middot;
       <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">CiteReady Web</a> &middot;
+      <a href="https://citeready-checker.appwrite.network/generator" target="_blank" rel="noopener">Free llms.txt Generator</a> &middot;
       <a href="https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack" target="_blank" rel="noopener">Launch Stack on Gumroad</a> &middot;
       <a href="https://omnipulse-x402.appwrite.network/checkout/launch-stack" target="_blank" rel="noopener">Instant Direct Checkout</a> &middot;
       <a href="../llms.txt">llms.txt</a>

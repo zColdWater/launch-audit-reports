@@ -20,8 +20,8 @@
     <nav class="nav-links">
       <a href="../index.html#benchmarks">220+ SaaS Reports</a>
       <a href="../index.html#guides">Fix Guides</a>
-      <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">Free Email Audit</a>
-      <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">Free AI Audit</a>
+      <a href="https://inbox-checker.appwrite.network/spf-flattener" target="_blank" rel="noopener">Free SPF Flattener</a>
+      <a href="https://citeready-checker.appwrite.network/generator" target="_blank" rel="noopener">Free llms.txt Generator</a>
       <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">Free Name Check</a>
       <a class="btn btn-cta" href="https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack" target="_blank" rel="noopener">3-in-1 Launch Stack ($49) &rarr;</a>
     </nav>
@@ -67,23 +67,25 @@ export async function GET() {
   });
 }</code></pre>
     </div><div class="card">
-      <h2 style="margin-top:0">3. Verify AI Crawlers Aren&#39;t Blocked in robots.txt</h2>
-      <p style="margin:0">An <code>llms.txt</code> file cannot help if your <code>robots.txt</code> disallows <code>OAI-SearchBot</code>, <code>PerplexityBot</code>, or <code>ClaudeBot</code>. Audit your live site in 3 seconds with CiteReady or auto-generate your full <code>llms.txt</code> from your sitemap with CiteReady Pro.</p>
+      <h2 style="margin-top:0">3. Generate a Live Starter /llms.txt &amp; Check AI Crawlers</h2>
+      <p style="margin:0">Skip manual scaffolding with our <a href="https://citeready-checker.appwrite.network/generator" target="_blank" rel="noopener"><strong>Free Live llms.txt Generator</strong></a> (parses your homepage + <code>sitemap.xml</code> in ~1 second to build an <code>llmstxt.org</code> starter and count unindexed subpages). Also verify your <code>robots.txt</code> does not disallow <code>OAI-SearchBot</code>, <code>PerplexityBot</code>, or <code>ClaudeBot</code>, or compile your full multi-page <code>llms-full.txt</code> offline with CiteReady Pro.</p>
       <pre><code># Verify your Next.js site&#39;s AI readiness from your terminal:
 npx github:zColdWater/citeready-cli audit https://yourdomain.com</code></pre>
     </div>
 
     <div class="card">
-    <h3 style="margin-top:0">Audit Your Own Startup Domain Live (Free, Zero Signup)</h3>
-    <p class="mut" style="margin:0 0 12px;font-size:.92rem">Enter your domain or product name to open an instant live diagnostic on our read-only scanners:</p>
-    <form class="audit-bar" onsubmit="event.preventDefault();const v=this.dom.value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');if(!v)return;const t=this.tool.value;if(t==='inbox')window.open('https://inbox-checker.appwrite.network/?domain='+encodeURIComponent(v),'_blank');else if(t==='cite')window.open('https://citeready-checker.appwrite.network/?url='+encodeURIComponent('https://'+v),'_blank');else window.open('https://brand-checker.appwrite.network/report/'+encodeURIComponent(v.split('.')[0]),'_blank');">
+    <h3 style="margin-top:0">Audit or Fix Your Own Startup Domain Live (Free, Zero Signup)</h3>
+    <p class="mut" style="margin:0 0 12px;font-size:.92rem">Enter your domain or product name to run a live scanner, flatten an SPF &gt;10 record, or generate a starter <code>/llms.txt</code>:</p>
+    <form class="audit-bar" onsubmit="event.preventDefault();const v=this.dom.value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');if(!v)return;const t=this.tool.value;if(t==='inbox')window.open('https://inbox-checker.appwrite.network/?domain='+encodeURIComponent(v),'_blank');else if(t==='spf')window.open('https://inbox-checker.appwrite.network/spf-flattener?domain='+encodeURIComponent(v),'_blank');else if(t==='cite')window.open('https://citeready-checker.appwrite.network/?url='+encodeURIComponent('https://'+v),'_blank');else if(t==='llms')window.open('https://citeready-checker.appwrite.network/generator?url='+encodeURIComponent('https://'+v),'_blank');else window.open('https://brand-checker.appwrite.network/report/'+encodeURIComponent(v.split('.')[0]),'_blank');">
       <input name="dom" placeholder="yourdomain.com (or brand name)..." required maxlength="80" />
       <select name="tool" aria-label="Diagnostic tool">
-        <option value="inbox">Email Deliverability (SPF/DMARC/MX)</option>
-        <option value="cite">AI Search &amp; llms.txt Audit</option>
+        <option value="llms">Free /llms.txt Starter Generator (CiteReady)</option>
+        <option value="spf">Free SPF &gt;10 Lookup Flattener (InboxShield)</option>
+        <option value="inbox">Email Deliverability Audit (SPF/DMARC/MX)</option>
+        <option value="cite">AI Search &amp; GEO Full Audit</option>
         <option value="brand">Brand Name &amp; USPTO Trademark Report</option>
       </select>
-      <button type="submit" class="btn btn-cta">Run Free Live Audit &rarr;</button>
+      <button type="submit" class="btn btn-cta">Run Free Live Tool &rarr;</button>
     </form>
   </div>
 
@@ -118,7 +120,9 @@ npx github:zColdWater/citeready-cli audit https://yourdomain.com</code></pre>
       <a href="../index.html">Benchmark Index</a> &middot;
       <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">BrandShield Web</a> &middot;
       <a href="https://inbox-checker.appwrite.network" target="_blank" rel="noopener">InboxShield Web</a> &middot;
+      <a href="https://inbox-checker.appwrite.network/spf-flattener" target="_blank" rel="noopener">Free SPF Flattener</a> &middot;
       <a href="https://citeready-checker.appwrite.network" target="_blank" rel="noopener">CiteReady Web</a> &middot;
+      <a href="https://citeready-checker.appwrite.network/generator" target="_blank" rel="noopener">Free llms.txt Generator</a> &middot;
       <a href="https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack" target="_blank" rel="noopener">Launch Stack on Gumroad</a> &middot;
       <a href="https://omnipulse-x402.appwrite.network/checkout/launch-stack" target="_blank" rel="noopener">Instant Direct Checkout</a> &middot;
       <a href="../llms.txt">llms.txt</a>
