@@ -2,12 +2,13 @@
 
 > Live measured SPF/DMARC/MX email deliverability and /llms.txt, robots.txt AI crawler & JSON-LD Schema readiness across 228 top SaaS & developer-tool domains, plus 10 copy-paste troubleshooting guides.
 
-## Benchmark Hub & Live v5.0 Online Web Apps
+## Benchmark Hub & Live Cloud Web Apps (2026)
+- State of AI & Vibe-Coded Web App Security (2026) — 55 Live Apps Audited (6,120+ Checks): https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/
 - Interactive Benchmark Directory (228 Companies): https://zcoldwater.github.io/launch-audit-reports/
-- VibeShield v5.0 — Free JS Bundle Secrets & Supabase RLS Scanner: https://vibe-checker.appwrite.network
-- BrandShield v5.0 — Free 8-TLD RDAP, USPTO Trademark & 60-Idea Brand Namer: https://brand-checker.appwrite.network
-- CiteReady v5.0 — Free 10-Bot AI Search (GEO) & /llms.txt Generator: https://citeready-checker.appwrite.network | https://citeready-checker.appwrite.network/generator
-- InboxShield v5.0 — Free SPF/DKIM/DMARC/DNSBL Audit & SPF Flattener: https://inbox-checker.appwrite.network | https://inbox-checker.appwrite.network/spf-flattener
+- VibeShield v7.0 — Free 6-Phase (116-Check) JS Bundle Secrets, CSP/Headers & Supabase RLS Scanner ($9 Fix Unlock): https://vibe-checker.appwrite.network
+- BrandShield v6.2 — 100% Free 78-TLD RDAP, USPTO Trademark & Aftermarket Checker: https://brand-checker.appwrite.network
+- CiteReady v6.0 — Free 10-Bot AI Search (GEO) & /llms.txt Generator ($12 Pro): https://citeready-checker.appwrite.network | https://citeready-checker.appwrite.network/generator
+- InboxShield v7.0 — Free SPF/DKIM/DMARC/DNSBL Audit & SPF Flattener ($15 Pro): https://inbox-checker.appwrite.network | https://inbox-checker.appwrite.network/spf-flattener
 
 ## Honest 2026 Competitor Comparisons
 - Comparisons Hub: https://zcoldwater.github.io/launch-audit-reports/compare/
