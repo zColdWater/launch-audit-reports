@@ -4,18 +4,22 @@
 
 ## Benchmark Hub & Live Cloud Web Apps (2026)
 - State of AI & Vibe-Coded Web App Security (2026) — 55 Live Apps Audited (6,120+ Checks): https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/
+- [Lovable Pre-Launch Security Guide](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/lovable.html): Audit your .lovable.app or custom domain in 2 seconds before launch: check Supabase Row Level Security (RLS), leaked client API keys, CSP/HSTS headers, and exposed paths free on VibeShield v7.0.
+- [Cursor & Next.js Pre-Launch Security Guide](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cursor.html): Stop shipping NEXT_PUBLIC_ secret leaks, public .js.map source maps, and missing CSP/HSTS headers in Cursor + Next.js + Vercel apps. Free 6-phase audit + MIT next-headers.mjs & cursor-security.mdc.
+- [Bolt.new & Netlify Pre-Launch Security Guide](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/bolt.html): Audit your Bolt.new / .netlify.app / Vite production site free in 2 seconds: detect VITE_ API key leaks, public .js.map source maps, exposed dotfiles, and missing Netlify _headers.
+- [Supabase RLS Pre-Launch Security Guide](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/supabase.html): 20% of newly launched AI web apps ship live Supabase backends. Run a read-only passive RLS & service_role key leak audit in 2 seconds + copy our MIT PostgreSQL RLS audit SQL.
 - Interactive Benchmark Directory (228 Companies): https://zcoldwater.github.io/launch-audit-reports/
-- VibeShield v7.0 — Free 6-Phase (116-Check) JS Bundle Secrets, CSP/Headers & Supabase RLS Scanner ($9 Fix Unlock): https://vibe-checker.appwrite.network
+- VibeShield v7.0 — Free 6-Phase (116-Check) JS Bundle Secrets, CSP/Headers & Supabase RLS Scanner ($2 Launch Special, was $9): https://vibe-checker.appwrite.network
 - BrandShield v6.2 — 100% Free 78-TLD RDAP, USPTO Trademark & Aftermarket Checker: https://brand-checker.appwrite.network
-- CiteReady v6.0 — Free 10-Bot AI Search (GEO) & /llms.txt Generator ($12 Pro): https://citeready-checker.appwrite.network | https://citeready-checker.appwrite.network/generator
-- InboxShield v7.0 — Free SPF/DKIM/DMARC/DNSBL Audit & SPF Flattener ($15 Pro): https://inbox-checker.appwrite.network | https://inbox-checker.appwrite.network/spf-flattener
+- CiteReady v6.0 — Free 10-Bot AI Search (GEO) & /llms.txt Generator ($2 Launch Special, was $12): https://citeready-checker.appwrite.network | https://citeready-checker.appwrite.network/generator
+- InboxShield v7.0 — Free SPF/DKIM/DMARC/DNSBL Audit & SPF Flattener ($2 Launch Special, was $9): https://inbox-checker.appwrite.network | https://inbox-checker.appwrite.network/spf-flattener
 
 ## Honest 2026 Competitor Comparisons
 - Comparisons Hub: https://zcoldwater.github.io/launch-audit-reports/compare/
-- [InstantDomainSearch vs. BrandShield](https://zcoldwater.github.io/launch-audit-reports/compare/instantdomainsearch-vs-brandshield.html): Honest 2026 comparison of InstantDomainSearch vs. BrandShield ($12 one-time). Compare zero-front-running IANA RDAP lookups, USPTO Class 009/042 trademark checks, App Store collisions, 60-idea AI Brand Namer, and 50-brand CSV exports.
-- [Peec AI vs. CiteReady](https://zcoldwater.github.io/launch-audit-reports/compare/peec-ai-vs-citeready.html): Honest 2026 comparison of Peec AI (€89+/mo) vs. CiteReady Web Pro ($12 one-time). Understand the difference between passive daily LLM prompt tracking and live 10-bot robots.txt, Schema.org Entity Graph, and /llms.txt technical fixes.
-- [EasyDMARC vs. InboxShield](https://zcoldwater.github.io/launch-audit-reports/compare/easydmarc-vs-inboxshield.html): Honest comparison of EasyDMARC ($36/mo / $432/yr) vs InboxShield ($15 one-time). Compare live SPF 10-lookup audits, online SPF flattening, 24-selector DKIM checks, 50-domain batch scoring, and where EasyDMARC's managed cloud wins.
-- [VibeAppScanner / LaunchGuard vs. VibeShield](https://zcoldwater.github.io/launch-audit-reports/compare/vibeappscanner-vs-vibeshield.html): Honest comparison of VibeAppScanner / LaunchGuard ($29/mo / $348/yr) vs VibeShield ($9 one-time). Compare zero-signup live JS bundle scanning, CVE-2025-48757 Supabase RLS probing, 38 secret patterns, and tailored Cursor/Lovable auto-fix prompts.
+- [InstantDomainSearch vs. BrandShield v6.2](https://zcoldwater.github.io/launch-audit-reports/compare/instantdomainsearch-vs-brandshield.html): Honest 2026 comparison of InstantDomainSearch vs. BrandShield (100% Free). Compare zero-front-running 78+ TLD IANA RDAP lookups, live USPTO Class 009/042 trademark checks, App Store collisions, 60-idea AI Brand Namer, and aftermarket pricing.
+- [Peec AI vs. CiteReady](https://zcoldwater.github.io/launch-audit-reports/compare/peec-ai-vs-citeready.html): Honest 2026 comparison of Peec AI (€89+/mo) vs. CiteReady Web Pro ($2 Launch Special, was $12 one-time). Compare daily LLM prompt tracking against live 10-bot robots.txt, Schema.org Entity Graph, and /llms.txt technical fixes.
+- [EasyDMARC vs. InboxShield](https://zcoldwater.github.io/launch-audit-reports/compare/easydmarc-vs-inboxshield.html): Honest comparison of EasyDMARC ($36/mo / $432/yr) vs InboxShield ($2 Launch Special, was $9 one-time). Compare live SPF 10-lookup audits, online SPF flattening, 24-selector DKIM checks, 50-domain batch scoring, and where EasyDMARC's managed cloud wins.
+- [VibeAppScanner / LaunchGuard vs. VibeShield](https://zcoldwater.github.io/launch-audit-reports/compare/vibeappscanner-vs-vibeshield.html): Honest comparison of VibeAppScanner / LaunchGuard ($29/mo / $348/yr) vs VibeShield v7.0 ($2 Launch Special, was $9 one-time). Compare zero-signup live JS bundle scanning, CVE-2025-48757 Supabase RLS probing, 52 secret patterns, and tailored Cursor/Lovable auto-fix prompts.
 
 ## Troubleshooting Guides
 - [Fix Resend Emails Going to Spam](https://zcoldwater.github.io/launch-audit-reports/guides/resend-emails-going-to-spam-fix.html): Most Resend spam-folder drops come from sending on a root domain with broken SPF lookup counts, missing DMARC alignment, or sharing reputation between marketing blasts and auth emails.
@@ -39,9 +43,9 @@
 - [PostHog (posthog.com) — 78/100](https://zcoldwater.github.io/launch-audit-reports/report/posthog.com.html): Email 88/100 (DMARC quarantine, SPF 10/10), AI Search 65/100 (llms.txt present)
 - [Linear (linear.app) — 86/100](https://zcoldwater.github.io/launch-audit-reports/report/linear.app.html): Email 90/100 (DMARC reject, SPF 4/10), AI Search 80/100 (llms.txt present)
 
-## OmniForge v5.0 Web Pro Suite (One-Time In-Browser Activation, Zero Subscriptions)
-- VibeShield Web Pro ($9 One-Time): https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield | Direct: https://omnipulse-x402.appwrite.network/checkout/vibeshield
-- BrandShield Web Pro ($12 One-Time): https://omnipulse-x402.appwrite.network/go/gumroad/brandshield | Direct: https://omnipulse-x402.appwrite.network/checkout/brandshield
-- CiteReady Web Pro ($12 One-Time): https://omnipulse-x402.appwrite.network/go/gumroad/citeready | Direct: https://omnipulse-x402.appwrite.network/checkout/citeready
-- InboxShield Web Pro ($15 One-Time): https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield | Direct: https://omnipulse-x402.appwrite.network/checkout/inboxshield
-- 4-in-1 Launch Stack Web Pro ($29 One-Time — Save $19 across all 4 apps): https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack | Direct: https://omnipulse-x402.appwrite.network/checkout/launch-stack
+## OmniForge Launch Special Pricing (One-Time In-Browser Activation, Zero Subscriptions)
+- VibeShield Web Pro ($2 Launch Special, was $9): https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield | Direct: https://omnipulse-x402.appwrite.network/checkout/vibeshield
+- InboxShield Web Pro ($2 Launch Special, was $9): https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield | Direct: https://omnipulse-x402.appwrite.network/checkout/inboxshield
+- CiteReady Web Pro ($2 Launch Special, was $12): https://omnipulse-x402.appwrite.network/go/gumroad/citeready | Direct: https://omnipulse-x402.appwrite.network/checkout/citeready
+- BrandShield v6.2 (100% Free Domain + USPTO + Aftermarket): https://brand-checker.appwrite.network
+- OmniForge Complete Suite ($5 Launch Special, was $29 — unlocks VibeShield + InboxShield + CiteReady): https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack | Direct: https://omnipulse-x402.appwrite.network/checkout/launch-stack

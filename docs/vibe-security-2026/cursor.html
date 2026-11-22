@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cursor &amp; Next.js Pre-Launch Security Checklist + .cursor/rules (2026) | VibeShield</title>
+  <meta name="description" content="Stop shipping NEXT_PUBLIC_ secret leaks, public .js.map source maps, and missing CSP/HSTS headers in Cursor + Next.js + Vercel apps. Free 6-phase audit + MIT next-headers.mjs &amp; cursor-security.mdc." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cursor.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Cursor &amp; Next.js Pre-Launch Security Checklist + .cursor/rules (2026) | VibeShield" />
+  <meta property="og:description" content="Stop shipping NEXT_PUBLIC_ secret leaks, public .js.map source maps, and missing CSP/HSTS headers in Cursor + Next.js + Vercel apps. Free 6-phase audit + MIT next-headers.mjs &amp; cursor-security.mdc." />
+  <meta property="og:url" content="https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cursor.html" />
+  <link rel="stylesheet" href="../compare/compare.css" />
+  <style>
+    pre.code{background:#0f172a;color:#e2e8f0;border:1px solid #1e293b;border-radius:10px;padding:16px;overflow-x:auto;font:12.5px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin:10px 0 0}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Launch Audit Reports","item":"https://zcoldwater.github.io/launch-audit-reports/"},{"@type":"ListItem","position":2,"name":"2026 Vibe Security Study","item":"https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/"},{"@type":"ListItem","position":3,"name":"Cursor & Next.js Security","item":"https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cursor.html"}]},{"@type":"TechArticle","headline":"Cursor & Next.js Security Checklist + Production Header Config","description":"Stop shipping NEXT_PUBLIC_ secret leaks, public .js.map source maps, and missing CSP/HSTS headers in Cursor + Next.js + Vercel apps. Free 6-phase audit + MIT next-headers.mjs & cursor-security.mdc.","datePublished":"2026-11-22","dateModified":"2026-11-22","author":{"@type":"Organization","name":"OmniForge · Agent Arena Studio"},"mainEntityOfPage":"https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cursor.html"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where can I download the .cursor/rules/security.mdc guardrail file?","acceptedAnswer":{"@type":"Answer","text":"Our open-source MIT repository at github.com/zColdWater/vibe-security-checklist includes rules/cursor-security.mdc, configs/next-headers.mjs, configs/vercel.json, and a zero-dependency local bundle secret guard."}},{"@type":"Question","name":"How much does VibeShield v7.0 cost to unlock full fix scripts?","acceptedAnswer":{"@type":"Answer","text":"Scanning is 100% free with zero signup. Unlocking exact file/chunk locations and 5-platform remediation scripts is $2 one-time during our Launch Special (was $9, 14-day refund guarantee)."}}]}]}</script>
+</head>
+<body>
+  <header class="top"><div class="wrap nav">
+    <a class="brand" href="../index.html"><span class="mark">OF</span><span>OmniForge Security</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="./index.html">2026 Benchmark Study</a>
+      <a href="../compare/index.html">Honest Comparisons</a>
+      <a href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">VibeShield v7.0</a>
+      <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">BrandShield (Free)</a>
+      <a class="btn btn-pri btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: $2 (was $9)</a>
+    </nav>
+  </div></header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="crumb"><a href="../index.html">Launch Benchmarks</a> / <a href="./index.html">2026 Vibe Security Study</a> / Cursor &amp; Next.js</div>
+      <span class="eyebrow">Cursor + Next.js + Vercel Hardening (2026) &middot; Read-Only 6-Phase Scanner</span>
+      <h1>Cursor &amp; Next.js Security Checklist + Production Header Config</h1>
+      <p class="lead">AI pair programming in Cursor accelerates Next.js and Vercel launches 10x — and makes it effortless to miss productionBrowserSourceMaps, custom headers(), Server Action auth checks, or accidentally expose server keys via NEXT_PUBLIC_. Drop in our MIT rules and scan your live preview URL free.</p>
+      <div class="hero-acts">
+        <a class="btn btn-pri" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open VibeShield v7.0 Free &rarr;</a>
+        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Full Fixes $2 (was $9)</a>
+        <a class="btn" href="https://github.com/zColdWater/vibe-security-checklist" target="_blank" rel="noopener">MIT Checklist &amp; Templates</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div class="widget-card">
+      <h2 style="margin:0 0 4px;font-size:19px">Run a Live 6-Phase Cursor &amp; Next.js Security Scan Free (Zero Signup)</h2>
+      <p style="margin:0;color:var(--mut);font-size:13.5px">Passively inspects TLS, up to 24 JS chunks across 52 secret patterns, safe Supabase/Firebase checks, 28 sensitive paths, and 10 Mozilla Observatory headers:</p>
+      <form id="stackScanForm" class="scan-row">
+        <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-app.vercel.app or yourdomain.com" required maxlength="150" />
+        <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan URL Free</button>
+      </form>
+      <div class="chips">
+        <span>Test live demos:</span>
+        <button type="button" class="chip mono s-chip" data-u="https://vercel.com">vercel.com</button><button type="button" class="chip mono s-chip" data-u="https://nextjs.org">nextjs.org</button><button type="button" class="chip mono s-chip" data-u="https://cursor.com">cursor.com</button>
+      </div>
+      <div id="stackScanOut" class="res-box"></div>
+    </div>
+
+    <h2>Top 4 Pre-Launch Risks in Cursor &amp; Next.js Production Apps</h2>
+    <div class="grid-2">
+      <div class="card prose"><h3>1. Zero Security Headers on Default Vercel Deploys</h3><p>Across 41 newly launched Vercel apps in our 2026 study, default deployments consistently shipped without Content-Security-Policy, X-Frame-Options, Permissions-Policy, or Cross-Origin-Opener-Policy.</p></div><div class="card prose"><h3>2. NEXT_PUBLIC_ &amp; Client Component Key Leaks</h3><p>Importing server helpers inside &#39;use client&#39; files or prefixing Stripe/OpenAI keys with NEXT_PUBLIC_ embeds secrets directly into _next/static/chunks/*.js.</p></div><div class="card prose"><h3>3. Public Production Source Maps &amp; /.DS_Store</h3><p>Leaving productionBrowserSourceMaps enabled or committing local macOS .DS_Store files into public/ exposes unminified source files and internal paths to every visitor.</p></div><div class="card prose"><h3>4. Unverified Server Actions &amp; Webhook Signatures</h3><p>Always derive userId from verified server session cookies and validate Stripe/Gumroad webhook HMAC signatures against raw request bytes.</p></div>
+    </div>
+
+    <h2>Copy-Paste next.config.mjs Security Headers &amp; Source Map Lockdown</h2>
+    <div class="card">
+      <pre class="code">// next.config.mjs — Fixes 7/10 Observatory headers + hides source maps &amp; X-Powered-By
+export default {
+  poweredByHeader: false,
+  productionBrowserSourceMaps: false,
+  async headers() {
+    return [{
+      source: &quot;/:path*&quot;,
+      headers: [
+        { key: &quot;Strict-Transport-Security&quot;, value: &quot;max-age=63072000; includeSubDomains; preload&quot; },
+        { key: &quot;X-Content-Type-Options&quot;, value: &quot;nosniff&quot; },
+        { key: &quot;X-Frame-Options&quot;, value: &quot;DENY&quot; },
+        { key: &quot;Referrer-Policy&quot;, value: &quot;strict-origin-when-cross-origin&quot; },
+        { key: &quot;Permissions-Policy&quot;, value: &quot;camera=(), microphone=(), geolocation=()&quot; },
+        { key: &quot;Cross-Origin-Opener-Policy&quot;, value: &quot;same-origin&quot; },
+        { key: &quot;Content-Security-Policy&quot;, value: &quot;default-src &#39;self&#39;; base-uri &#39;self&#39;; object-src &#39;none&#39;; frame-ancestors &#39;none&#39;; upgrade-insecure-requests&quot; },
+      ],
+    }];
+  },
+};</pre>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq" open><summary>Where can I download the .cursor/rules/security.mdc guardrail file?</summary><p>Our open-source MIT repository at github.com/zColdWater/vibe-security-checklist includes rules/cursor-security.mdc, configs/next-headers.mjs, configs/vercel.json, and a zero-dependency local bundle secret guard.</p></details><details class="faq" open><summary>How much does VibeShield v7.0 cost to unlock full fix scripts?</summary><p>Scanning is 100% free with zero signup. Unlocking exact file/chunk locations and 5-platform remediation scripts is $2 one-time during our Launch Special (was $9, 14-day refund guarantee).</p></details>
+
+    <div class="cta-panel">
+      <div style="max-width:600px">
+        <strong style="font-size:18px;display:block;margin-bottom:6px">Launch Special: Unlock Exact Locations &amp; 5-Platform Fixes for $2 (was <s>$9</s>)</strong>
+        <span style="color:var(--ink2);font-size:14px">One-time perpetual browser unlock (78% off during Launch Special, zero monthly subscription, 14-day refund guarantee) — or grab the <strong>OmniForge Complete Suite</strong> (VibeShield + InboxShield + CiteReady) for <strong>$5 once (was <s>$29</s>)</strong>.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;min-width:250px">
+        <a class="btn btn-pri" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Run Free 6-Phase Scan &rarr;</a>
+        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Unlock VibeShield — $2 (was $9)</a>
+        <a class="btn" href="https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack" target="_blank" rel="noopener">Complete 3-App Suite — $5 (was $29)</a>
+      </div>
+    </div>
+
+    <h2>More Stack Hardening Guides &amp; Empirical Research</h2>
+    <div class="hub-grid">
+      <a class="hub-card" href="./index.html">
+        <div><span class="pill p-ok" style="margin-bottom:8px">55 Live Apps Audited</span><h3>State of Vibe-Coded Web App Security (2026)</h3><p style="margin:0;color:var(--ink2);font-size:13.5px">Full 6,120+ check empirical benchmark study across Vercel, Custom Domains &amp; GitHub Pages.</p></div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Read full study &rarr;</span>
+      </a>
+      <a class="hub-card" href="./lovable.html">
+        <div><span class="pill p-neutral" style="margin-bottom:8px">Stack Guide</span><h3>Lovable Pre-Launch Security</h3><p style="margin:0;color:var(--ink2);font-size:13.5px">Audit your .lovable.app or custom domain in 2 seconds before launch: check Supabase Row Level Security (RLS), leaked client A...</p></div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open Lovable guide &rarr;</span>
+      </a><a class="hub-card" href="./bolt.html">
+        <div><span class="pill p-neutral" style="margin-bottom:8px">Stack Guide</span><h3>Bolt.new &amp; Netlify Pre-Launch Security</h3><p style="margin:0;color:var(--ink2);font-size:13.5px">Audit your Bolt.new / .netlify.app / Vite production site free in 2 seconds: detect VITE_ API key leaks, public .js.map sourc...</p></div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open Bolt.new &amp; Netlify guide &rarr;</span>
+      </a><a class="hub-card" href="./supabase.html">
+        <div><span class="pill p-neutral" style="margin-bottom:8px">Stack Guide</span><h3>Supabase RLS Pre-Launch Security</h3><p style="margin:0;color:var(--ink2);font-size:13.5px">20% of newly launched AI web apps ship live Supabase backends. Run a read-only passive RLS &amp; service_role key leak audit in 2...</p></div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open Supabase RLS guide &rarr;</span>
+      </a>
+    </div>
+  </main>
+
+  <footer class="ft"><div class="wrap">
+    <div class="ft-row">
+      <div><strong>OmniForge &middot; Agent Arena Studio</strong> &middot; Read-only pre-launch security diagnostics.</div>
+      <div class="ft-links">
+        <a href="./index.html">2026 Study</a>
+        <a href="../index.html">228 SaaS Benchmarks</a>
+        <a href="https://omnipulse-x402.appwrite.network/support" target="_blank" rel="noopener">Support</a>
+        <a href="https://omnipulse-x402.appwrite.network/refund-policy" target="_blank" rel="noopener">14-Day Refund</a>
+        <a href="mailto:agentarenastudio@proton.me">agentarenastudio@proton.me</a>
+      </div>
+    </div>
+  </div></footer>
+
+  <script>
+  (function () {
+    var form = document.getElementById("stackScanForm");
+    var inp = document.getElementById("stackScanInput");
+    var btn = document.getElementById("stackScanBtn");
+    var out = document.getElementById("stackScanOut");
+    function esc(s) { return String(s == null ? "" : s).split("&").join("&amp;").split("<").join("&lt;").split(">").join("&gt;").split('"').join("&quot;"); }
+    async function run(raw) {
+      var v = String(raw || "").trim();
+      if (!v) return;
+      var u = /^https?:\/\//i.test(v) ? v : "https://" + v;
+      inp.value = u;
+      btn.disabled = true;
+      out.style.display = "block";
+      out.innerHTML = '<span style="color:var(--mut)">Scanning <strong>' + esc(u) + '</strong> with VibeShield v7.0 (6 phases)...</span>';
+      try {
+        var r = await fetch("https://vibe-checker.appwrite.network/api/free-scan?url=" + encodeURIComponent(u), { headers: { Accept: "application/json" } });
+        var d = await r.json().catch(function () { return {}; });
+        if (!r.ok || d.ok === false) {
+          out.innerHTML = '<span class="pill p-bad">Error</span> ' + esc(d.error || "Could not scan URL.") + ' <a href="https://vibe-checker.appwrite.network/?url=' + encodeURIComponent(u) + '" target="_blank" rel="noopener" style="margin-left:8px;font-weight:600">Open VibeShield v7.0 &rarr;</a>';
+          return;
+        }
+        var sc = (d.assessment && typeof d.assessment.score === "number") ? d.assessment.score : 0;
+        var gr = (d.assessment && d.assessment.grade) || "-";
+        var checks = d.checksExecuted || 110;
+        var locked = d.lockedFindingsCount || 0;
+        var cls = sc >= 80 ? "p-ok" : (sc >= 60 ? "p-warn" : "p-bad");
+        out.innerHTML =
+          '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">' +
+            '<div><strong>' + esc(d.hostname || u) + '</strong> &middot; Checks: <strong>' + esc(checks) + '</strong> &middot; Findings: <strong>' + esc((d.findings || []).length) + '</strong>' + (locked ? ' (<strong>' + esc(locked) + '</strong> fixes ready)' : '') + '</div>' +
+            '<span class="pill ' + cls + '">Score: ' + esc(sc) + '/100 (' + esc(gr) + ')</span>' +
+          '</div>' +
+          '<div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">' +
+            '<a class="btn btn-pri btn-sm" href="https://vibe-checker.appwrite.network/?url=' + encodeURIComponent(u) + '" target="_blank" rel="noopener">Inspect Full Trace &amp; Fix Wizard &rarr;</a>' +
+            '<a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock $2 (was $9)</a>' +
+          '</div>';
+      } catch (e) {
+        out.innerHTML = '<span class="pill p-warn">Notice</span> <a href="https://vibe-checker.appwrite.network/?url=' + encodeURIComponent(u) + '" target="_blank" rel="noopener" style="font-weight:600">Open VibeShield v7.0 directly &rarr;</a>';
+      } finally {
+        btn.disabled = false;
+      }
+    }
+    form.addEventListener("submit", function (e) { e.preventDefault(); run(inp.value); });
+    document.querySelectorAll(".s-chip").forEach(function (c) { c.addEventListener("click", function () { run(c.getAttribute("data-u")); }); });
+  })();
+  </script>
+</body>
+</html>
