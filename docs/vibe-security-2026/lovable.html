@@ -155,15 +155,25 @@ CREATE POLICY &quot;Users update own profile&quot;
         var gr = (d.assessment && d.assessment.grade) || "-";
         var checks = d.checksExecuted || 110;
         var locked = d.lockedFindingsCount || 0;
+        var findings = Array.isArray(d.findings) ? d.findings : [];
         var cls = sc >= 80 ? "p-ok" : (sc >= 60 ? "p-warn" : "p-bad");
+        var topHtml = "";
+        if (findings.length) {
+          topHtml = '<ul style="margin:10px 0 0;padding-left:18px;font-size:13px;color:var(--ink2)">' + findings.slice(0, 3).map(function (f) {
+            var sev = String(f.severity || "INFO").toUpperCase();
+            var sc2 = (sev === "CRITICAL" || sev === "HIGH") ? "p-bad" : (sev === "MEDIUM" ? "p-warn" : "p-neutral");
+            return '<li style="margin:5px 0"><span class="pill ' + sc2 + '" style="margin-right:6px;font-size:11px">' + esc(sev) + '</span>' + esc(f.title || f.summary || "Finding detected") + '</li>';
+          }).join("") + '</ul>';
+        }
         out.innerHTML =
           '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">' +
-            '<div><strong>' + esc(d.hostname || u) + '</strong> &middot; Checks: <strong>' + esc(checks) + '</strong> &middot; Findings: <strong>' + esc((d.findings || []).length) + '</strong>' + (locked ? ' (<strong>' + esc(locked) + '</strong> fixes ready)' : '') + '</div>' +
+            '<div><strong>' + esc(d.hostname || u) + '</strong> &middot; Checks: <strong>' + esc(checks) + '</strong> &middot; Findings: <strong>' + esc(findings.length) + '</strong>' + (locked ? ' (<strong>' + esc(locked) + '</strong> locked fixes ready)' : '') + '</div>' +
             '<span class="pill ' + cls + '">Score: ' + esc(sc) + '/100 (' + esc(gr) + ')</span>' +
           '</div>' +
-          '<div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">' +
-            '<a class="btn btn-pri btn-sm" href="https://vibe-checker.appwrite.network/?url=' + encodeURIComponent(u) + '" target="_blank" rel="noopener">Inspect Full Trace &amp; Fix Wizard &rarr;</a>' +
-            '<a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock $2 (was $9)</a>' +
+          topHtml +
+          '<div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--bd);display:flex;gap:10px;flex-wrap:wrap;align-items:center">' +
+            '<a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Unlock Exact Fixes — $2 Launch Special (was $9) &rarr;</a>' +
+            '<a class="btn btn-pri btn-sm" href="https://vibe-checker.appwrite.network/?url=' + encodeURIComponent(u) + '" target="_blank" rel="noopener">Inspect Full Trace &amp; Sample Fix</a>' +
           '</div>';
       } catch (e) {
         out.innerHTML = '<span class="pill p-warn">Notice</span> <a href="https://vibe-checker.appwrite.network/?url=' + encodeURIComponent(u) + '" target="_blank" rel="noopener" style="font-weight:600">Open VibeShield v7.0 directly &rarr;</a>';
