@@ -40,29 +40,26 @@
       <span class="eyebrow">Cursor + Next.js + Vercel Hardening (2026) &middot; Read-Only 6-Phase Scanner</span>
       <h1>Cursor &amp; Next.js Security Checklist + Production Header Config</h1>
       <p class="lead">AI pair programming in Cursor accelerates Next.js and Vercel launches 10x — and makes it effortless to miss productionBrowserSourceMaps, custom headers(), Server Action auth checks, or accidentally expose server keys via NEXT_PUBLIC_. Drop in our MIT rules and scan your live preview URL free.</p>
+      <div class="widget-card" style="margin:18px 0 14px">
+        <form id="stackScanForm" class="scan-row" style="margin-top:0">
+          <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-app.vercel.app or yourdomain.com" required maxlength="150" />
+          <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan Cursor &amp; Next.js URL Free (116 Checks) &rarr;</button>
+        </form>
+        <div class="chips">
+          <span>1-click live demo:</span>
+          <button type="button" class="chip mono s-chip" data-u="https://vercel.com">vercel.com</button><button type="button" class="chip mono s-chip" data-u="https://nextjs.org">nextjs.org</button><button type="button" class="chip mono s-chip" data-u="https://cursor.com">cursor.com</button>
+        </div>
+        <div id="stackScanOut" class="res-box"></div>
+      </div>
       <div class="hero-acts">
-        <a class="btn btn-pri" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open VibeShield v7.0 Free &rarr;</a>
-        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Full Fixes $2 (was $9)</a>
-        <a class="btn" href="https://github.com/zColdWater/vibe-security-checklist" target="_blank" rel="noopener">MIT Checklist &amp; Templates</a>
+        <a class="btn btn-pri btn-sm" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open Full VibeShield v7.0 &rarr;</a>
+        <a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Fixes $2 (was $9)</a>
+        <a class="btn btn-sm" href="https://zcoldwater.github.io/vibe-security-checklist/" target="_blank" rel="noopener">Interactive MIT Checklist</a>
       </div>
     </div>
   </section>
 
   <main class="wrap">
-    <div class="widget-card">
-      <h2 style="margin:0 0 4px;font-size:19px">Run a Live 6-Phase Cursor &amp; Next.js Security Scan Free (Zero Signup)</h2>
-      <p style="margin:0;color:var(--mut);font-size:13.5px">Passively inspects TLS, up to 24 JS chunks across 52 secret patterns, safe Supabase/Firebase checks, 28 sensitive paths, and 10 Mozilla Observatory headers:</p>
-      <form id="stackScanForm" class="scan-row">
-        <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-app.vercel.app or yourdomain.com" required maxlength="150" />
-        <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan URL Free</button>
-      </form>
-      <div class="chips">
-        <span>Test live demos:</span>
-        <button type="button" class="chip mono s-chip" data-u="https://vercel.com">vercel.com</button><button type="button" class="chip mono s-chip" data-u="https://nextjs.org">nextjs.org</button><button type="button" class="chip mono s-chip" data-u="https://cursor.com">cursor.com</button>
-      </div>
-      <div id="stackScanOut" class="res-box"></div>
-    </div>
-
     <h2>Top 4 Pre-Launch Risks in Cursor &amp; Next.js Production Apps</h2>
     <div class="grid-2">
       <div class="card prose"><h3>1. Zero Security Headers on Default Vercel Deploys</h3><p>Across 41 newly launched Vercel apps in our 2026 study, default deployments consistently shipped without Content-Security-Policy, X-Frame-Options, Permissions-Policy, or Cross-Origin-Opener-Policy.</p></div><div class="card prose"><h3>2. NEXT_PUBLIC_ &amp; Client Component Key Leaks</h3><p>Importing server helpers inside &#39;use client&#39; files or prefixing Stripe/OpenAI keys with NEXT_PUBLIC_ embeds secrets directly into _next/static/chunks/*.js.</p></div><div class="card prose"><h3>3. Public Production Source Maps &amp; /.DS_Store</h3><p>Leaving productionBrowserSourceMaps enabled or committing local macOS .DS_Store files into public/ exposes unminified source files and internal paths to every visitor.</p></div><div class="card prose"><h3>4. Unverified Server Actions &amp; Webhook Signatures</h3><p>Always derive userId from verified server session cookies and validate Stripe/Gumroad webhook HMAC signatures against raw request bytes.</p></div>

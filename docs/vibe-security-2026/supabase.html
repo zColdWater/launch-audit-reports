@@ -40,29 +40,26 @@
       <span class="eyebrow">Supabase RLS &amp; JWT Security Audit (2026) &middot; Read-Only 6-Phase Scanner</span>
       <h1>Free Supabase Row Level Security (RLS) Checker &amp; SQL Hardening</h1>
       <p class="lead">In our live 2026 study of 55 freshly launched AI-built web apps, 20.0% shipped live Supabase backends. A single table missing ENABLE ROW LEVEL SECURITY or a leaked service_role JWT bypasses authentication completely. Verify your deployed frontend passively with zero user-row reads.</p>
+      <div class="widget-card" style="margin:18px 0 14px">
+        <form id="stackScanForm" class="scan-row" style="margin-top:0">
+          <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-supabase-app.vercel.app or yourdomain.com" required maxlength="150" />
+          <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan Supabase RLS URL Free (116 Checks) &rarr;</button>
+        </form>
+        <div class="chips">
+          <span>1-click live demo:</span>
+          <button type="button" class="chip mono s-chip" data-u="https://supabase.com">supabase.com</button><button type="button" class="chip mono s-chip" data-u="https://lovable.dev">lovable.dev</button><button type="button" class="chip mono s-chip" data-u="https://linear.app">linear.app</button>
+        </div>
+        <div id="stackScanOut" class="res-box"></div>
+      </div>
       <div class="hero-acts">
-        <a class="btn btn-pri" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open VibeShield v7.0 Free &rarr;</a>
-        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Full Fixes $2 (was $9)</a>
-        <a class="btn" href="https://github.com/zColdWater/vibe-security-checklist" target="_blank" rel="noopener">MIT Checklist &amp; Templates</a>
+        <a class="btn btn-pri btn-sm" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open Full VibeShield v7.0 &rarr;</a>
+        <a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Fixes $2 (was $9)</a>
+        <a class="btn btn-sm" href="https://zcoldwater.github.io/vibe-security-checklist/" target="_blank" rel="noopener">Interactive MIT Checklist</a>
       </div>
     </div>
   </section>
 
   <main class="wrap">
-    <div class="widget-card">
-      <h2 style="margin:0 0 4px;font-size:19px">Run a Live 6-Phase Supabase RLS Security Scan Free (Zero Signup)</h2>
-      <p style="margin:0;color:var(--mut);font-size:13.5px">Passively inspects TLS, up to 24 JS chunks across 52 secret patterns, safe Supabase/Firebase checks, 28 sensitive paths, and 10 Mozilla Observatory headers:</p>
-      <form id="stackScanForm" class="scan-row">
-        <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-supabase-app.vercel.app or yourdomain.com" required maxlength="150" />
-        <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan URL Free</button>
-      </form>
-      <div class="chips">
-        <span>Test live demos:</span>
-        <button type="button" class="chip mono s-chip" data-u="https://supabase.com">supabase.com</button><button type="button" class="chip mono s-chip" data-u="https://lovable.dev">lovable.dev</button><button type="button" class="chip mono s-chip" data-u="https://linear.app">linear.app</button>
-      </div>
-      <div id="stackScanOut" class="res-box"></div>
-    </div>
-
     <h2>Top 4 Pre-Launch Risks in Supabase RLS Production Apps</h2>
     <div class="grid-2">
       <div class="card prose"><h3>1. Tables Created Without ENABLE ROW LEVEL SECURITY</h3><p>PostgreSQL tables created in the SQL Editor or AI migrations default to RLS disabled. Anyone who reads your public anon key from browser JS can query PostgREST directly.</p></div><div class="card prose"><h3>2. Leaked service_role JWTs (Bypasses ALL RLS)</h3><p>VibeShield decodes every Supabase JWT detected in your client bundles locally and immediately raises a Critical alert if the role claim is service_role or an sb_secret_ token.</p></div><div class="card prose"><h3>3. Permissive USING (true) Write Policies</h3><p>Even with RLS enabled, a quick prototype policy like FOR ALL USING (true) allows any visitor to overwrite or delete other users&#39; records.</p></div><div class="card prose"><h3>4. Public Storage Buckets &amp; Unchecked Grants</h3><p>Audit public storage buckets and run REVOKE ALL ON ALL TABLES IN SCHEMA public FROM anon so newly added internal tables stay locked by default.</p></div>

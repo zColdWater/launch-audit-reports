@@ -40,29 +40,26 @@
       <span class="eyebrow">Cloudflare Pages &amp; Workers Hardening (2026) &middot; Read-Only 6-Phase Scanner</span>
       <h1>Cloudflare Pages &amp; Workers Security Headers &amp; Pre-Launch Scanner</h1>
       <p class="lead">Cloudflare&#39;s edge handles TLS 1.3 and DDoS mitigation automatically, yet Cloudflare Pages and Workers still leave application-layer security headers (CSP, X-Frame-Options, Permissions-Policy, COOP/CORP) and client bundle hygiene up to your code. Verify your live edge headers free.</p>
+      <div class="widget-card" style="margin:18px 0 14px">
+        <form id="stackScanForm" class="scan-row" style="margin-top:0">
+          <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-site.pages.dev or yourdomain.com" required maxlength="150" />
+          <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan Cloudflare Pages &amp; Workers URL Free (116 Checks) &rarr;</button>
+        </form>
+        <div class="chips">
+          <span>1-click live demo:</span>
+          <button type="button" class="chip mono s-chip" data-u="https://cloudflare.com">cloudflare.com</button><button type="button" class="chip mono s-chip" data-u="https://workers.cloudflare.com">workers.cloudflare.com</button><button type="button" class="chip mono s-chip" data-u="https://linear.app">linear.app</button>
+        </div>
+        <div id="stackScanOut" class="res-box"></div>
+      </div>
       <div class="hero-acts">
-        <a class="btn btn-pri" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open VibeShield v7.0 Free &rarr;</a>
-        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Full Fixes $2 (was $9)</a>
-        <a class="btn" href="https://github.com/zColdWater/vibe-security-checklist" target="_blank" rel="noopener">MIT Checklist &amp; Templates</a>
+        <a class="btn btn-pri btn-sm" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open Full VibeShield v7.0 &rarr;</a>
+        <a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Fixes $2 (was $9)</a>
+        <a class="btn btn-sm" href="https://zcoldwater.github.io/vibe-security-checklist/" target="_blank" rel="noopener">Interactive MIT Checklist</a>
       </div>
     </div>
   </section>
 
   <main class="wrap">
-    <div class="widget-card">
-      <h2 style="margin:0 0 4px;font-size:19px">Run a Live 6-Phase Cloudflare Pages &amp; Workers Security Scan Free (Zero Signup)</h2>
-      <p style="margin:0;color:var(--mut);font-size:13.5px">Passively inspects TLS, up to 24 JS chunks across 52 secret patterns, safe Supabase/Firebase checks, 28 sensitive paths, and 10 Mozilla Observatory headers:</p>
-      <form id="stackScanForm" class="scan-row">
-        <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-site.pages.dev or yourdomain.com" required maxlength="150" />
-        <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan URL Free</button>
-      </form>
-      <div class="chips">
-        <span>Test live demos:</span>
-        <button type="button" class="chip mono s-chip" data-u="https://cloudflare.com">cloudflare.com</button><button type="button" class="chip mono s-chip" data-u="https://workers.cloudflare.com">workers.cloudflare.com</button><button type="button" class="chip mono s-chip" data-u="https://linear.app">linear.app</button>
-      </div>
-      <div id="stackScanOut" class="res-box"></div>
-    </div>
-
     <h2>Top 4 Pre-Launch Risks in Cloudflare Pages &amp; Workers Production Apps</h2>
     <div class="grid-2">
       <div class="card prose"><h3>1. Missing Application Security Headers at the Edge</h3><p>Cloudflare does not inject Content-Security-Policy, X-Frame-Options, Permissions-Policy, or Cross-Origin-Opener-Policy by default — leaving sites exposed to clickjacking and XSS.</p></div><div class="card prose"><h3>2. Secrets Bundled into Frontend Assets Instead of Worker Secrets</h3><p>Always store third-party API keys via wrangler secret put rather than Vite/Astro public env vars compiled into static assets.</p></div><div class="card prose"><h3>3. Permissive CORS &amp; Unprotected Worker API Routes</h3><p>Avoid reflecting arbitrary Origin headers with Access-Control-Allow-Credentials: true on authenticated Worker endpoints.</p></div><div class="card prose"><h3>4. Leaked Source Maps &amp; Staging Subdomains</h3><p>Ensure .js.map files are excluded from dist/ and audit both your custom domain and .pages.dev origin.</p></div>

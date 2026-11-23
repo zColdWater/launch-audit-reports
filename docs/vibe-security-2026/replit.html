@@ -40,29 +40,26 @@
       <span class="eyebrow">Replit Agent &amp; Replit Deployments Security (2026) &middot; Read-Only 6-Phase Scanner</span>
       <h1>Replit Agent Security Scanner &amp; Production Hardening Checklist</h1>
       <p class="lead">Replit Agent builds and deploys full-stack Express, FastAPI, and Vite apps in one prompt — but default Replit apps often expose Express X-Powered-By banners, omit Helmet/CSP headers, leak environment keys into frontend bundles, or ship unauthenticated admin/debug routes. Scan your live .replit.app URL free.</p>
+      <div class="widget-card" style="margin:18px 0 14px">
+        <form id="stackScanForm" class="scan-row" style="margin-top:0">
+          <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-app.replit.app or yourdomain.com" required maxlength="150" />
+          <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan Replit Agent URL Free (116 Checks) &rarr;</button>
+        </form>
+        <div class="chips">
+          <span>1-click live demo:</span>
+          <button type="button" class="chip mono s-chip" data-u="https://replit.com">replit.com</button><button type="button" class="chip mono s-chip" data-u="https://linear.app">linear.app</button><button type="button" class="chip mono s-chip" data-u="https://vercel.com">vercel.com</button>
+        </div>
+        <div id="stackScanOut" class="res-box"></div>
+      </div>
       <div class="hero-acts">
-        <a class="btn btn-pri" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open VibeShield v7.0 Free &rarr;</a>
-        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Full Fixes $2 (was $9)</a>
-        <a class="btn" href="https://github.com/zColdWater/vibe-security-checklist" target="_blank" rel="noopener">MIT Checklist &amp; Templates</a>
+        <a class="btn btn-pri btn-sm" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open Full VibeShield v7.0 &rarr;</a>
+        <a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Fixes $2 (was $9)</a>
+        <a class="btn btn-sm" href="https://zcoldwater.github.io/vibe-security-checklist/" target="_blank" rel="noopener">Interactive MIT Checklist</a>
       </div>
     </div>
   </section>
 
   <main class="wrap">
-    <div class="widget-card">
-      <h2 style="margin:0 0 4px;font-size:19px">Run a Live 6-Phase Replit Agent Security Scan Free (Zero Signup)</h2>
-      <p style="margin:0;color:var(--mut);font-size:13.5px">Passively inspects TLS, up to 24 JS chunks across 52 secret patterns, safe Supabase/Firebase checks, 28 sensitive paths, and 10 Mozilla Observatory headers:</p>
-      <form id="stackScanForm" class="scan-row">
-        <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-app.replit.app or yourdomain.com" required maxlength="150" />
-        <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan URL Free</button>
-      </form>
-      <div class="chips">
-        <span>Test live demos:</span>
-        <button type="button" class="chip mono s-chip" data-u="https://replit.com">replit.com</button><button type="button" class="chip mono s-chip" data-u="https://linear.app">linear.app</button><button type="button" class="chip mono s-chip" data-u="https://vercel.com">vercel.com</button>
-      </div>
-      <div id="stackScanOut" class="res-box"></div>
-    </div>
-
     <h2>Top 4 Pre-Launch Risks in Replit Agent Production Apps</h2>
     <div class="grid-2">
       <div class="card prose"><h3>1. Missing Helmet &amp; HTTP Security Headers</h3><p>Express and Flask servers scaffolded by Replit Agent rarely enable Content-Security-Policy, HSTS preload, X-Frame-Options, or Permissions-Policy by default.</p></div><div class="card prose"><h3>2. Secrets Hardcoded Outside Replit Secrets Vault</h3><p>Accidentally committing API keys into client/src/ or .env files instead of Replit Secrets exposes live Stripe, OpenAI, or PostgreSQL credentials to every visitor.</p></div><div class="card prose"><h3>3. Exposed /swagger.json, /docs &amp; Dev Endpoints</h3><p>FastAPI /docs, /openapi.json, GraphQL playgrounds, and Express debug routes often stay publicly reachable in production unless gated by NODE_ENV=production.</p></div><div class="card prose"><h3>4. Broad CORS (* + Credentials) &amp; Missing Rate Limits</h3><p>Setting Access-Control-Allow-Origin: * alongside session cookies or exposing unthrottled LLM endpoints makes Replit apps easy targets for quota draining.</p></div>

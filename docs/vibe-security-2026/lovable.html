@@ -40,29 +40,26 @@
       <span class="eyebrow">Lovable + Supabase Security Guide (2026) &middot; Read-Only 6-Phase Scanner</span>
       <h1>Lovable App Security Scanner &amp; Pre-Launch Hardening Checklist</h1>
       <p class="lead">Lovable lets founders ship React + Vite + Supabase apps in hours — but default deployments frequently ship missing 8–9 of 10 HTTP security headers, unguarded Supabase tables without Row Level Security (RLS), or sensitive keys bundled into client JavaScript. Run a free read-only 6-phase audit before inviting real users.</p>
+      <div class="widget-card" style="margin:18px 0 14px">
+        <form id="stackScanForm" class="scan-row" style="margin-top:0">
+          <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-app.lovable.app or yourdomain.com" required maxlength="150" />
+          <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan Lovable URL Free (116 Checks) &rarr;</button>
+        </form>
+        <div class="chips">
+          <span>1-click live demo:</span>
+          <button type="button" class="chip mono s-chip" data-u="https://lovable.dev">lovable.dev</button><button type="button" class="chip mono s-chip" data-u="https://supabase.com">supabase.com</button><button type="button" class="chip mono s-chip" data-u="https://linear.app">linear.app</button>
+        </div>
+        <div id="stackScanOut" class="res-box"></div>
+      </div>
       <div class="hero-acts">
-        <a class="btn btn-pri" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open VibeShield v7.0 Free &rarr;</a>
-        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Full Fixes $2 (was $9)</a>
-        <a class="btn" href="https://github.com/zColdWater/vibe-security-checklist" target="_blank" rel="noopener">MIT Checklist &amp; Templates</a>
+        <a class="btn btn-pri btn-sm" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open Full VibeShield v7.0 &rarr;</a>
+        <a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Fixes $2 (was $9)</a>
+        <a class="btn btn-sm" href="https://zcoldwater.github.io/vibe-security-checklist/" target="_blank" rel="noopener">Interactive MIT Checklist</a>
       </div>
     </div>
   </section>
 
   <main class="wrap">
-    <div class="widget-card">
-      <h2 style="margin:0 0 4px;font-size:19px">Run a Live 6-Phase Lovable Security Scan Free (Zero Signup)</h2>
-      <p style="margin:0;color:var(--mut);font-size:13.5px">Passively inspects TLS, up to 24 JS chunks across 52 secret patterns, safe Supabase/Firebase checks, 28 sensitive paths, and 10 Mozilla Observatory headers:</p>
-      <form id="stackScanForm" class="scan-row">
-        <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-app.lovable.app or yourdomain.com" required maxlength="150" />
-        <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan URL Free</button>
-      </form>
-      <div class="chips">
-        <span>Test live demos:</span>
-        <button type="button" class="chip mono s-chip" data-u="https://lovable.dev">lovable.dev</button><button type="button" class="chip mono s-chip" data-u="https://supabase.com">supabase.com</button><button type="button" class="chip mono s-chip" data-u="https://linear.app">linear.app</button>
-      </div>
-      <div id="stackScanOut" class="res-box"></div>
-    </div>
-
     <h2>Top 4 Pre-Launch Risks in Lovable Production Apps</h2>
     <div class="grid-2">
       <div class="card prose"><h3>1. Public Supabase Tables Missing RLS</h3><p>When Lovable generates a new migration table, forgetting ALTER TABLE ... ENABLE ROW LEVEL SECURITY lets anyone holding the public anon key query or mutate user rows directly via PostgREST.</p></div><div class="card prose"><h3>2. Client-Side Secret Leaks via VITE_* Variables</h3><p>Any environment variable prefixed with VITE_ is compiled verbatim into public browser bundles. Stripe live keys, OpenAI/Gemini keys, and Supabase service_role tokens must stay strictly inside Supabase Edge Functions.</p></div><div class="card prose"><h3>3. Missing Security Headers on Custom Domains</h3><p>In our 55-app empirical benchmark, 74.5% of freshly launched AI apps shipped missing 8–9 of 10 Mozilla Observatory headers (CSP, X-Frame-Options, Permissions-Policy, COOP/CORP).</p></div><div class="card prose"><h3>4. Unprotected Storage Buckets &amp; Profile Updates</h3><p>Public upload buckets and broad USING (true) policies allow unauthenticated users to enumerate files or escalate their own role/plan columns from the browser console.</p></div>

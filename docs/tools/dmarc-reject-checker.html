@@ -41,28 +41,25 @@
       <span class="eyebrow">2026 Gmail &amp; Yahoo Sender Compliance Audit</span>
       <h1>Free DMARC p=reject, DKIM &amp; MTA-STS Checker</h1>
       <p class="lead">In our live 2026 audit of 228 top SaaS domains, over half still run passive DMARC p=none monitoring or lack an apex _dmarc record — leaving their domains open to executive spoofing and silent spam filtering. Test your live DNS posture across 6 phases in 2 seconds.</p>
+      <div class="widget-card" style="margin:18px 0 14px">
+        <form id="toolForm" class="scan-row" style="margin-top:0">
+          <input id="toolInput" class="scan-in mono" type="text" placeholder="yourdomain.com" required maxlength="150" />
+          <button id="toolBtn" class="btn btn-pri" type="submit">Audit DMARC &amp; DKIM Free &rarr;</button>
+        </form>
+        <div class="chips">
+          <span>1-click live demo:</span>
+          <button type="button" class="chip mono t-chip" data-v="stripe.com">stripe.com</button><button type="button" class="chip mono t-chip" data-v="cal.com">cal.com</button><button type="button" class="chip mono t-chip" data-v="posthog.com">posthog.com</button>
+        </div>
+        <div id="toolOut" class="res-box"></div>
+      </div>
       <div class="hero-acts">
-        <a class="btn btn-pri" href="https://inbox-checker.appwrite.network/" target="_blank" rel="noopener">Open Full InboxShield v7.0 &rarr;</a>
-        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield" target="_blank" rel="noopener">Unlock Exact Fixes — $2 Launch Special (was $9)</a>
+        <a class="btn btn-pri btn-sm" href="https://inbox-checker.appwrite.network/" target="_blank" rel="noopener">Open Full InboxShield v7.0 &rarr;</a>
+        <a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield" target="_blank" rel="noopener">Unlock Exact Fixes — $2 Launch Special (was $9)</a>
       </div>
     </div>
   </section>
 
   <main class="wrap">
-    <div class="widget-card">
-      <h2 style="margin:0 0 4px;font-size:19px">Run Live DMARC p=reject Checker (Free &middot; Zero Signup)</h2>
-      <p style="margin:0;color:var(--mut);font-size:13.5px">Queries live public DNS/HTTPS/RDAP endpoints directly in 2 seconds with zero account required:</p>
-      <form id="toolForm" class="scan-row">
-        <input id="toolInput" class="scan-in mono" type="text" placeholder="yourdomain.com" required maxlength="150" />
-        <button id="toolBtn" class="btn btn-pri" type="submit">Audit DMARC &amp; DKIM Free</button>
-      </form>
-      <div class="chips">
-        <span>Try live:</span>
-        <button type="button" class="chip mono t-chip" data-v="stripe.com">stripe.com</button><button type="button" class="chip mono t-chip" data-v="cal.com">cal.com</button><button type="button" class="chip mono t-chip" data-v="posthog.com">posthog.com</button>
-      </div>
-      <div id="toolOut" class="res-box"></div>
-    </div>
-
     <h2>What This Live Diagnostic Checks</h2>
     <div class="grid-2">
       <div class="card prose"><h3>DMARC Policy &amp; Aggregate Reporting (rua)</h3><p>Checks _dmarc.yourdomain.com for p=none vs. p=quarantine vs. p=reject, subdomain policy (sp=), percentage rollout (pct=), and active rua= telemetry.</p></div><div class="card prose"><h3>24-Selector Live DKIM Discovery</h3><p>Probes 24 common selectors (google, selector1/2, resend, k1, s1/s2, pm, mandrill, ses) directly over DNS without asking for API keys.</p></div><div class="card prose"><h3>MTA-STS, TLS-RPT, DANE &amp; BIMI</h3><p>Verifies _mta-sts TXT + HTTPS policy file, _smtp._tls reporting, and BIMI brand logo readiness for modern inbox clients.</p></div><div class="card prose"><h3>5 Real-Time DNSBL Blocklist Checks</h3><p>Resolves your mail infrastructure against 5 major live spam blocklists so deliverability drops are caught immediately.</p></div>

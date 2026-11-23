@@ -41,28 +41,25 @@
       <span class="eyebrow">Transactional Email DNS Verification (2026)</span>
       <h1>Free Resend, Postmark &amp; SendGrid SPF/DKIM/DMARC Setup Checker</h1>
       <p class="lead">Launching password resets, magic links, or Stripe receipts through Resend, Postmark, SendGrid, or AWS SES? A single duplicate v=spf1 TXT record, missing DKIM key, or SPF &gt;10 lookup overflow silently pushes auth emails straight into Gmail spam. Verify your live DNS setup in 2 seconds.</p>
+      <div class="widget-card" style="margin:18px 0 14px">
+        <form id="toolForm" class="scan-row" style="margin-top:0">
+          <input id="toolInput" class="scan-in mono" type="text" placeholder="yourdomain.com" required maxlength="150" />
+          <button id="toolBtn" class="btn btn-pri" type="submit">Verify Email DNS Free &rarr;</button>
+        </form>
+        <div class="chips">
+          <span>1-click live demo:</span>
+          <button type="button" class="chip mono t-chip" data-v="resend.com">resend.com</button><button type="button" class="chip mono t-chip" data-v="postmarkapp.com">postmarkapp.com</button><button type="button" class="chip mono t-chip" data-v="stripe.com">stripe.com</button>
+        </div>
+        <div id="toolOut" class="res-box"></div>
+      </div>
       <div class="hero-acts">
-        <a class="btn btn-pri" href="https://inbox-checker.appwrite.network/" target="_blank" rel="noopener">Open Full InboxShield v7.0 &rarr;</a>
-        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield" target="_blank" rel="noopener">Unlock Exact Fixes — $2 Launch Special (was $9)</a>
+        <a class="btn btn-pri btn-sm" href="https://inbox-checker.appwrite.network/" target="_blank" rel="noopener">Open Full InboxShield v7.0 &rarr;</a>
+        <a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield" target="_blank" rel="noopener">Unlock Exact Fixes — $2 Launch Special (was $9)</a>
       </div>
     </div>
   </section>
 
   <main class="wrap">
-    <div class="widget-card">
-      <h2 style="margin:0 0 4px;font-size:19px">Run Live Resend &amp; Postmark DNS Checker (Free &middot; Zero Signup)</h2>
-      <p style="margin:0;color:var(--mut);font-size:13.5px">Queries live public DNS/HTTPS/RDAP endpoints directly in 2 seconds with zero account required:</p>
-      <form id="toolForm" class="scan-row">
-        <input id="toolInput" class="scan-in mono" type="text" placeholder="yourdomain.com" required maxlength="150" />
-        <button id="toolBtn" class="btn btn-pri" type="submit">Verify Email DNS Free</button>
-      </form>
-      <div class="chips">
-        <span>Try live:</span>
-        <button type="button" class="chip mono t-chip" data-v="resend.com">resend.com</button><button type="button" class="chip mono t-chip" data-v="postmarkapp.com">postmarkapp.com</button><button type="button" class="chip mono t-chip" data-v="stripe.com">stripe.com</button>
-      </div>
-      <div id="toolOut" class="res-box"></div>
-    </div>
-
     <h2>What This Live Diagnostic Checks</h2>
     <div class="grid-2">
       <div class="card prose"><h3>Single-TXT SPF &amp; 10-Lookup Safety Check</h3><p>Confirms your Resend/SES/SendGrid include does not push recursive DNS lookups past the RFC 7208 limit of 10 or collide with Google Workspace.</p></div><div class="card prose"><h3>24-Selector DKIM Verification</h3><p>Probes resend._domainkey, pm._domainkey, s1/s2._domainkey, google._domainkey, and 19 more common selectors directly over live DNS.</p></div><div class="card prose"><h3>DMARC Alignment &amp; Return-Path Hygiene</h3><p>Verifies _dmarc TXT policy (p=none vs p=quarantine vs p=reject) and rua= reporting required by Gmail and Yahoo sender guidelines.</p></div><div class="card prose"><h3>5 Real-Time DNSBL Checks</h3><p>Ensures your sending domain and MX infrastructure are completely clean across 5 major live reputation blocklists.</p></div>

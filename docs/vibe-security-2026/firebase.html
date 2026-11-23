@@ -40,29 +40,26 @@
       <span class="eyebrow">Firebase Hosting &amp; Firestore Rules Audit (2026) &middot; Read-Only 6-Phase Scanner</span>
       <h1>Free Firebase &amp; Firestore Security Rules Audit &amp; Pre-Launch Scanner</h1>
       <p class="lead">Firebase makes authentication and Realtime Database/Firestore setup effortless — until prototype test-mode rules (allow read, write: if true;) survive into production or service account JSON files leak into public bundles. Run a passive read-only VibeShield v7.0 check before launch.</p>
+      <div class="widget-card" style="margin:18px 0 14px">
+        <form id="stackScanForm" class="scan-row" style="margin-top:0">
+          <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-app.web.app or yourdomain.com" required maxlength="150" />
+          <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan Firebase &amp; Firestore URL Free (116 Checks) &rarr;</button>
+        </form>
+        <div class="chips">
+          <span>1-click live demo:</span>
+          <button type="button" class="chip mono s-chip" data-u="https://firebase.google.com">firebase.google.com</button><button type="button" class="chip mono s-chip" data-u="https://vercel.com">vercel.com</button><button type="button" class="chip mono s-chip" data-u="https://supabase.com">supabase.com</button>
+        </div>
+        <div id="stackScanOut" class="res-box"></div>
+      </div>
       <div class="hero-acts">
-        <a class="btn btn-pri" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open VibeShield v7.0 Free &rarr;</a>
-        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Full Fixes $2 (was $9)</a>
-        <a class="btn" href="https://github.com/zColdWater/vibe-security-checklist" target="_blank" rel="noopener">MIT Checklist &amp; Templates</a>
+        <a class="btn btn-pri btn-sm" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open Full VibeShield v7.0 &rarr;</a>
+        <a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Fixes $2 (was $9)</a>
+        <a class="btn btn-sm" href="https://zcoldwater.github.io/vibe-security-checklist/" target="_blank" rel="noopener">Interactive MIT Checklist</a>
       </div>
     </div>
   </section>
 
   <main class="wrap">
-    <div class="widget-card">
-      <h2 style="margin:0 0 4px;font-size:19px">Run a Live 6-Phase Firebase &amp; Firestore Security Scan Free (Zero Signup)</h2>
-      <p style="margin:0;color:var(--mut);font-size:13.5px">Passively inspects TLS, up to 24 JS chunks across 52 secret patterns, safe Supabase/Firebase checks, 28 sensitive paths, and 10 Mozilla Observatory headers:</p>
-      <form id="stackScanForm" class="scan-row">
-        <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-app.web.app or yourdomain.com" required maxlength="150" />
-        <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan URL Free</button>
-      </form>
-      <div class="chips">
-        <span>Test live demos:</span>
-        <button type="button" class="chip mono s-chip" data-u="https://firebase.google.com">firebase.google.com</button><button type="button" class="chip mono s-chip" data-u="https://vercel.com">vercel.com</button><button type="button" class="chip mono s-chip" data-u="https://supabase.com">supabase.com</button>
-      </div>
-      <div id="stackScanOut" class="res-box"></div>
-    </div>
-
     <h2>Top 4 Pre-Launch Risks in Firebase &amp; Firestore Production Apps</h2>
     <div class="grid-2">
       <div class="card prose"><h3>1. Prototype Test-Mode Firestore Rules Left Public</h3><p>Leaving allow read, write: if true; or expired timestamp rules lets any unauthenticated caller read or overwrite entire Firestore collections using the public firebaseConfig projectId.</p></div><div class="card prose"><h3>2. Missing Field-Level Validation on User Writes</h3><p>Checking request.auth.uid == userId without restricting affectedKeys() allows signed-in users to mutate their own plan, role, or credits fields directly from the browser console.</p></div><div class="card prose"><h3>3. Public Firebase Storage Buckets &amp; Service Account Leaks</h3><p>Never commit firebase-adminsdk-*.json private keys into frontend directories; VibeShield flags leaked PEM private keys and Google service account secrets across 24 JS chunks.</p></div><div class="card prose"><h3>4. Missing firebase.json Security Headers</h3><p>Firebase Hosting serves static sites without CSP, HSTS preload, X-Frame-Options, or Permissions-Policy unless configured under hosting.headers in firebase.json.</p></div>

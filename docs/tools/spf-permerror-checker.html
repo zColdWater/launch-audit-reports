@@ -41,28 +41,25 @@
       <span class="eyebrow">RFC 7208 SPF Diagnostic &amp; Flattener (2026)</span>
       <h1>Free SPF 10-DNS-Lookup Limit &amp; PermError Checker</h1>
       <p class="lead">RFC 7208 enforces a hard ceiling of 10 DNS-querying mechanisms (include, a, mx, ptr, exists, redirect) during SPF evaluation. Exceeding 10 lookups triggers a silent PermError — causing Gmail, Outlook, and Yahoo to reject or spam-folder your password resets and invoices. Inspect your live recursive SPF tree free.</p>
+      <div class="widget-card" style="margin:18px 0 14px">
+        <form id="toolForm" class="scan-row" style="margin-top:0">
+          <input id="toolInput" class="scan-in mono" type="text" placeholder="yourdomain.com" required maxlength="150" />
+          <button id="toolBtn" class="btn btn-pri" type="submit">Check SPF Tree Free &rarr;</button>
+        </form>
+        <div class="chips">
+          <span>1-click live demo:</span>
+          <button type="button" class="chip mono t-chip" data-v="stripe.com">stripe.com</button><button type="button" class="chip mono t-chip" data-v="resend.com">resend.com</button><button type="button" class="chip mono t-chip" data-v="linear.app">linear.app</button>
+        </div>
+        <div id="toolOut" class="res-box"></div>
+      </div>
       <div class="hero-acts">
-        <a class="btn btn-pri" href="https://inbox-checker.appwrite.network/spf-flattener" target="_blank" rel="noopener">Open Live SPF Flattener &rarr;</a>
-        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield" target="_blank" rel="noopener">Unlock Exact Fixes — $2 Launch Special (was $9)</a>
+        <a class="btn btn-pri btn-sm" href="https://inbox-checker.appwrite.network/spf-flattener" target="_blank" rel="noopener">Open Live SPF Flattener &rarr;</a>
+        <a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield" target="_blank" rel="noopener">Unlock Exact Fixes — $2 Launch Special (was $9)</a>
       </div>
     </div>
   </section>
 
   <main class="wrap">
-    <div class="widget-card">
-      <h2 style="margin:0 0 4px;font-size:19px">Run Live SPF 10-Lookup Checker (Free &middot; Zero Signup)</h2>
-      <p style="margin:0;color:var(--mut);font-size:13.5px">Queries live public DNS/HTTPS/RDAP endpoints directly in 2 seconds with zero account required:</p>
-      <form id="toolForm" class="scan-row">
-        <input id="toolInput" class="scan-in mono" type="text" placeholder="yourdomain.com" required maxlength="150" />
-        <button id="toolBtn" class="btn btn-pri" type="submit">Check SPF Tree Free</button>
-      </form>
-      <div class="chips">
-        <span>Try live:</span>
-        <button type="button" class="chip mono t-chip" data-v="stripe.com">stripe.com</button><button type="button" class="chip mono t-chip" data-v="resend.com">resend.com</button><button type="button" class="chip mono t-chip" data-v="linear.app">linear.app</button>
-      </div>
-      <div id="toolOut" class="res-box"></div>
-    </div>
-
     <h2>What This Live Diagnostic Checks</h2>
     <div class="grid-2">
       <div class="card prose"><h3>Recursive Nested Include Expansion</h3><p>Counts every nested include: hop (for example, Zendesk, HubSpot, and Mailchimp frequently consume 3–4 lookups each) rather than only counting top-level tags.</p></div><div class="card prose"><h3>Void Lookup &amp; Duplicate TXT Detection</h3><p>Flags publishing two separate v=spf1 TXT records on the apex domain — an instant RFC 7208 PermError that breaks SPF even when lookup counts are low.</p></div><div class="card prose"><h3>Live DMARC &amp; 24-Selector DKIM Pairing</h3><p>Verifies whether your DKIM signatures and DMARC alignment remain intact alongside your SPF configuration.</p></div><div class="card prose"><h3>5-Registrar Copy-Paste Flattening</h3><p>Need to shrink 13 lookups down to 3 safely? Open the free InboxShield SPF Flattener or unlock registrar-tailored DNS patches for $2 once (was $9).</p></div>

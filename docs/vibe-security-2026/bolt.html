@@ -40,29 +40,26 @@
       <span class="eyebrow">Bolt.new + Netlify + Cloudflare Pages Security (2026) &middot; Read-Only 6-Phase Scanner</span>
       <h1>Bolt.new &amp; Netlify Pre-Launch Security Audit &amp; Hardening</h1>
       <p class="lead">Bolt.new ships full-stack Vite and Netlify web apps in minutes — which means client bundles, public/_headers, environment variable separation, and backend API proxies rarely get reviewed before sharing the URL publicly. Run all 6 passive VibeShield v7.0 phases free.</p>
+      <div class="widget-card" style="margin:18px 0 14px">
+        <form id="stackScanForm" class="scan-row" style="margin-top:0">
+          <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-app.netlify.app or yourdomain.com" required maxlength="150" />
+          <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan Bolt.new &amp; Netlify URL Free (116 Checks) &rarr;</button>
+        </form>
+        <div class="chips">
+          <span>1-click live demo:</span>
+          <button type="button" class="chip mono s-chip" data-u="https://bolt.new">bolt.new</button><button type="button" class="chip mono s-chip" data-u="https://netlify.com">netlify.com</button><button type="button" class="chip mono s-chip" data-u="https://supabase.com">supabase.com</button>
+        </div>
+        <div id="stackScanOut" class="res-box"></div>
+      </div>
       <div class="hero-acts">
-        <a class="btn btn-pri" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open VibeShield v7.0 Free &rarr;</a>
-        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Full Fixes $2 (was $9)</a>
-        <a class="btn" href="https://github.com/zColdWater/vibe-security-checklist" target="_blank" rel="noopener">MIT Checklist &amp; Templates</a>
+        <a class="btn btn-pri btn-sm" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open Full VibeShield v7.0 &rarr;</a>
+        <a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Fixes $2 (was $9)</a>
+        <a class="btn btn-sm" href="https://zcoldwater.github.io/vibe-security-checklist/" target="_blank" rel="noopener">Interactive MIT Checklist</a>
       </div>
     </div>
   </section>
 
   <main class="wrap">
-    <div class="widget-card">
-      <h2 style="margin:0 0 4px;font-size:19px">Run a Live 6-Phase Bolt.new &amp; Netlify Security Scan Free (Zero Signup)</h2>
-      <p style="margin:0;color:var(--mut);font-size:13.5px">Passively inspects TLS, up to 24 JS chunks across 52 secret patterns, safe Supabase/Firebase checks, 28 sensitive paths, and 10 Mozilla Observatory headers:</p>
-      <form id="stackScanForm" class="scan-row">
-        <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-app.netlify.app or yourdomain.com" required maxlength="150" />
-        <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan URL Free</button>
-      </form>
-      <div class="chips">
-        <span>Test live demos:</span>
-        <button type="button" class="chip mono s-chip" data-u="https://bolt.new">bolt.new</button><button type="button" class="chip mono s-chip" data-u="https://netlify.com">netlify.com</button><button type="button" class="chip mono s-chip" data-u="https://supabase.com">supabase.com</button>
-      </div>
-      <div id="stackScanOut" class="res-box"></div>
-    </div>
-
     <h2>Top 4 Pre-Launch Risks in Bolt.new &amp; Netlify Production Apps</h2>
     <div class="grid-2">
       <div class="card prose"><h3>1. Direct Browser Calls to OpenAI / Gemini / Stripe</h3><p>Prototyping directly in Vite often wires API keys straight into fetch() calls in the browser. Move every paid API call into a Netlify Function, Cloudflare Worker, or Supabase Edge Function.</p></div><div class="card prose"><h3>2. Missing public/_headers Security Policy</h3><p>Without a public/_headers file, Netlify and Cloudflare Pages deployments lack Content-Security-Policy, X-Frame-Options, Permissions-Policy, and HSTS preload directives.</p></div><div class="card prose"><h3>3. Build Source Maps Left Enabled</h3><p>Ensure build.sourcemap is false in vite.config.ts before production deploys so attackers cannot reconstruct your full TypeScript source tree from /assets/*.js.map.</p></div><div class="card prose"><h3>4. Unprotected AI Generation Endpoints</h3><p>Add per-IP rate limiting and strict max_tokens limits on server functions so automated bots cannot drain your LLM API quota overnight.</p></div>

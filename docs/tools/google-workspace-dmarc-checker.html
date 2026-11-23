@@ -41,28 +41,25 @@
       <span class="eyebrow">Google Workspace &amp; Microsoft 365 Email Audit (2026)</span>
       <h1>Free Google Workspace &amp; Microsoft 365 DMARC, SPF &amp; DKIM Auditor</h1>
       <p class="lead">Even after turning on Google Workspace or Microsoft 365, custom domains still ship with unauthenticated DMARC or broken DKIM selectors until DNS TXT/CNAME records are published and verified. Run a live 6-phase InboxShield v7.0 DNS audit right now.</p>
+      <div class="widget-card" style="margin:18px 0 14px">
+        <form id="toolForm" class="scan-row" style="margin-top:0">
+          <input id="toolInput" class="scan-in mono" type="text" placeholder="yourdomain.com" required maxlength="150" />
+          <button id="toolBtn" class="btn btn-pri" type="submit">Audit Workspace DNS Free &rarr;</button>
+        </form>
+        <div class="chips">
+          <span>1-click live demo:</span>
+          <button type="button" class="chip mono t-chip" data-v="cal.com">cal.com</button><button type="button" class="chip mono t-chip" data-v="linear.app">linear.app</button><button type="button" class="chip mono t-chip" data-v="posthog.com">posthog.com</button>
+        </div>
+        <div id="toolOut" class="res-box"></div>
+      </div>
       <div class="hero-acts">
-        <a class="btn btn-pri" href="https://inbox-checker.appwrite.network/" target="_blank" rel="noopener">Open Full InboxShield v7.0 &rarr;</a>
-        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield" target="_blank" rel="noopener">Unlock Exact Fixes — $2 Launch Special (was $9)</a>
+        <a class="btn btn-pri btn-sm" href="https://inbox-checker.appwrite.network/" target="_blank" rel="noopener">Open Full InboxShield v7.0 &rarr;</a>
+        <a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield" target="_blank" rel="noopener">Unlock Exact Fixes — $2 Launch Special (was $9)</a>
       </div>
     </div>
   </section>
 
   <main class="wrap">
-    <div class="widget-card">
-      <h2 style="margin:0 0 4px;font-size:19px">Run Live Google Workspace &amp; M365 DMARC Audit (Free &middot; Zero Signup)</h2>
-      <p style="margin:0;color:var(--mut);font-size:13.5px">Queries live public DNS/HTTPS/RDAP endpoints directly in 2 seconds with zero account required:</p>
-      <form id="toolForm" class="scan-row">
-        <input id="toolInput" class="scan-in mono" type="text" placeholder="yourdomain.com" required maxlength="150" />
-        <button id="toolBtn" class="btn btn-pri" type="submit">Audit Workspace DNS Free</button>
-      </form>
-      <div class="chips">
-        <span>Try live:</span>
-        <button type="button" class="chip mono t-chip" data-v="cal.com">cal.com</button><button type="button" class="chip mono t-chip" data-v="linear.app">linear.app</button><button type="button" class="chip mono t-chip" data-v="posthog.com">posthog.com</button>
-      </div>
-      <div id="toolOut" class="res-box"></div>
-    </div>
-
     <h2>What This Live Diagnostic Checks</h2>
     <div class="grid-2">
       <div class="card prose"><h3>Google &amp; M365 DKIM Selector Probe</h3><p>Checks google._domainkey (Google Workspace) plus selector1._domainkey and selector2._domainkey (Microsoft 365) over live DNS.</p></div><div class="card prose"><h3>SPF Include Efficiency Audit</h3><p>Verifies include:_spf.google.com (3–4 lookups) and include:spf.protection.outlook.com (2 lookups) stay safely below the 10-lookup RFC 7208 ceiling.</p></div><div class="card prose"><h3>DMARC Policy &amp; Anti-Spoofing Score</h3><p>Flags missing _dmarc or passive p=none configurations that still permit attackers to spoof your founder or billing email address.</p></div><div class="card prose"><h3>MTA-STS &amp; TLS-RPT Transport Encryption</h3><p>Checks whether inbound SMTP connections enforce modern TLS via _mta-sts and _smtp._tls DNS records.</p></div>
