@@ -265,6 +265,9 @@
         var chk = d.checkout || {};
         var v = eng.vibeshield || {}, ib = eng.inboxshield || {}, cr = eng.citeready || {}, br = eng.brandshield || {};
         var suiteUrl = chk.completeSuite5Usd || ("https://omnipulse-x402.appwrite.network/checkout/launch-stack?domain=" + encodeURIComponent(dom) + "&score=" + encodeURIComponent(ov.score || 0) + "&issues=" + encodeURIComponent(ov.totalIssues || 0));
+        var bg = d.badge || {};
+        var bSvg = bg.suiteSvgUrl || ("https://omnipulse-x402.appwrite.network/v1/badge/suite.svg?domain=" + encodeURIComponent(d.domain || dom));
+        var bMd = bg.markdown || ("[![OmniForge Launch Score](" + bSvg + ")](" + suiteUrl + ")");
         out.innerHTML =
           '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">' +
             '<div><strong>' + esc(d.domain || dom) + '</strong> &middot; 3-Engine Launch Readiness &middot; Total Issues: <strong>' + esc(ov.totalIssues != null ? ov.totalIssues : 0) + '</strong></div>' +
@@ -286,6 +289,10 @@
               '<div style="font-size:12px;color:var(--mut);margin:5px 0">Entity: ' + esc(cr.entityScore != null ? cr.entityScore : 0) + '/100 &middot; /llms.txt: ' + (cr.llmsTxt ? "Yes" : "Missing") + '</div>' +
               '<a href="' + esc(cr.checkoutUrl || "https://omnipulse-x402.appwrite.network/go/gumroad/citeready") + '" target="_blank" rel="noopener" style="font-size:12px;font-weight:700">Fix AI Search ($2) &rarr;</a>' +
             '</div>' +
+          '</div>' +
+          '<div style="margin-top:10px;padding:10px;border:1px solid var(--bd);border-radius:8px;background:#fff">' +
+            '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px"><span style="font-size:12.5px;font-weight:700">Live 3-Engine README Badge:</span><img src="' + esc(bSvg) + '" alt="OmniForge Launch Score Badge" style="height:20px" /></div>' +
+            '<pre style="margin:0;padding:8px;background:#0f172a;color:#e2e8f0;border-radius:6px;overflow-x:auto;font-size:11.5px">' + esc(bMd) + '</pre>' +
           '</div>' +
           '<div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--bd);display:flex;gap:10px;flex-wrap:wrap;align-items:center">' +
             '<a class="btn btn-dark btn-sm" href="' + esc(suiteUrl) + '" target="_blank" rel="noopener">Unlock All 3 Fixes for ' + esc(d.domain || dom) + ' — $5 Suite Special (was $29) &rarr;</a>' +
