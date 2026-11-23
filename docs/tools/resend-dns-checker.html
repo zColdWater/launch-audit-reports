@@ -50,6 +50,10 @@
           <span>1-click live demo:</span>
           <button type="button" class="chip mono t-chip" data-v="resend.com">resend.com</button><button type="button" class="chip mono t-chip" data-v="postmarkapp.com">postmarkapp.com</button><button type="button" class="chip mono t-chip" data-v="stripe.com">stripe.com</button>
         </div>
+        <div style="margin-top:11px;padding:9px 12px;border-radius:8px;background:#0f172a;color:#e2e8f0;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace">
+          <span><span style="color:#5eead4;font-weight:700">Zero-install CLI:</span> <code id="toolCliCmd">curl -fsSL https://inbox-checker.appwrite.network/cli.sh | sh -s -- yourdomain.com</code></span>
+          <button type="button" class="btn btn-sm" id="toolCliCopy" style="background:#1e293b;color:#f8fafc;border-color:#334155">Copy CLI</button>
+        </div>
         <div id="toolOut" class="res-box"></div>
       </div>
       <div class="hero-acts">
@@ -139,6 +143,34 @@ _dmarc     TXT  &quot;v=DMARC1; p=quarantine; pct=100; rua=mailto:dmarc@yourdoma
           <span class="pill p-neutral" style="margin-bottom:8px">AI Search &amp; GEO</span>
           <h3>AI Crawler robots.txt Checker</h3>
           <p style="margin:0;color:var(--ink2);font-size:13.5px">Test whether your robots.txt or WAF blocks GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, PerplexityBot, Google-Extended, and 4...</p>
+        </div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open live checker &rarr;</span>
+      </a><a class="hub-card" href="./csp-header-generator.html">
+        <div>
+          <span class="pill p-neutral" style="margin-bottom:8px">Web Security</span>
+          <h3>CSP Header Checker &amp; Nonce Builder</h3>
+          <p style="margin:0;color:var(--ink2);font-size:13.5px">Audit your live Content-Security-Policy header AST for unsafe-inline, wildcard script-src, missing frame-ancestors, and object-s...</p>
+        </div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open live checker &rarr;</span>
+      </a><a class="hub-card" href="./cors-misconfig-checker.html">
+        <div>
+          <span class="pill p-neutral" style="margin-bottom:8px">Web Security</span>
+          <h3>CORS Misconfiguration Checker</h3>
+          <p style="margin:0;color:var(--ink2);font-size:13.5px">Test your web app or API for dangerous Access-Control-Allow-Origin reflection, wildcard + credentials leaks, and missing COOP/CO...</p>
+        </div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open live checker &rarr;</span>
+      </a><a class="hub-card" href="./nextjs-security-headers-checker.html">
+        <div>
+          <span class="pill p-neutral" style="margin-bottom:8px">Web Security</span>
+          <h3>Next.js Security Headers Checker</h3>
+          <p style="margin:0;color:var(--ink2);font-size:13.5px">Audit your deployed Next.js / Vercel app against all 10 Mozilla Observatory security headers, X-Powered-By leakage, public sourc...</p>
+        </div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open live checker &rarr;</span>
+      </a><a class="hub-card" href="./bimi-mta-sts-checker.html">
+        <div>
+          <span class="pill p-neutral" style="margin-bottom:8px">Email Security</span>
+          <h3>BIMI, MTA-STS &amp; TLS-RPT Checker</h3>
+          <p style="margin:0;color:var(--ink2);font-size:13.5px">Inspect your domain&#39;s _mta-sts TXT record, HTTPS mta-sts policy file, _smtp._tls TLS-RPT reporting, BIMI brand logo SVG/VMC read...</p>
         </div>
         <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open live checker &rarr;</span>
       </a>
@@ -305,6 +337,18 @@ _dmarc     TXT  &quot;v=DMARC1; p=quarantine; pct=100; rua=mailto:dmarc@yourdoma
   }
   form.addEventListener("submit", function (e) { e.preventDefault(); run(inp.value); });
   document.querySelectorAll(".t-chip").forEach(function (c) { c.addEventListener("click", function () { run(c.getAttribute("data-v")); }); });
+  var cBtn = document.getElementById("toolCliCopy");
+  var cTxt = document.getElementById("toolCliCmd");
+  if (cBtn && cTxt) {
+    cBtn.addEventListener("click", function () {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(cTxt.textContent).then(function () {
+          cBtn.textContent = "Copied!";
+          setTimeout(function () { cBtn.textContent = "Copy CLI"; }, 1800);
+        });
+      }
+    });
+  }
 })();
 </script>
 </body>
