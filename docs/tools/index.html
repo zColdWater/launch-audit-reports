@@ -32,10 +32,27 @@
       <div class="crumb"><a href="../index.html">Launch Benchmarks</a> / Free Interactive Tools</div>
       <span class="eyebrow">2026 Zero-Signup Pre-Launch Toolkit &middot; Browser + Zero-Install CLI</span>
       <h1>12 Free Pre-Launch Diagnostic Tools for Indie Founders &amp; AI Builders</h1>
-      <p class="lead">Every tool runs live, read-only diagnostics directly against public DNS, HTTPS, IANA RDAP, and USPTO endpoints in ~2 seconds with zero signup. Need full code-level fixes? Launch Special pricing is $2 once per tool (was $9–$12), $5 for all 3 paid tools (was $29), and BrandShield is 100% Free Forever.</p>
+      <p class="lead">Run an all-in-one 3-engine launch audit below (Security + Email DNS + AI Search in one pass), or open any of the 12 focused zero-signup diagnostics. Launch Special: $2 once per tool (was $9–$12), $5 for all 3 paid tools (was $29), BrandShield 100% Free Forever.</p>
+      <div class="widget-card" style="margin:18px 0 14px">
+        <form id="qsForm" class="scan-row" style="margin-top:0">
+          <input id="qsInput" class="scan-in mono" type="text" placeholder="yourdomain.com (runs VibeShield + InboxShield + CiteReady concurrently)" required maxlength="150" />
+          <button id="qsBtn" class="btn btn-pri" type="submit">Run 3-Engine Launch Audit Free &rarr;</button>
+        </form>
+        <div class="chips">
+          <span>1-click 3-engine demo:</span>
+          <button type="button" class="chip mono qs-chip" data-d="stripe.com">stripe.com</button>
+          <button type="button" class="chip mono qs-chip" data-d="supabase.com">supabase.com</button>
+          <button type="button" class="chip mono qs-chip" data-d="linear.app">linear.app</button>
+        </div>
+        <div style="margin-top:11px;padding:9px 12px;border-radius:8px;background:#0f172a;color:#e2e8f0;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace">
+          <span><span style="color:#5eead4;font-weight:700">Zero-install 3-Engine CLI:</span> <code id="qsCliCmd">curl -fsSL https://omnipulse-x402.appwrite.network/cli.sh | sh -s -- --suite yourdomain.com</code></span>
+          <button type="button" class="btn btn-sm" id="qsCliCopy" style="background:#1e293b;color:#f8fafc;border-color:#334155">Copy CLI</button>
+        </div>
+        <div id="qsOut" class="res-box"></div>
+      </div>
       <div class="hero-acts">
-        <a class="btn btn-pri" href="https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack" target="_blank" rel="noopener">Complete Suite — $5 Once (was $29) &rarr;</a>
-        <a class="btn" href="../vibe-security-2026/index.html">Read 2026 Empirical Studies</a>
+        <a class="btn btn-pri btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack" target="_blank" rel="noopener">Complete 3-App Suite — $5 Once (was $29) &rarr;</a>
+        <a class="btn btn-sm" href="../vibe-security-2026/index.html">Read 2026 Empirical Studies</a>
       </div>
     </div>
   </section>
@@ -207,5 +224,82 @@
   tx("pageview");
 })();
 </script>
+  <script>
+  (function () {
+    var form = document.getElementById("qsForm");
+    var inp = document.getElementById("qsInput");
+    var btn = document.getElementById("qsBtn");
+    var out = document.getElementById("qsOut");
+    var cliCmd = document.getElementById("qsCliCmd");
+    var cliCopy = document.getElementById("qsCliCopy");
+    function esc(s) { return String(s == null ? "" : s).split("&").join("&amp;").split("<").join("&lt;").split(">").join("&gt;").split('"').join("&quot;"); }
+    function pillCls(sc) { return sc == null ? "p-neutral" : (sc >= 80 ? "p-ok" : (sc >= 60 ? "p-warn" : "p-bad")); }
+    if (cliCopy && cliCmd) {
+      cliCopy.addEventListener("click", function () {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(cliCmd.textContent).then(function () {
+            cliCopy.textContent = "Copied!";
+            setTimeout(function () { cliCopy.textContent = "Copy CLI"; }, 1800);
+          });
+        }
+      });
+    }
+    async function runSuite(raw) {
+      var dom = String(raw || "").trim().replace(/^https?:\/\//i, "").replace(/^www\./i, "").split("/")[0];
+      if (!dom) return;
+      inp.value = dom;
+      if (cliCmd) cliCmd.textContent = "curl -fsSL https://omnipulse-x402.appwrite.network/cli.sh | sh -s -- --suite " + dom;
+      btn.disabled = true;
+      out.style.display = "block";
+      out.innerHTML = '<span style="color:var(--mut)">Running VibeShield + InboxShield + CiteReady concurrently on <strong>' + esc(dom) + '</strong> (~4s)...</span>';
+      try {
+        var r = await fetch("https://omnipulse-x402.appwrite.network/v1/quick-score?domain=" + encodeURIComponent(dom), { headers: { Accept: "application/json" } });
+        var d = await r.json().catch(function () { return {}; });
+        if (!r.ok || d.ok === false) {
+          out.innerHTML = '<span class="pill p-bad">Notice</span> ' + esc(d.error || "Could not scan domain.");
+          return;
+        }
+        if (typeof window.opTrack === "function") window.opTrack("scan");
+        var ov = d.overall || {};
+        var eng = d.engines || {};
+        var chk = d.checkout || {};
+        var v = eng.vibeshield || {}, ib = eng.inboxshield || {}, cr = eng.citeready || {}, br = eng.brandshield || {};
+        var suiteUrl = chk.completeSuite5Usd || ("https://omnipulse-x402.appwrite.network/checkout/launch-stack?domain=" + encodeURIComponent(dom) + "&score=" + encodeURIComponent(ov.score || 0) + "&issues=" + encodeURIComponent(ov.totalIssues || 0));
+        out.innerHTML =
+          '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">' +
+            '<div><strong>' + esc(d.domain || dom) + '</strong> &middot; 3-Engine Launch Readiness &middot; Total Issues: <strong>' + esc(ov.totalIssues != null ? ov.totalIssues : 0) + '</strong></div>' +
+            '<span class="pill ' + pillCls(ov.score) + '">Overall: ' + esc(ov.score != null ? ov.score : "-") + '/100 (' + esc(ov.grade || "-") + ')</span>' +
+          '</div>' +
+          '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px">' +
+            '<div style="padding:10px;border:1px solid var(--bd);border-radius:8px;background:#fff">' +
+              '<div style="display:flex;justify-content:space-between;align-items:center"><strong>VibeShield Security</strong><span class="pill ' + pillCls(v.score) + '">' + esc(v.score != null ? v.score : "-") + '/100</span></div>' +
+              '<div style="font-size:12px;color:var(--mut);margin:5px 0">Observatory: ' + esc(v.observatory || "-") + ' &middot; Issues: ' + esc(v.issues != null ? v.issues : 0) + '</div>' +
+              '<a href="' + esc(v.checkoutUrl || "https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield") + '" target="_blank" rel="noopener" style="font-size:12px;font-weight:700">Fix Security ($2) &rarr;</a>' +
+            '</div>' +
+            '<div style="padding:10px;border:1px solid var(--bd);border-radius:8px;background:#fff">' +
+              '<div style="display:flex;justify-content:space-between;align-items:center"><strong>InboxShield Email</strong><span class="pill ' + pillCls(ib.score) + '">' + esc(ib.score != null ? ib.score : "-") + '/100</span></div>' +
+              '<div style="font-size:12px;color:var(--mut);margin:5px 0">SPF: ' + esc(ib.spfLookups != null ? ib.spfLookups : "-") + '/10 &middot; DMARC: ' + esc(ib.dmarcPolicy || "none") + '</div>' +
+              '<a href="' + esc(ib.checkoutUrl || "https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield") + '" target="_blank" rel="noopener" style="font-size:12px;font-weight:700">Fix Email DNS ($2) &rarr;</a>' +
+            '</div>' +
+            '<div style="padding:10px;border:1px solid var(--bd);border-radius:8px;background:#fff">' +
+              '<div style="display:flex;justify-content:space-between;align-items:center"><strong>CiteReady AI Search</strong><span class="pill ' + pillCls(cr.score) + '">' + esc(cr.score != null ? cr.score : "-") + '/100</span></div>' +
+              '<div style="font-size:12px;color:var(--mut);margin:5px 0">Entity: ' + esc(cr.entityScore != null ? cr.entityScore : 0) + '/100 &middot; /llms.txt: ' + (cr.llmsTxt ? "Yes" : "Missing") + '</div>' +
+              '<a href="' + esc(cr.checkoutUrl || "https://omnipulse-x402.appwrite.network/go/gumroad/citeready") + '" target="_blank" rel="noopener" style="font-size:12px;font-weight:700">Fix AI Search ($2) &rarr;</a>' +
+            '</div>' +
+          '</div>' +
+          '<div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--bd);display:flex;gap:10px;flex-wrap:wrap;align-items:center">' +
+            '<a class="btn btn-dark btn-sm" href="' + esc(suiteUrl) + '" target="_blank" rel="noopener">Unlock All 3 Fixes for ' + esc(d.domain || dom) + ' — $5 Suite Special (was $29) &rarr;</a>' +
+            '<a class="btn btn-sm" href="' + esc(br.reportUrl || "https://brand-checker.appwrite.network/") + '" target="_blank" rel="noopener">Check Brand &amp; 78 TLDs (100% Free) &rarr;</a>' +
+          '</div>';
+      } catch (e) {
+        out.innerHTML = '<span class="pill p-warn">Notice</span> <a href="https://vibe-checker.appwrite.network/?url=' + encodeURIComponent(dom) + '" target="_blank" rel="noopener" style="font-weight:600">Open VibeShield directly &rarr;</a>';
+      } finally {
+        btn.disabled = false;
+      }
+    }
+    form.addEventListener("submit", function (e) { e.preventDefault(); runSuite(inp.value); });
+    document.querySelectorAll(".qs-chip").forEach(function (c) { c.addEventListener("click", function () { runSuite(c.getAttribute("data-d")); }); });
+  })();
+  </script>
 </body>
 </html>
