@@ -326,6 +326,11 @@
     }
     form.addEventListener("submit", function (e) { e.preventDefault(); runSuite(inp.value); });
     document.querySelectorAll(".qs-chip").forEach(function (c) { c.addEventListener("click", function () { runSuite(c.getAttribute("data-d")); }); });
+    try {
+      var qp = new URLSearchParams(window.location.search);
+      var autoD = qp.get("domain") || qp.get("url");
+      if (autoD) runSuite(autoD);
+    } catch (e) {}
   })();
   </script>
 </body>

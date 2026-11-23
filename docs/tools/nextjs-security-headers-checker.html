@@ -383,6 +383,11 @@ export default {
   }
   form.addEventListener("submit", function (e) { e.preventDefault(); run(inp.value); });
   document.querySelectorAll(".t-chip").forEach(function (c) { c.addEventListener("click", function () { run(c.getAttribute("data-v")); }); });
+  try {
+    var qp = new URLSearchParams(window.location.search);
+    var autoV = qp.get("url") || qp.get("domain") || qp.get("q");
+    if (autoV) run(autoV);
+  } catch (e) {}
   var cBtn = document.getElementById("toolCliCopy");
   var cTxt = document.getElementById("toolCliCmd");
   if (cBtn && cTxt) {
