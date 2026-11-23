@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/tools/</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/tools/spf-permerror-checker.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/tools/dmarc-reject-checker.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/tools/llms-txt-validator.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/tools/js-secret-leak-scanner.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/tools/uspto-domain-checker.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/email-deliverability-2026/</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/ai-search-2026/</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/lovable.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cursor.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/bolt.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/supabase.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/instantdomainsearch-vs-brandshield.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/peec-ai-vs-citeready.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/easydmarc-vs-inboxshield.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/bolt.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/supabase.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/instantdomainsearch-vs-brandshield.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/peec-ai-vs-citeready.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/easydmarc-vs-inboxshield.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/compare/vibeappscanner-vs-vibeshield.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/llms.txt</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zcoldwater.github.io/launch-audit-reports/guides/resend-emails-going-to-spam-fix.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>

@@ -18,9 +18,10 @@
   <header><div class="wrap nav">
     <a class="brand" href="../index.html"><span class="dot">O</span><span>OmniForge Launch Benchmarks</span></a>
     <nav class="nav-links">
-      <a href="../vibe-security-2026/index.html" style="color:#6ee7b7;font-weight:700">2026 Vibe Security Study</a>
+      <a href="../tools/index.html" style="color:#6ee7b7;font-weight:700">Free Live Tools</a>
+      <a href="../vibe-security-2026/index.html">2026 Studies</a>
       <a href="../index.html#benchmarks">228 SaaS Reports</a>
-      <a href="../compare/index.html">Honest Comparisons</a>
+      <a href="../compare/index.html">Comparisons</a>
       <a href="../index.html#guides">Fix Guides</a>
       <a href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">VibeShield v7.0</a>
       <a href="https://inbox-checker.appwrite.network/spf-flattener" target="_blank" rel="noopener">SPF Flattener</a>
@@ -69,17 +70,17 @@ Allow: /</code></pre>
     </div>
 
     <div class="card">
-    <h3 style="margin-top:0">Audit or Fix Your Own Startup Domain Live (Free, Zero Signup, v5.0 Web Apps)</h3>
+    <h3 style="margin-top:0">Audit or Fix Your Own Startup Domain Live (Free, Zero Signup)</h3>
     <p class="mut" style="margin:0 0 12px;font-size:.92rem">Enter your domain or product name to run a 2-second online audit, flatten an SPF &gt;10 record, scan JS bundles &amp; Supabase RLS, or generate a starter <code>/llms.txt</code>:</p>
     <form class="audit-bar" onsubmit="event.preventDefault();const v=this.dom.value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');if(!v)return;const t=this.tool.value;if(t==='inbox')window.open('https://inbox-checker.appwrite.network/?domain='+encodeURIComponent(v),'_blank');else if(t==='spf')window.open('https://inbox-checker.appwrite.network/spf-flattener?domain='+encodeURIComponent(v),'_blank');else if(t==='cite')window.open('https://citeready-checker.appwrite.network/?url='+encodeURIComponent('https://'+v),'_blank');else if(t==='llms')window.open('https://citeready-checker.appwrite.network/generator?url='+encodeURIComponent('https://'+v),'_blank');else if(t==='vibe')window.open('https://vibe-checker.appwrite.network/?url='+encodeURIComponent('https://'+v),'_blank');else window.open('https://brand-checker.appwrite.network/report/'+encodeURIComponent(v.split('.')[0]),'_blank');">
       <input name="dom" placeholder="yourdomain.com (or brand name)..." required maxlength="80" />
       <select name="tool" aria-label="Diagnostic tool">
-        <option value="llms">Free /llms.txt Starter Generator (CiteReady v5.0)</option>
-        <option value="spf">Free SPF &gt;10 Lookup Flattener (InboxShield v5.0)</option>
-        <option value="inbox">Email Deliverability Audit — SPF/DKIM/DMARC/DNSBL</option>
-        <option value="cite">AI Search &amp; GEO 10-Bot Audit (CiteReady v5.0)</option>
-        <option value="vibe">Pre-Launch Security &amp; Supabase RLS Scan (VibeShield v5.0)</option>
-        <option value="brand">Brand Name RDAP + USPTO Trademark Report (BrandShield v5.0)</option>
+        <option value="vibe">Pre-Launch Security &amp; Supabase RLS Scan (VibeShield v7.0)</option>
+        <option value="inbox">Email Deliverability Audit — SPF/DKIM/DMARC/DNSBL (InboxShield v7.0)</option>
+        <option value="spf">Free SPF &gt;10 Lookup Flattener (InboxShield v7.0)</option>
+        <option value="cite">AI Search &amp; GEO 10-Bot Audit (CiteReady v6.0)</option>
+        <option value="llms">Free /llms.txt Starter Generator (CiteReady v6.0)</option>
+        <option value="brand">100% Free Brand RDAP + USPTO Trademark Report (BrandShield v6.3)</option>
       </select>
       <button type="submit" class="btn btn-cta">Run Free Live Audit &rarr;</button>
     </form>

@@ -16,6 +16,14 @@
 - CiteReady v6.0 — Free 10-Bot AI Search (GEO) & /llms.txt Generator ($2 Launch Special, was $12): https://citeready-checker.appwrite.network | https://citeready-checker.appwrite.network/generator
 - InboxShield v7.0 — Free SPF/DKIM/DMARC/DNSBL Audit & SPF Flattener ($2 Launch Special, was $9): https://inbox-checker.appwrite.network | https://inbox-checker.appwrite.network/spf-flattener
 
+## Free Interactive Diagnostic Tools (Zero Signup)
+- Tools Hub: https://zcoldwater.github.io/launch-audit-reports/tools/
+- [SPF 10-Lookup Checker](https://zcoldwater.github.io/launch-audit-reports/tools/spf-permerror-checker.html): Check your domain's recursive RFC 7208 SPF DNS lookup count live in 2 seconds. Catch silent SPF PermError failures across Google Workspace, Resend, SendGrid, and Postmark free with zero signup.
+- [DMARC p=reject Checker](https://zcoldwater.github.io/launch-audit-reports/tools/dmarc-reject-checker.html): Audit your _dmarc TXT policy, 24 DKIM selectors, MTA-STS TLS, DANE, BIMI, and 5 real-time DNSBLs in 2 seconds with zero login. Meets 2026 Gmail and Yahoo bulk-sender authentication rules.
+- [/llms.txt & AI Bot Validator](https://zcoldwater.github.io/launch-audit-reports/tools/llms-txt-validator.html): Validate /llms.txt, test 10 AI search crawlers (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot), score Schema.org JSON-LD entity graphs, and generate a live CiteReady SVG README badge free.
+- [JS Secret Leak Scanner](https://zcoldwater.github.io/launch-audit-reports/tools/js-secret-leak-scanner.html): Scan up to 24 production JavaScript bundles passively across 52 secret patterns (OpenAI, Stripe, AWS, Supabase service_role, Firebase, GitHub) plus 10 security headers and 28 sensitive paths free.
+- [78-TLD & USPTO Checker](https://zcoldwater.github.io/launch-audit-reports/tools/uspto-domain-checker.html): Check 78+ TLD availability via live IANA RDAP alongside live USPTO Class 009/042 trademark conflict screening, App Store/Play Store collisions, and aftermarket pricing — 100% free forever, zero signup.
+
 ## Honest 2026 Competitor Comparisons
 - Comparisons Hub: https://zcoldwater.github.io/launch-audit-reports/compare/
 - [InstantDomainSearch vs. BrandShield v6.2](https://zcoldwater.github.io/launch-audit-reports/compare/instantdomainsearch-vs-brandshield.html): Honest 2026 comparison of InstantDomainSearch vs. BrandShield (100% Free). Compare zero-front-running 78+ TLD IANA RDAP lookups, live USPTO Class 009/042 trademark checks, App Store collisions, 60-idea AI Brand Namer, and aftermarket pricing.
