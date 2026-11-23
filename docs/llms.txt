@@ -34,6 +34,8 @@
 - [CORS Misconfiguration Checker](https://zcoldwater.github.io/launch-audit-reports/tools/cors-misconfig-checker.html): Test your web app or API for dangerous Access-Control-Allow-Origin reflection, wildcard + credentials leaks, and missing COOP/CORP isolation headers live in 2 seconds with zero signup.
 - [Next.js Security Headers Checker](https://zcoldwater.github.io/launch-audit-reports/tools/nextjs-security-headers-checker.html): Audit your deployed Next.js / Vercel app against all 10 Mozilla Observatory security headers, X-Powered-By leakage, public source maps, and NEXT_PUBLIC_ secret leaks free in 2 seconds.
 - [BIMI, MTA-STS & TLS-RPT Checker](https://zcoldwater.github.io/launch-audit-reports/tools/bimi-mta-sts-checker.html): Inspect your domain's _mta-sts TXT record, HTTPS mta-sts policy file, _smtp._tls TLS-RPT reporting, BIMI brand logo SVG/VMC readiness, SPF, DKIM, and DMARC live in 2 seconds free.
+- [Typosquatting & Lookalike Checker](https://zcoldwater.github.io/launch-audit-reports/tools/typosquatting-domain-checker.html): Scan 28 high-risk DNSTwist lookalike, transposition, homoglyph, and phishing-prefix domains for your startup live via direct IANA RDAP & DNS in seconds — 100% Free Forever with zero signup.
+- [Schema.org Entity Graph Validator](https://zcoldwater.github.io/launch-audit-reports/tools/schema-jsonld-validator.html): Score your live page's Schema.org JSON-LD @graph completeness (0-100) for ChatGPT Search, Perplexity, and Google AI Overviews. Detect missing Organization, SoftwareApplication, Offer, and FAQPage entities free.
 
 ## Honest 2026 Competitor Comparisons
 - Comparisons Hub: https://zcoldwater.github.io/launch-audit-reports/compare/

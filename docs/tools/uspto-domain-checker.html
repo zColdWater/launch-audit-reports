@@ -172,6 +172,20 @@ npx --yes github:zColdWater/brandshield-cli check northstar
           <p style="margin:0;color:var(--ink2);font-size:13.5px">Inspect your domain&#39;s _mta-sts TXT record, HTTPS mta-sts policy file, _smtp._tls TLS-RPT reporting, BIMI brand logo SVG/VMC read...</p>
         </div>
         <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open live checker &rarr;</span>
+      </a><a class="hub-card" href="./typosquatting-domain-checker.html">
+        <div>
+          <span class="pill p-neutral" style="margin-bottom:8px">Brand &amp; Domain Security</span>
+          <h3>Typosquatting &amp; Lookalike Checker</h3>
+          <p style="margin:0;color:var(--ink2);font-size:13.5px">Scan 28 high-risk DNSTwist lookalike, transposition, homoglyph, and phishing-prefix domains for your startup live via direct IAN...</p>
+        </div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open live checker &rarr;</span>
+      </a><a class="hub-card" href="./schema-jsonld-validator.html">
+        <div>
+          <span class="pill p-neutral" style="margin-bottom:8px">AI Search &amp; GEO</span>
+          <h3>Schema.org Entity Graph Validator</h3>
+          <p style="margin:0;color:var(--ink2);font-size:13.5px">Score your live page&#39;s Schema.org JSON-LD @graph completeness (0-100) for ChatGPT Search, Perplexity, and Google AI Overviews. D...</p>
+        </div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open live checker &rarr;</span>
       </a>
     </div>
   </main>
@@ -251,6 +265,9 @@ npx --yes github:zColdWater/brandshield-cli check northstar
       } else if (MODE === "vibe") {
         ep = "https://vibe-checker.appwrite.network/api/free-scan?url=" + encodeURIComponent(u);
         deep = "https://vibe-checker.appwrite.network/?url=" + encodeURIComponent(u);
+      } else if (MODE === "typos") {
+        ep = "https://brand-checker.appwrite.network/api/typos?q=" + encodeURIComponent(dom);
+        deep = "https://brand-checker.appwrite.network/typos?q=" + encodeURIComponent(dom);
       } else {
         var clean = dom.split(".")[0];
         ep = "https://brand-checker.appwrite.network/api/free-check?name=" + encodeURIComponent(clean);
@@ -313,14 +330,31 @@ npx --yes github:zColdWater/brandshield-cli check northstar
             return '<li style="margin:4px 0"><span class="pill ' + c2 + '" style="margin-right:6px;font-size:11px">' + esc(sv) + '</span>' + esc(f.title || f.summary || "Finding detected") + '</li>';
           }).join("") + '</ul>';
         }
+      } else if (MODE === "typos") {
+        var tk = typeof d.takenCount === "number" ? d.takenCount : 0;
+        var af = typeof d.aftermarketCount === "number" ? d.aftermarketCount : 0;
+        var av = typeof d.availableCount === "number" ? d.availableCount : 0;
+        var tot = typeof d.total === "number" ? d.total : (Array.isArray(d.domains) ? d.domains.length : 0);
+        ctxDom = d.baseDomain || dom;
+        issueCount = tk + af;
+        summaryHtml = '<strong>' + esc(ctxDom) + '</strong> &middot; Scanned: <strong>' + esc(tot) + '</strong> variants &middot; Registered Lookalikes: <strong>' + esc(tk) + '</strong> &middot; Parked: <strong>' + esc(af) + '</strong> &middot; Available: <strong>' + esc(av) + '</strong>';
+        var doms = Array.isArray(d.domains) ? d.domains : [];
+        var risky = doms.filter(function (x) { return x.status !== "available"; }).slice(0, 4);
+        if (risky.length) {
+          listHtml = '<ul style="margin:10px 0 0;padding-left:18px;font-size:13px;color:var(--ink2)">' + risky.map(function (x) {
+            return '<li style="margin:4px 0"><span class="pill p-bad" style="margin-right:6px;font-size:11px">' + esc(String(x.status || "taken").toUpperCase()) + '</span><strong>' + esc(x.domain) + '</strong> (' + esc(x.category || "typo") + ')</li>';
+          }).join("") + '</ul>';
+        }
       } else {
         var tm = (d.trademark && typeof d.trademark.totalHits === "number") ? d.trademark.totalHits : (Array.isArray(d.trademarks) ? d.trademarks.length : 0);
         summaryHtml = 'Candidate: <strong>' + esc(d.name || d.candidate || val) + '</strong> &middot; Live USPTO Trademark Hits: <strong>' + esc(tm) + '</strong>';
       }
-      var slugMap = { inbox: "inboxshield", cite: "citeready", vibe: "vibeshield" };
+      var slugMap = { inbox: "inboxshield", cite: "citeready", vibe: "vibeshield", typos: "inboxshield" };
       var ctxCheckout = slugMap[MODE] ? ("https://omnipulse-x402.appwrite.network/checkout/" + slugMap[MODE] + "?domain=" + encodeURIComponent(ctxDom) + "&score=" + encodeURIComponent(sc == null ? 0 : sc) + "&issues=" + encodeURIComponent(issueCount)) : GUM;
       var ctaBtns = MODE === "brand"
         ? '<a class="btn btn-pri btn-sm" href="' + esc(deep) + '" target="_blank" rel="noopener">Open Full 78-TLD + USPTO Report (100% Free) &rarr;</a><a class="btn btn-sm" href="' + esc(GUM) + '" target="_blank" rel="noopener">Complete Launch Audit Suite — $5 (was $29)</a>'
+        : MODE === "typos"
+        ? '<a class="btn btn-pri btn-sm" href="' + esc(deep) + '" target="_blank" rel="noopener">Inspect All 28 Variants + RDAP/MX (100% Free) &rarr;</a><a class="btn btn-dark btn-sm" href="' + esc(ctxCheckout) + '" target="_blank" rel="noopener">Block Spoofing w/ InboxShield DMARC — $2 (was $9) &rarr;</a>'
         : '<a class="btn btn-dark btn-sm" href="' + esc(ctxCheckout) + '" target="_blank" rel="noopener">Unlock Exact Fixes for ' + esc(ctxDom) + ' — ' + esc(PRICE) + ' &rarr;</a><a class="btn btn-pri btn-sm" href="' + esc(deep) + '" target="_blank" rel="noopener">Inspect Full Live Trace &rarr;</a>';
       out.innerHTML =
         '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">' +
