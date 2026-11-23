@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cloudflare Pages &amp; Workers Security Headers (_headers) &amp; CSP Audit (2026) | VibeShield</title>
+  <meta name="description" content="Audit your Cloudflare Pages (.pages.dev) or Workers production site in 2 seconds: verify all 10 Mozilla Observatory headers, CSP, HSTS preload, and client JS secret leaks free on VibeShield v7.0." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cloudflare.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Cloudflare Pages &amp; Workers Security Headers (_headers) &amp; CSP Audit (2026) | VibeShield" />
+  <meta property="og:description" content="Audit your Cloudflare Pages (.pages.dev) or Workers production site in 2 seconds: verify all 10 Mozilla Observatory headers, CSP, HSTS preload, and client JS secret leaks free on VibeShield v7.0." />
+  <meta property="og:url" content="https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cloudflare.html" />
+  <meta property="og:image" content="https://brand-checker.appwrite.network/assets/cover-vibeshield-2usd.png" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://brand-checker.appwrite.network/assets/cover-vibeshield-2usd.png" />
+  <link rel="stylesheet" href="../compare/compare.css" />
+  <style>
+    pre.code{background:#0f172a;color:#e2e8f0;border:1px solid #1e293b;border-radius:10px;padding:16px;overflow-x:auto;font:12.5px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin:10px 0 0}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Launch Audit Reports","item":"https://zcoldwater.github.io/launch-audit-reports/"},{"@type":"ListItem","position":2,"name":"2026 Vibe Security Study","item":"https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/"},{"@type":"ListItem","position":3,"name":"Cloudflare Pages & Workers Security","item":"https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cloudflare.html"}]},{"@type":"TechArticle","headline":"Cloudflare Pages & Workers Security Headers & Pre-Launch Scanner","description":"Audit your Cloudflare Pages (.pages.dev) or Workers production site in 2 seconds: verify all 10 Mozilla Observatory headers, CSP, HSTS preload, and client JS secret leaks free on VibeShield v7.0.","datePublished":"2026-11-22","dateModified":"2026-11-22","author":{"@type":"Organization","name":"OmniForge · Agent Arena Studio"},"mainEntityOfPage":"https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cloudflare.html"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I use Cloudflare Transform Rules, _headers, or a Worker for security headers?","acceptedAnswer":{"@type":"Answer","text":"For static Cloudflare Pages sites, a public/_headers file is the simplest zero-overhead approach. For dynamic Workers or proxied origins, wrapping responses in a Worker or Cloudflare Response Header Transform Rule ensures every route ships consistent headers."}},{"@type":"Question","name":"How much does VibeShield v7.0 cost?","acceptedAnswer":{"@type":"Answer","text":"Live 116-check scanning is 100% free with zero signup. Unlocking exact evidence and tailored fix scripts is $2 one-time during our Launch Special (was $9, 14-day refund guarantee)."}}]}]}</script>
+</head>
+<body>
+  <header class="top"><div class="wrap nav">
+    <a class="brand" href="../index.html"><span class="mark">OF</span><span>OmniForge Security</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="./index.html">2026 Benchmark Study</a>
+      <a href="../compare/index.html">Honest Comparisons</a>
+      <a href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">VibeShield v7.0</a>
+      <a href="https://brand-checker.appwrite.network" target="_blank" rel="noopener">BrandShield (Free)</a>
+      <a class="btn btn-pri btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: $2 (was $9)</a>
+    </nav>
+  </div></header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="crumb"><a href="../index.html">Launch Benchmarks</a> / <a href="./index.html">2026 Vibe Security Study</a> / Cloudflare Pages &amp; Workers</div>
+      <span class="eyebrow">Cloudflare Pages &amp; Workers Hardening (2026) &middot; Read-Only 6-Phase Scanner</span>
+      <h1>Cloudflare Pages &amp; Workers Security Headers &amp; Pre-Launch Scanner</h1>
+      <p class="lead">Cloudflare&#39;s edge handles TLS 1.3 and DDoS mitigation automatically, yet Cloudflare Pages and Workers still leave application-layer security headers (CSP, X-Frame-Options, Permissions-Policy, COOP/CORP) and client bundle hygiene up to your code. Verify your live edge headers free.</p>
+      <div class="hero-acts">
+        <a class="btn btn-pri" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Open VibeShield v7.0 Free &rarr;</a>
+        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Launch Special: Unlock Full Fixes $2 (was $9)</a>
+        <a class="btn" href="https://github.com/zColdWater/vibe-security-checklist" target="_blank" rel="noopener">MIT Checklist &amp; Templates</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div class="widget-card">
+      <h2 style="margin:0 0 4px;font-size:19px">Run a Live 6-Phase Cloudflare Pages &amp; Workers Security Scan Free (Zero Signup)</h2>
+      <p style="margin:0;color:var(--mut);font-size:13.5px">Passively inspects TLS, up to 24 JS chunks across 52 secret patterns, safe Supabase/Firebase checks, 28 sensitive paths, and 10 Mozilla Observatory headers:</p>
+      <form id="stackScanForm" class="scan-row">
+        <input id="stackScanInput" class="scan-in mono" type="text" placeholder="https://your-site.pages.dev or yourdomain.com" required maxlength="150" />
+        <button id="stackScanBtn" class="btn btn-pri" type="submit">Scan URL Free</button>
+      </form>
+      <div class="chips">
+        <span>Test live demos:</span>
+        <button type="button" class="chip mono s-chip" data-u="https://cloudflare.com">cloudflare.com</button><button type="button" class="chip mono s-chip" data-u="https://workers.cloudflare.com">workers.cloudflare.com</button><button type="button" class="chip mono s-chip" data-u="https://linear.app">linear.app</button>
+      </div>
+      <div id="stackScanOut" class="res-box"></div>
+    </div>
+
+    <h2>Top 4 Pre-Launch Risks in Cloudflare Pages &amp; Workers Production Apps</h2>
+    <div class="grid-2">
+      <div class="card prose"><h3>1. Missing Application Security Headers at the Edge</h3><p>Cloudflare does not inject Content-Security-Policy, X-Frame-Options, Permissions-Policy, or Cross-Origin-Opener-Policy by default — leaving sites exposed to clickjacking and XSS.</p></div><div class="card prose"><h3>2. Secrets Bundled into Frontend Assets Instead of Worker Secrets</h3><p>Always store third-party API keys via wrangler secret put rather than Vite/Astro public env vars compiled into static assets.</p></div><div class="card prose"><h3>3. Permissive CORS &amp; Unprotected Worker API Routes</h3><p>Avoid reflecting arbitrary Origin headers with Access-Control-Allow-Credentials: true on authenticated Worker endpoints.</p></div><div class="card prose"><h3>4. Leaked Source Maps &amp; Staging Subdomains</h3><p>Ensure .js.map files are excluded from dist/ and audit both your custom domain and .pages.dev origin.</p></div>
+    </div>
+
+    <h2>Copy-Paste Cloudflare Worker Security Header Wrapper (MIT)</h2>
+    <div class="card">
+      <pre class="code">// From github.com/zColdWater/vibe-security-checklist/configs/cloudflare-headers.js
+const SECURITY_HEADERS = {
+  &quot;Strict-Transport-Security&quot;: &quot;max-age=63072000; includeSubDomains; preload&quot;,
+  &quot;X-Content-Type-Options&quot;: &quot;nosniff&quot;,
+  &quot;X-Frame-Options&quot;: &quot;DENY&quot;,
+  &quot;Referrer-Policy&quot;: &quot;strict-origin-when-cross-origin&quot;,
+  &quot;Permissions-Policy&quot;: &quot;camera=(), microphone=(), geolocation=()&quot;,
+  &quot;Cross-Origin-Opener-Policy&quot;: &quot;same-origin&quot;,
+  &quot;Cross-Origin-Resource-Policy&quot;: &quot;same-site&quot;,
+};
+export default {
+  async fetch(request, env, ctx) {
+    const res = await fetch(request);
+    const out = new Response(res.body, res);
+    for (const [k, v] of Object.entries(SECURITY_HEADERS)) out.headers.set(k, v);
+    return out;
+  },
+};</pre>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq" open><summary>Should I use Cloudflare Transform Rules, _headers, or a Worker for security headers?</summary><p>For static Cloudflare Pages sites, a public/_headers file is the simplest zero-overhead approach. For dynamic Workers or proxied origins, wrapping responses in a Worker or Cloudflare Response Header Transform Rule ensures every route ships consistent headers.</p></details><details class="faq" open><summary>How much does VibeShield v7.0 cost?</summary><p>Live 116-check scanning is 100% free with zero signup. Unlocking exact evidence and tailored fix scripts is $2 one-time during our Launch Special (was $9, 14-day refund guarantee).</p></details>
+
+    <div class="cta-panel">
+      <div style="max-width:600px">
+        <strong style="font-size:18px;display:block;margin-bottom:6px">Launch Special: Unlock Exact Locations &amp; 5-Platform Fixes for $2 (was <s>$9</s>)</strong>
+        <span style="color:var(--ink2);font-size:14px">One-time perpetual browser unlock (78% off during Launch Special, zero monthly subscription, 14-day refund guarantee) — or grab the <strong>OmniForge Complete Suite</strong> (VibeShield + InboxShield + CiteReady) for <strong>$5 once (was <s>$29</s>)</strong>.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;min-width:250px">
+        <a class="btn btn-pri" href="https://vibe-checker.appwrite.network" target="_blank" rel="noopener">Run Free 6-Phase Scan &rarr;</a>
+        <a class="btn btn-dark" href="https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield" target="_blank" rel="noopener">Unlock VibeShield — $2 (was $9)</a>
+        <a class="btn" href="https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack" target="_blank" rel="noopener">Complete 3-App Suite — $5 (was $29)</a>
+      </div>
+    </div>
+
+    <h2>More Stack Hardening Guides &amp; Empirical Research</h2>
+    <div class="hub-grid">
+      <a class="hub-card" href="./index.html">
+        <div><span class="pill p-ok" style="margin-bottom:8px">55 Live Apps Audited</span><h3>State of Vibe-Coded Web App Security (2026)</h3><p style="margin:0;color:var(--ink2);font-size:13.5px">Full 6,120+ check empirical benchmark study across Vercel, Custom Domains &amp; GitHub Pages.</p></div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Read full study &rarr;</span>
+      </a>
+      <a class="hub-card" href="./lovable.html">
+        <div><span class="pill p-neutral" style="margin-bottom:8px">Stack Guide</span><h3>Lovable Pre-Launch Security</h3><p style="margin:0;color:var(--ink2);font-size:13.5px">Audit your .lovable.app or custom domain in 2 seconds before launch: check Supabase Row Level Security (RLS), leaked client A...</p></div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open Lovable guide &rarr;</span>
+      </a><a class="hub-card" href="./cursor.html">
+        <div><span class="pill p-neutral" style="margin-bottom:8px">Stack Guide</span><h3>Cursor &amp; Next.js Pre-Launch Security</h3><p style="margin:0;color:var(--ink2);font-size:13.5px">Stop shipping NEXT_PUBLIC_ secret leaks, public .js.map source maps, and missing CSP/HSTS headers in Cursor + Next.js + Verce...</p></div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open Cursor &amp; Next.js guide &rarr;</span>
+      </a><a class="hub-card" href="./bolt.html">
+        <div><span class="pill p-neutral" style="margin-bottom:8px">Stack Guide</span><h3>Bolt.new &amp; Netlify Pre-Launch Security</h3><p style="margin:0;color:var(--ink2);font-size:13.5px">Audit your Bolt.new / .netlify.app / Vite production site free in 2 seconds: detect VITE_ API key leaks, public .js.map sourc...</p></div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open Bolt.new &amp; Netlify guide &rarr;</span>
+      </a><a class="hub-card" href="./supabase.html">
+        <div><span class="pill p-neutral" style="margin-bottom:8px">Stack Guide</span><h3>Supabase RLS Pre-Launch Security</h3><p style="margin:0;color:var(--ink2);font-size:13.5px">20% of newly launched AI web apps ship live Supabase backends. Run a read-only passive RLS &amp; service_role key leak audit in 2...</p></div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open Supabase RLS guide &rarr;</span>
+      </a><a class="hub-card" href="./v0.html">
+        <div><span class="pill p-neutral" style="margin-bottom:8px">Stack Guide</span><h3>v0.dev &amp; Vercel Pre-Launch Security</h3><p style="margin:0;color:var(--ink2);font-size:13.5px">Audit your v0.dev / Vercel Next.js deployment in 2 seconds before sharing: detect missing CSP/HSTS headers, leaked NEXT_PUBLI...</p></div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open v0.dev &amp; Vercel guide &rarr;</span>
+      </a><a class="hub-card" href="./replit.html">
+        <div><span class="pill p-neutral" style="margin-bottom:8px">Stack Guide</span><h3>Replit Agent Pre-Launch Security</h3><p style="margin:0;color:var(--ink2);font-size:13.5px">Audit your .replit.app or custom Replit deployment passively in 2 seconds: catch exposed client API keys, missing Express/Fla...</p></div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open Replit Agent guide &rarr;</span>
+      </a><a class="hub-card" href="./firebase.html">
+        <div><span class="pill p-neutral" style="margin-bottom:8px">Stack Guide</span><h3>Firebase &amp; Firestore Pre-Launch Security</h3><p style="margin:0;color:var(--ink2);font-size:13.5px">Audit your deployed Firebase web app passively in 2 seconds: detect open Firestore/RTDB test-mode rules, leaked service accou...</p></div>
+        <span style="margin-top:12px;font-weight:700;font-size:13.5px">Open Firebase &amp; Firestore guide &rarr;</span>
+      </a>
+    </div>
+  </main>
+
+  <footer class="ft"><div class="wrap">
+    <div class="ft-row">
+      <div><strong>OmniForge &middot; Agent Arena Studio</strong> &middot; Read-only pre-launch security diagnostics.</div>
+      <div class="ft-links">
+        <a href="./index.html">2026 Study</a>
+        <a href="../index.html">228 SaaS Benchmarks</a>
+        <a href="https://omnipulse-x402.appwrite.network/support" target="_blank" rel="noopener">Support</a>
+        <a href="https://omnipulse-x402.appwrite.network/refund-policy" target="_blank" rel="noopener">14-Day Refund</a>
+        <a href="mailto:agentarenastudio@proton.me">agentarenastudio@proton.me</a>
+      </div>
+    </div>
+  </div></footer>
+  <script>
+(function(){
+  var E="https://omnipulse-x402.appwrite.network/v1/telemetry",D=document,W=window,R=D.documentElement,G=navigator,S=W.screen,M=Math,N=Date.now;
+  var SITE="vibeshield",PTH="/vibe-security-2026/cloudflare",I="hub_"+N().toString(36)+"_"+M.random().toString(36).slice(2,10);
+  var z="",d=0,v=D.hidden?0:N(),m=0,la=0,c={scan:0,outbound:0,paywall:0};
+  try{z=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}
+  function fl(){if(v)d+=M.max(0,N()-v);v=D.hidden?0:N();}
+  function us(){m=M.max(m,M.min(100,M.round(M.max(0,W.scrollY)/M.max(1,R.scrollHeight-W.innerHeight)*100)));}
+  function tx(ev){
+    fl();us();
+    var b=JSON.stringify({site:SITE,sid:I,event:ev,path:PTH,webdriver:!!G.webdriver,screen:S?S.width+"x"+S.height:"0x0",dwellSec:M.round(d/1e3),scrollPct:m,scansRun:c.scan,outboundClicks:c.outbound,paywallClicks:c.paywall,referrer:(D.referrer||"").slice(0,128),tz:z,lang:R.lang||"en"});
+    try{if(!G.sendBeacon||!G.sendBeacon(E,new Blob([b],{type:"text/plain"})))fetch(E,{method:"POST",body:b,keepalive:true}).catch(function(){});}catch(e){}
+  }
+  function lv(){fl();v=0;if(N()-la>1000){la=N();tx("leave");}}
+  W.opTrack=function(ev){if(ev in c)c[ev]++;tx(ev);};
+  W.addEventListener("scroll",us,{passive:true});
+  D.addEventListener("visibilitychange",function(){if(D.hidden)lv();else v=N();});
+  W.addEventListener("pagehide",lv);
+  D.addEventListener("click",function(e){
+    var a=e.target&&e.target.closest?e.target.closest("a[href]"):null;
+    if(!a)return;
+    var h=a.getAttribute("href")||"";
+    if(h.indexOf("/go/gumroad")!==-1||h.indexOf("/checkout/")!==-1)W.opTrack("paywall");
+    else if(h.indexOf("appwrite.network")!==-1&&h.indexOf("/assets/cover")===-1)W.opTrack("outbound");
+  });
+  tx("pageview");
+})();
+</script>
+
+  <script>
+  (function () {
+    var form = document.getElementById("stackScanForm");
+    var inp = document.getElementById("stackScanInput");
+    var btn = document.getElementById("stackScanBtn");
+    var out = document.getElementById("stackScanOut");
+    function esc(s) { return String(s == null ? "" : s).split("&").join("&amp;").split("<").join("&lt;").split(">").join("&gt;").split('"').join("&quot;"); }
+    async function run(raw) {
+      var v = String(raw || "").trim();
+      if (!v) return;
+      var u = /^https?:\/\//i.test(v) ? v : "https://" + v;
+      inp.value = u;
+      btn.disabled = true;
+      out.style.display = "block";
+      out.innerHTML = '<span style="color:var(--mut)">Scanning <strong>' + esc(u) + '</strong> with VibeShield v7.0 (6 phases)...</span>';
+      try {
+        var r = await fetch("https://vibe-checker.appwrite.network/api/free-scan?url=" + encodeURIComponent(u), { headers: { Accept: "application/json" } });
+        var d = await r.json().catch(function () { return {}; });
+        if (!r.ok || d.ok === false) {
+          out.innerHTML = '<span class="pill p-bad">Error</span> ' + esc(d.error || "Could not scan URL.") + ' <a href="https://vibe-checker.appwrite.network/?url=' + encodeURIComponent(u) + '" target="_blank" rel="noopener" style="margin-left:8px;font-weight:600">Open VibeShield v7.0 &rarr;</a>';
+          return;
+        }
+        var sc = (d.assessment && typeof d.assessment.score === "number") ? d.assessment.score : 0;
+        var gr = (d.assessment && d.assessment.grade) || "-";
+        var checks = d.checksExecuted || 110;
+        var locked = d.lockedFindingsCount || 0;
+        var findings = Array.isArray(d.findings) ? d.findings : [];
+        var cls = sc >= 80 ? "p-ok" : (sc >= 60 ? "p-warn" : "p-bad");
+        if (typeof window.opTrack === "function") window.opTrack("scan");
+        var ctxHost = d.hostname || u;
+        var ctxUrl = "https://omnipulse-x402.appwrite.network/checkout/vibeshield?domain=" + encodeURIComponent(ctxHost) + "&score=" + encodeURIComponent(sc) + "&issues=" + encodeURIComponent(findings.length);
+        var topHtml = "";
+        if (findings.length) {
+          topHtml = '<ul style="margin:10px 0 0;padding-left:18px;font-size:13px;color:var(--ink2)">' + findings.slice(0, 3).map(function (f) {
+            var sev = String(f.severity || "INFO").toUpperCase();
+            var sc2 = (sev === "CRITICAL" || sev === "HIGH") ? "p-bad" : (sev === "MEDIUM" ? "p-warn" : "p-neutral");
+            return '<li style="margin:5px 0"><span class="pill ' + sc2 + '" style="margin-right:6px;font-size:11px">' + esc(sev) + '</span>' + esc(f.title || f.summary || "Finding detected") + '</li>';
+          }).join("") + '</ul>';
+        }
+        out.innerHTML =
+          '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">' +
+            '<div><strong>' + esc(ctxHost) + '</strong> &middot; Checks: <strong>' + esc(checks) + '</strong> &middot; Findings: <strong>' + esc(findings.length) + '</strong>' + (locked ? ' (<strong>' + esc(locked) + '</strong> locked fixes ready)' : '') + '</div>' +
+            '<span class="pill ' + cls + '">Score: ' + esc(sc) + '/100 (' + esc(gr) + ')</span>' +
+          '</div>' +
+          topHtml +
+          '<div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--bd);display:flex;gap:10px;flex-wrap:wrap;align-items:center">' +
+            '<a class="btn btn-dark btn-sm" href="' + esc(ctxUrl) + '" target="_blank" rel="noopener">Unlock Exact Fixes for ' + esc(ctxHost) + ' — $2 Launch Special (was $9) &rarr;</a>' +
+            '<a class="btn btn-pri btn-sm" href="https://vibe-checker.appwrite.network/?url=' + encodeURIComponent(u) + '" target="_blank" rel="noopener">Inspect Full Trace &amp; Sample Fix</a>' +
+          '</div>';
+      } catch (e) {
+        out.innerHTML = '<span class="pill p-warn">Notice</span> <a href="https://vibe-checker.appwrite.network/?url=' + encodeURIComponent(u) + '" target="_blank" rel="noopener" style="font-weight:600">Open VibeShield v7.0 directly &rarr;</a>';
+      } finally {
+        btn.disabled = false;
+      }
+    }
+    form.addEventListener("submit", function (e) { e.preventDefault(); run(inp.value); });
+    document.querySelectorAll(".s-chip").forEach(function (c) { c.addEventListener("click", function () { run(c.getAttribute("data-u")); }); });
+  })();
+  </script>
+</body>
+</html>
