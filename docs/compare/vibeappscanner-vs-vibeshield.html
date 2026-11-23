@@ -297,9 +297,9 @@
         var dkimN = (d.dkim && Array.isArray(d.dkim.found)) ? d.dkim.found.length : 0;
         summaryLine = "Domain: <strong>" + esc(d.domain || val) + "</strong> &middot; SPF: <strong>" + esc(lookups) + "/10</strong> &middot; DMARC: <strong>" + esc(dmarcP) + "</strong> &middot; DKIM keys: <strong>" + esc(dkimN) + "</strong>";
       } else if (MODE === "vibe") {
-        var chunks = (d.scripts && typeof d.scripts.scanned === "number") ? d.scripts.scanned : (d.jsChunksScanned || 0);
-        var secrets = Array.isArray(d.secrets) ? d.secrets.length : 0;
-        summaryLine = "Target: <strong>" + esc(d.domain || d.url || val) + "</strong> &middot; JS chunks scanned: <strong>" + esc(chunks) + "</strong> &middot; Secret findings: <strong>" + esc(secrets) + "</strong>";
+        var checks = d.checksExecuted || 110;
+        var fCount = Array.isArray(d.findings) ? d.findings.length : 0;
+        summaryLine = "Target: <strong>" + esc(d.hostname || d.domain || val) + "</strong> &middot; Checks: <strong>" + esc(checks) + "</strong> &middot; Findings: <strong>" + esc(fCount) + "</strong>";
       } else {
         var bots = (d.robotsTxt && Array.isArray(d.robotsTxt.crawlers)) ? d.robotsTxt.crawlers : [];
         var open = bots.filter(function (b) { return b.allowed; }).length;
@@ -313,9 +313,8 @@
           '<div>' + summaryLine + '</div>' +
           (score != null ? '<span class="pill ' + pillCls + '">Score: ' + esc(score) + '/100' + (grade ? ' (' + esc(grade) + ')' : '') + '</span>' : '') +
         '</div>' +
-        '<div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">' +
-          '<a class="btn btn-pri btn-sm" href="' + esc(deepLink) + '" target="_blank" rel="noopener">Open Full Interactive Report &amp; 5-Platform Fixes &rarr;</a>' +
-          '<a class="btn btn-sm" href="' + esc(OUR_GUM) + '" target="_blank" rel="noopener">Unlock Web Pro (' + esc(OUR_PRICE) + ')</a>' +
+        '<div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--bd);display:flex;gap:10px;flex-wrap:wrap;align-items:center">' +
+          (MODE === "brand" ? '<a class="btn btn-pri btn-sm" href="' + esc(deepLink) + '" target="_blank" rel="noopener">Open Full 78-TLD + USPTO Report (100% Free) &rarr;</a>' : '<a class="btn btn-dark btn-sm" href="' + esc(OUR_GUM) + '" target="_blank" rel="noopener">Unlock Full Fixes — ' + esc(OUR_PRICE) + ' &rarr;</a><a class="btn btn-pri btn-sm" href="' + esc(deepLink) + '" target="_blank" rel="noopener">Inspect Full Trace &amp; Sample Fix</a>') +
         '</div>';
     } catch (e) {
       out.innerHTML = '<span class="pill p-warn">Offline</span> Live check unavailable right now — <a href="' + esc(OUR_URL) + '" target="_blank" rel="noopener" style="font-weight:600">open the web app directly &rarr;</a>';

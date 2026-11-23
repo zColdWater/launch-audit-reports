@@ -4,6 +4,8 @@
 
 ## Benchmark Hub & Live Cloud Web Apps (2026)
 - State of AI & Vibe-Coded Web App Security (2026) — 55 Live Apps Audited (6,120+ Checks): https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/
+- State of SaaS Email Deliverability & DMARC Enforcement (2026) — 228 Domains: https://zcoldwater.github.io/launch-audit-reports/email-deliverability-2026/
+- State of /llms.txt & AI Search (GEO) Readiness (2026) — 228 Domains: https://zcoldwater.github.io/launch-audit-reports/ai-search-2026/
 - [Lovable Pre-Launch Security Guide](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/lovable.html): Audit your .lovable.app or custom domain in 2 seconds before launch: check Supabase Row Level Security (RLS), leaked client API keys, CSP/HSTS headers, and exposed paths free on VibeShield v7.0.
 - [Cursor & Next.js Pre-Launch Security Guide](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cursor.html): Stop shipping NEXT_PUBLIC_ secret leaks, public .js.map source maps, and missing CSP/HSTS headers in Cursor + Next.js + Vercel apps. Free 6-phase audit + MIT next-headers.mjs & cursor-security.mdc.
 - [Bolt.new & Netlify Pre-Launch Security Guide](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/bolt.html): Audit your Bolt.new / .netlify.app / Vite production site free in 2 seconds: detect VITE_ API key leaks, public .js.map source maps, exposed dotfiles, and missing Netlify _headers.
