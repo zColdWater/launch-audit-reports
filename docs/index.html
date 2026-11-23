@@ -7,6 +7,13 @@
   <meta name="description" content="Live public email deliverability (SPF/DMARC/MX) and AI search readiness (llms.txt, GPTBot/ClaudeBot, Schema.org) audit reports across 228 top SaaS &amp; developer-tool domains, plus 10 copy-paste troubleshooting guides." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://zcoldwater.github.io/launch-audit-reports/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="2026 SaaS Launch Readiness Benchmarks (228 Domains) — Security, Email DNS &amp; AI Search" />
+  <meta property="og:image" content="https://brand-checker.appwrite.network/assets/cover-suite-5usd.png" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://brand-checker.appwrite.network/assets/cover-suite-5usd.png" />
   <link rel="stylesheet" href="./style.css" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"2026 SaaS Launch Readiness Benchmark Dataset (228 Domains)","description":"Live measured SPF/DMARC/MX email deliverability and /llms.txt, robots.txt AI crawler, and JSON-LD Schema.org readiness across 228 top SaaS and developer-tool domains.","url":"https://zcoldwater.github.io/launch-audit-reports/","dateModified":"2026-11-22T03:01:28Z","creator":{"@type":"Organization","name":"OmniForge Studio"}}</script>
 </head>
@@ -41,20 +48,64 @@
     </div>
 
     <div class="card">
-    <h3 style="margin-top:0">Audit or Fix Your Own Startup Domain Live (Free, Zero Signup)</h3>
-    <p class="mut" style="margin:0 0 12px;font-size:.92rem">Enter your domain or product name to run a 2-second online audit, flatten an SPF &gt;10 record, scan JS bundles &amp; Supabase RLS, or generate a starter <code>/llms.txt</code>:</p>
-    <form class="audit-bar" onsubmit="event.preventDefault();const v=this.dom.value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');if(!v)return;const t=this.tool.value;if(t==='inbox')window.open('https://inbox-checker.appwrite.network/?domain='+encodeURIComponent(v),'_blank');else if(t==='spf')window.open('https://inbox-checker.appwrite.network/spf-flattener?domain='+encodeURIComponent(v),'_blank');else if(t==='cite')window.open('https://citeready-checker.appwrite.network/?url='+encodeURIComponent('https://'+v),'_blank');else if(t==='llms')window.open('https://citeready-checker.appwrite.network/generator?url='+encodeURIComponent('https://'+v),'_blank');else if(t==='vibe')window.open('https://vibe-checker.appwrite.network/?url='+encodeURIComponent('https://'+v),'_blank');else window.open('https://brand-checker.appwrite.network/report/'+encodeURIComponent(v.split('.')[0]),'_blank');">
-      <input name="dom" placeholder="yourdomain.com (or brand name)..." required maxlength="80" />
-      <select name="tool" aria-label="Diagnostic tool">
+    <h3 style="margin-top:0">Run a Live 3-Engine Launch Audit on Your Domain (Free, Zero Signup)</h3>
+    <p class="mut" style="margin:0 0 12px;font-size:.92rem">Enter your domain once to audit <strong>Security Headers &amp; JS Secrets + Email DNS (SPF/DKIM/DMARC) + AI Search (/llms.txt)</strong> concurrently inline, or jump directly to any single flagship tool:</p>
+    <form class="audit-bar" id="liveAuditForm">
+      <input name="dom" id="liveAuditDom" placeholder="yourdomain.com (or brand name)..." required maxlength="80" />
+      <select name="tool" id="liveAuditTool" aria-label="Diagnostic tool">
+        <option value="suite">All-in-One 3-Engine Live Audit (Security + Email + AI Search)</option>
         <option value="vibe">Pre-Launch Security &amp; Supabase RLS Scan (VibeShield v7.0)</option>
         <option value="inbox">Email Deliverability Audit — SPF/DKIM/DMARC/DNSBL (InboxShield v7.0)</option>
         <option value="spf">Free SPF &gt;10 Lookup Flattener (InboxShield v7.0)</option>
         <option value="cite">AI Search &amp; GEO 10-Bot Audit (CiteReady v6.0)</option>
         <option value="llms">Free /llms.txt Starter Generator (CiteReady v6.0)</option>
-        <option value="brand">100% Free Brand RDAP + USPTO Trademark Report (BrandShield v6.3)</option>
+        <option value="brand">100% Free Brand RDAP + USPTO Trademark Report (BrandShield v6.4)</option>
       </select>
-      <button type="submit" class="btn btn-cta">Run Free Live Audit &rarr;</button>
+      <button type="submit" id="liveAuditBtn" class="btn btn-cta">Run Free Live Audit &rarr;</button>
     </form>
+    <div id="liveAuditOut" style="display:none;margin-top:12px;padding:12px;border-radius:10px;border:1px solid rgba(148,163,184,.25);background:rgba(15,23,42,.55)"></div>
+    <script>
+    (function(){
+      var f=document.getElementById("liveAuditForm"),i=document.getElementById("liveAuditDom"),s=document.getElementById("liveAuditTool"),b=document.getElementById("liveAuditBtn"),o=document.getElementById("liveAuditOut");
+      if(!f||!i||!s||!o)return;
+      function e(x){return String(x==null?"":x).split("&").join("&amp;").split("<").join("&lt;").split(">").join("&gt;").split('"').join("&quot;");}
+      f.addEventListener("submit",async function(ev){
+        ev.preventDefault();
+        var v=i.value.trim().replace(/^https?:\/\//i,"").replace(/^www\./i,"").replace(/\/.*$/,"");
+        if(!v)return;
+        var t=s.value;
+        if(t==="inbox"){window.open("https://inbox-checker.appwrite.network/?domain="+encodeURIComponent(v),"_blank");return;}
+        if(t==="spf"){window.open("https://inbox-checker.appwrite.network/spf-flattener?domain="+encodeURIComponent(v),"_blank");return;}
+        if(t==="cite"){window.open("https://citeready-checker.appwrite.network/?url="+encodeURIComponent("https://"+v),"_blank");return;}
+        if(t==="llms"){window.open("https://citeready-checker.appwrite.network/generator?url="+encodeURIComponent("https://"+v),"_blank");return;}
+        if(t==="vibe"){window.open("https://vibe-checker.appwrite.network/?url="+encodeURIComponent("https://"+v),"_blank");return;}
+        if(t==="brand"){window.open("https://brand-checker.appwrite.network/report/"+encodeURIComponent(v.split(".")[0]),"_blank");return;}
+        b.disabled=true;o.style.display="block";
+        o.innerHTML='<span class="mut">Running VibeShield + InboxShield + CiteReady concurrently on <strong>'+e(v)+'</strong> (~4s)...</span>';
+        try{
+          var r=await fetch("https://omnipulse-x402.appwrite.network/v1/quick-score?domain="+encodeURIComponent(v),{headers:{Accept:"application/json"}});
+          var d=await r.json().catch(function(){return {};});
+          if(!r.ok||d.ok===false){o.innerHTML='<span class="pill bad">Notice</span> '+e(d.error||"Could not scan domain.");return;}
+          if(typeof window.opTrack==="function")window.opTrack("scan");
+          var ov=d.overall||{},en=d.engines||{},ck=d.checkout||{},vb=en.vibeshield||{},ib=en.inboxshield||{},cr=en.citeready||{};
+          var suiteUrl=ck.completeSuite5Usd||"https://omnipulse-x402.appwrite.network/checkout/launch-stack";
+          o.innerHTML=
+            '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">'+
+              '<div><strong>'+e(d.domain||v)+'</strong> &middot; Security: <strong>'+e(vb.score!=null?vb.score:"-")+'/100</strong> &middot; Email: <strong>'+e(ib.score!=null?ib.score:"-")+'/100</strong> &middot; AI Search: <strong>'+e(cr.score!=null?cr.score:"-")+'/100</strong></div>'+
+              '<span class="pill '+(ov.score>=80?"ok":(ov.score>=60?"warn":"bad"))+'">Overall: '+e(ov.score!=null?ov.score:"-")+'/100 ('+e(ov.grade||"-")+')</span>'+
+            '</div>'+
+            '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">'+
+              '<a class="btn btn-cta" href="'+e(suiteUrl)+'" target="_blank" rel="noopener">Unlock All 3 Fixes for '+e(d.domain||v)+' — $5 Suite Special (was $29) &rarr;</a>'+
+              '<a class="btn" href="'+e(vb.checkoutUrl||"https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield")+'" target="_blank" rel="noopener">Security $2</a>'+
+              '<a class="btn" href="'+e(ib.checkoutUrl||"https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield")+'" target="_blank" rel="noopener">Email $2</a>'+
+              '<a class="btn" href="'+e(cr.checkoutUrl||"https://omnipulse-x402.appwrite.network/go/gumroad/citeready")+'" target="_blank" rel="noopener">AI Search $2</a>'+
+            '</div>';
+        }catch(err){
+          o.innerHTML='<span class="pill warn">Notice</span> <a href="https://vibe-checker.appwrite.network/?url='+encodeURIComponent("https://"+v)+'" target="_blank" rel="noopener">Open VibeShield directly &rarr;</a>';
+        }finally{b.disabled=false;}
+      });
+    })();
+    </script>
   </div>
 
     <div class="card" style="border-color:rgba(16,185,129,.45);background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(56,189,248,.06))">
