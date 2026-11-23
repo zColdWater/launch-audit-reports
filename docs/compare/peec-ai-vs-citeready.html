@@ -236,6 +236,34 @@
     </div>
   </div></footer>
   <script>
+(function(){
+  var E="https://omnipulse-x402.appwrite.network/v1/telemetry",D=document,W=window,R=D.documentElement,G=navigator,S=W.screen,M=Math,N=Date.now;
+  var SITE="citeready",PTH="/compare/peec-ai-vs-citeready",I="hub_"+N().toString(36)+"_"+M.random().toString(36).slice(2,10);
+  var z="",d=0,v=D.hidden?0:N(),m=0,la=0,c={scan:0,outbound:0,paywall:0};
+  try{z=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}
+  function fl(){if(v)d+=M.max(0,N()-v);v=D.hidden?0:N();}
+  function us(){m=M.max(m,M.min(100,M.round(M.max(0,W.scrollY)/M.max(1,R.scrollHeight-W.innerHeight)*100)));}
+  function tx(ev){
+    fl();us();
+    var b=JSON.stringify({site:SITE,sid:I,event:ev,path:PTH,webdriver:!!G.webdriver,screen:S?S.width+"x"+S.height:"0x0",dwellSec:M.round(d/1e3),scrollPct:m,scansRun:c.scan,outboundClicks:c.outbound,paywallClicks:c.paywall,referrer:(D.referrer||"").slice(0,128),tz:z,lang:R.lang||"en"});
+    try{if(!G.sendBeacon||!G.sendBeacon(E,new Blob([b],{type:"text/plain"})))fetch(E,{method:"POST",body:b,keepalive:true}).catch(function(){});}catch(e){}
+  }
+  function lv(){fl();v=0;if(N()-la>1000){la=N();tx("leave");}}
+  W.opTrack=function(ev){if(ev in c)c[ev]++;tx(ev);};
+  W.addEventListener("scroll",us,{passive:true});
+  D.addEventListener("visibilitychange",function(){if(D.hidden)lv();else v=N();});
+  W.addEventListener("pagehide",lv);
+  D.addEventListener("click",function(e){
+    var a=e.target&&e.target.closest?e.target.closest("a[href]"):null;
+    if(!a)return;
+    var h=a.getAttribute("href")||"";
+    if(h.indexOf("/go/gumroad")!==-1||h.indexOf("/checkout/")!==-1)W.opTrack("paywall");
+    else if(h.indexOf("appwrite.network")!==-1&&h.indexOf("/assets/cover")===-1)W.opTrack("outbound");
+  });
+  tx("pageview");
+})();
+</script>
+  <script>
 (function () {
   var MODE = "cite";
   var OUR_URL = "https://citeready-checker.appwrite.network";
@@ -308,13 +336,18 @@
       }
 
       var pillCls = score == null ? "p-neutral" : (score >= 75 ? "p-ok" : (score >= 50 ? "p-warn" : "p-bad"));
+      if (typeof window.opTrack === "function") window.opTrack("scan");
+      var slugMap = { inbox: "inboxshield", vibe: "vibeshield", cite: "citeready" };
+      var ctxDom = d.domain || d.hostname || val;
+      var ctxIssues = (MODE === "vibe" && Array.isArray(d.findings)) ? d.findings.length : ((d.assessment && Array.isArray(d.assessment.issues)) ? d.assessment.issues.length : ((d.assessment && Array.isArray(d.assessment.warnings)) ? d.assessment.warnings.length : 0));
+      var ctxHref = slugMap[MODE] ? ("https://omnipulse-x402.appwrite.network/checkout/" + slugMap[MODE] + "?domain=" + encodeURIComponent(ctxDom) + "&score=" + encodeURIComponent(score == null ? 0 : score) + "&issues=" + encodeURIComponent(ctxIssues)) : OUR_GUM;
       out.innerHTML =
         '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">' +
           '<div>' + summaryLine + '</div>' +
           (score != null ? '<span class="pill ' + pillCls + '">Score: ' + esc(score) + '/100' + (grade ? ' (' + esc(grade) + ')' : '') + '</span>' : '') +
         '</div>' +
         '<div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--bd);display:flex;gap:10px;flex-wrap:wrap;align-items:center">' +
-          (MODE === "brand" ? '<a class="btn btn-pri btn-sm" href="' + esc(deepLink) + '" target="_blank" rel="noopener">Open Full 78-TLD + USPTO Report (100% Free) &rarr;</a>' : '<a class="btn btn-dark btn-sm" href="' + esc(OUR_GUM) + '" target="_blank" rel="noopener">Unlock Full Fixes — ' + esc(OUR_PRICE) + ' &rarr;</a><a class="btn btn-pri btn-sm" href="' + esc(deepLink) + '" target="_blank" rel="noopener">Inspect Full Trace &amp; Sample Fix</a>') +
+          (MODE === "brand" ? '<a class="btn btn-pri btn-sm" href="' + esc(deepLink) + '" target="_blank" rel="noopener">Open Full 78-TLD + USPTO Report (100% Free) &rarr;</a>' : '<a class="btn btn-dark btn-sm" href="' + esc(ctxHref) + '" target="_blank" rel="noopener">Unlock Exact Fixes for ' + esc(ctxDom) + ' — ' + esc(OUR_PRICE) + ' &rarr;</a><a class="btn btn-pri btn-sm" href="' + esc(deepLink) + '" target="_blank" rel="noopener">Inspect Full Trace &amp; Sample Fix</a>') +
         '</div>';
     } catch (e) {
       out.innerHTML = '<span class="pill p-warn">Offline</span> Live check unavailable right now — <a href="' + esc(OUR_URL) + '" target="_blank" rel="noopener" style="font-weight:600">open the web app directly &rarr;</a>';

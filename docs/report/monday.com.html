@@ -181,5 +181,33 @@
       });
     });
   </script>
+  <script>
+(function(){
+  var E="https://omnipulse-x402.appwrite.network/v1/telemetry",D=document,W=window,R=D.documentElement,G=navigator,S=W.screen,M=Math,N=Date.now;
+  var SITE="inboxshield",PTH="/report/monday.com",I="hub_"+N().toString(36)+"_"+M.random().toString(36).slice(2,10);
+  var z="",d=0,v=D.hidden?0:N(),m=0,la=0,c={scan:0,outbound:0,paywall:0};
+  try{z=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}
+  function fl(){if(v)d+=M.max(0,N()-v);v=D.hidden?0:N();}
+  function us(){m=M.max(m,M.min(100,M.round(M.max(0,W.scrollY)/M.max(1,R.scrollHeight-W.innerHeight)*100)));}
+  function tx(ev){
+    fl();us();
+    var b=JSON.stringify({site:SITE,sid:I,event:ev,path:PTH,webdriver:!!G.webdriver,screen:S?S.width+"x"+S.height:"0x0",dwellSec:M.round(d/1e3),scrollPct:m,scansRun:c.scan,outboundClicks:c.outbound,paywallClicks:c.paywall,referrer:(D.referrer||"").slice(0,128),tz:z,lang:R.lang||"en"});
+    try{if(!G.sendBeacon||!G.sendBeacon(E,new Blob([b],{type:"text/plain"})))fetch(E,{method:"POST",body:b,keepalive:true}).catch(function(){});}catch(e){}
+  }
+  function lv(){fl();v=0;if(N()-la>1000){la=N();tx("leave");}}
+  W.opTrack=function(ev){if(ev in c)c[ev]++;tx(ev);};
+  W.addEventListener("scroll",us,{passive:true});
+  D.addEventListener("visibilitychange",function(){if(D.hidden)lv();else v=N();});
+  W.addEventListener("pagehide",lv);
+  D.addEventListener("click",function(e){
+    var a=e.target&&e.target.closest?e.target.closest("a[href]"):null;
+    if(!a)return;
+    var h=a.getAttribute("href")||"";
+    if(h.indexOf("/go/gumroad")!==-1||h.indexOf("/checkout/")!==-1)W.opTrack("paywall");
+    else if(h.indexOf("appwrite.network")!==-1&&h.indexOf("/assets/cover")===-1)W.opTrack("outbound");
+  });
+  tx("pageview");
+})();
+</script>
 </body>
 </html>

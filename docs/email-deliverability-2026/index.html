@@ -242,17 +242,20 @@ _dmarc.yourdomain.com.  300  IN  TXT  "v=DMARC1; p=reject; pct=100; rua=mailto:d
         var dmarcP = (d.dmarc && d.dmarc.policy) || "missing";
         var issues = (d.assessment && Array.isArray(d.assessment.issues)) ? d.assessment.issues : (Array.isArray(d.issues) ? d.issues : []);
         var cls = sc >= 80 ? "p-ok" : (sc >= 60 ? "p-warn" : "p-bad");
+        if (typeof window.opTrack === "function") window.opTrack("scan");
+        var ctxDom = d.domain || dom;
+        var ctxUrl = "https://omnipulse-x402.appwrite.network/checkout/inboxshield?domain=" + encodeURIComponent(ctxDom) + "&score=" + encodeURIComponent(sc) + "&issues=" + encodeURIComponent(issues.length);
         var topHtml = issues.length ? '<ul style="margin:10px 0 0;padding-left:18px;font-size:13px;color:var(--ink2)">' + issues.slice(0, 3).map(function (it) {
           var txt = typeof it === "string" ? it : (it.title || it.message || it.code || "DNS issue detected");
           return '<li style="margin:5px 0">' + esc(txt) + '</li>';
         }).join("") + '</ul>' : '';
         out.innerHTML =
           '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">' +
-            '<div><strong>' + esc(d.domain || dom) + '</strong> &middot; SPF: <strong>' + esc(lookups) + '/10</strong> &middot; DMARC: <strong>' + esc(dmarcP) + '</strong></div>' +
+            '<div><strong>' + esc(ctxDom) + '</strong> &middot; SPF: <strong>' + esc(lookups) + '/10</strong> &middot; DMARC: <strong>' + esc(dmarcP) + '</strong></div>' +
             '<span class="pill ' + cls + '">Score: ' + esc(sc) + '/100 (' + esc(gr) + ')</span>' +
           '</div>' + topHtml +
           '<div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--bd);display:flex;gap:10px;flex-wrap:wrap">' +
-            '<a class="btn btn-dark btn-sm" href="https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield" target="_blank" rel="noopener">Unlock Zero-Conflict DNS Fixes — $2 (was $9) &rarr;</a>' +
+            '<a class="btn btn-dark btn-sm" href="' + esc(ctxUrl) + '" target="_blank" rel="noopener">Unlock Zero-Conflict DNS Fixes for ' + esc(ctxDom) + ' — $2 (was $9) &rarr;</a>' +
             '<a class="btn btn-pri btn-sm" href="https://inbox-checker.appwrite.network/?domain=' + encodeURIComponent(dom) + '" target="_blank" rel="noopener">Inspect Full 6-Phase Trace</a>' +
           '</div>';
       } catch (e) {
@@ -265,5 +268,33 @@ _dmarc.yourdomain.com.  300  IN  TXT  "v=DMARC1; p=reject; pct=100; rua=mailto:d
     document.querySelectorAll(".in-chip").forEach(function (c) { c.addEventListener("click", function () { run(c.getAttribute("data-d")); }); });
   })();
   </script>
+  <script>
+(function(){
+  var E="https://omnipulse-x402.appwrite.network/v1/telemetry",D=document,W=window,R=D.documentElement,G=navigator,S=W.screen,M=Math,N=Date.now;
+  var SITE="inboxshield",PTH="/email-deliverability-2026",I="hub_"+N().toString(36)+"_"+M.random().toString(36).slice(2,10);
+  var z="",d=0,v=D.hidden?0:N(),m=0,la=0,c={scan:0,outbound:0,paywall:0};
+  try{z=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}
+  function fl(){if(v)d+=M.max(0,N()-v);v=D.hidden?0:N();}
+  function us(){m=M.max(m,M.min(100,M.round(M.max(0,W.scrollY)/M.max(1,R.scrollHeight-W.innerHeight)*100)));}
+  function tx(ev){
+    fl();us();
+    var b=JSON.stringify({site:SITE,sid:I,event:ev,path:PTH,webdriver:!!G.webdriver,screen:S?S.width+"x"+S.height:"0x0",dwellSec:M.round(d/1e3),scrollPct:m,scansRun:c.scan,outboundClicks:c.outbound,paywallClicks:c.paywall,referrer:(D.referrer||"").slice(0,128),tz:z,lang:R.lang||"en"});
+    try{if(!G.sendBeacon||!G.sendBeacon(E,new Blob([b],{type:"text/plain"})))fetch(E,{method:"POST",body:b,keepalive:true}).catch(function(){});}catch(e){}
+  }
+  function lv(){fl();v=0;if(N()-la>1000){la=N();tx("leave");}}
+  W.opTrack=function(ev){if(ev in c)c[ev]++;tx(ev);};
+  W.addEventListener("scroll",us,{passive:true});
+  D.addEventListener("visibilitychange",function(){if(D.hidden)lv();else v=N();});
+  W.addEventListener("pagehide",lv);
+  D.addEventListener("click",function(e){
+    var a=e.target&&e.target.closest?e.target.closest("a[href]"):null;
+    if(!a)return;
+    var h=a.getAttribute("href")||"";
+    if(h.indexOf("/go/gumroad")!==-1||h.indexOf("/checkout/")!==-1)W.opTrack("paywall");
+    else if(h.indexOf("appwrite.network")!==-1&&h.indexOf("/assets/cover")===-1)W.opTrack("outbound");
+  });
+  tx("pageview");
+})();
+</script>
 </body>
 </html>
