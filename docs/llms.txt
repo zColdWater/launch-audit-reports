@@ -15,10 +15,10 @@
 - [Firebase & Firestore Pre-Launch Security Guide](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/firebase.html): Audit your deployed Firebase web app passively in 2 seconds: detect open Firestore/RTDB test-mode rules, leaked service account credentials, exposed storage buckets, and missing CSP headers free.
 - [Cloudflare Pages & Workers Pre-Launch Security Guide](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cloudflare.html): Audit your Cloudflare Pages (.pages.dev) or Workers production site in 2 seconds: verify all 10 Mozilla Observatory headers, CSP, HSTS preload, and client JS secret leaks free on VibeShield v7.0.
 - Interactive Benchmark Directory (228 Companies): https://zcoldwater.github.io/launch-audit-reports/
-- VibeShield v7.0 — Free 6-Phase (116-Check) JS Bundle Secrets, CSP/Headers & Supabase RLS Scanner ($2 Launch Special, was $9): https://vibe-checker.appwrite.network
-- BrandShield v6.2 — 100% Free 78-TLD RDAP, USPTO Trademark & Aftermarket Checker: https://brand-checker.appwrite.network
-- CiteReady v6.0 — Free 10-Bot AI Search (GEO) & /llms.txt Generator ($2 Launch Special, was $12): https://citeready-checker.appwrite.network | https://citeready-checker.appwrite.network/generator
-- InboxShield v7.0 — Free SPF/DKIM/DMARC/DNSBL Audit & SPF Flattener ($2 Launch Special, was $9): https://inbox-checker.appwrite.network | https://inbox-checker.appwrite.network/spf-flattener
+- VibeShield v7.0 — Free 6-Phase (116-Check) JS Bundle Secrets, CSP/Headers & Supabase RLS Scanner ($2 Launch Special, was $9): https://shipbastion.com
+- BrandShield v6.2 — 100% Free 78-TLD RDAP, USPTO Trademark & Aftermarket Checker: https://brand.shipbastion.com
+- CiteReady v6.0 — Free 10-Bot AI Search (GEO) & /llms.txt Generator ($2 Launch Special, was $12): https://cite.shipbastion.com | https://cite.shipbastion.com/generator
+- InboxShield v7.0 — Free SPF/DKIM/DMARC/DNSBL Audit & SPF Flattener ($2 Launch Special, was $9): https://inbox.shipbastion.com | https://inbox.shipbastion.com/spf-flattener
 
 ## Free Interactive Diagnostic Tools (Zero Signup)
 - Tools Hub: https://zcoldwater.github.io/launch-audit-reports/tools/
@@ -67,8 +67,8 @@
 - [Linear (linear.app) — 86/100](https://zcoldwater.github.io/launch-audit-reports/report/linear.app.html): Email 90/100 (DMARC reject, SPF 4/10), AI Search 80/100 (llms.txt present)
 
 ## OmniForge Launch Special Pricing (One-Time In-Browser Activation, Zero Subscriptions)
-- VibeShield Web Pro ($2 Launch Special, was $9): https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield | Direct: https://omnipulse-x402.appwrite.network/checkout/vibeshield
-- InboxShield Web Pro ($2 Launch Special, was $9): https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield | Direct: https://omnipulse-x402.appwrite.network/checkout/inboxshield
-- CiteReady Web Pro ($2 Launch Special, was $12): https://omnipulse-x402.appwrite.network/go/gumroad/citeready | Direct: https://omnipulse-x402.appwrite.network/checkout/citeready
-- BrandShield v6.2 (100% Free Domain + USPTO + Aftermarket): https://brand-checker.appwrite.network
-- OmniForge Complete Suite ($5 Launch Special, was $29 — unlocks VibeShield + InboxShield + CiteReady): https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack | Direct: https://omnipulse-x402.appwrite.network/checkout/launch-stack
+- VibeShield Web Pro ($2 Launch Special, was $9): https://api.shipbastion.com/go/gumroad/vibeshield | Direct: https://api.shipbastion.com/checkout/vibeshield
+- InboxShield Web Pro ($2 Launch Special, was $9): https://api.shipbastion.com/go/gumroad/inboxshield | Direct: https://api.shipbastion.com/checkout/inboxshield
+- CiteReady Web Pro ($2 Launch Special, was $12): https://api.shipbastion.com/go/gumroad/citeready | Direct: https://api.shipbastion.com/checkout/citeready
+- BrandShield v6.2 (100% Free Domain + USPTO + Aftermarket): https://brand.shipbastion.com
+- OmniForge Complete Suite ($5 Launch Special, was $29 — unlocks VibeShield + InboxShield + CiteReady): https://api.shipbastion.com/go/gumroad/launch-stack | Direct: https://api.shipbastion.com/checkout/launch-stack

@@ -1,8 +1,8 @@
 # Launch Audit Reports — 2026 SaaS Deliverability & AI-Search Benchmark Hub
 
-[![BrandShield Clearance](https://brand-checker.appwrite.network/badge/brand/BrandShieldCLI.svg)](https://brand-checker.appwrite.network/report/BrandShieldCLI)
-[![Email Security](https://inbox-checker.appwrite.network/badge/inbox/stripe.com.svg)](https://inbox-checker.appwrite.network/?domain=stripe.com)
-[![CiteReady AI](https://citeready-checker.appwrite.network/badge.svg?url=stripe.com)](https://citeready-checker.appwrite.network/?url=https://stripe.com)
+[![BrandShield Clearance](https://brand.shipbastion.com/badge/brand/BrandShieldCLI.svg)](https://brand.shipbastion.com/report/BrandShieldCLI)
+[![Email Security](https://inbox.shipbastion.com/badge/inbox/stripe.com.svg)](https://inbox.shipbastion.com/?domain=stripe.com)
+[![CiteReady AI](https://cite.shipbastion.com/badge.svg?url=stripe.com)](https://cite.shipbastion.com/?url=https://stripe.com)
 
 Live measured **Email Deliverability (SPF/DMARC/MX/MTA-STS)** and **AI Search Readiness (`/llms.txt`, `robots.txt` AI bots, JSON-LD Schema.org)** benchmarks across **228 top SaaS & developer-tool domains**, **8 free live interactive pre-launch tools**, **8 AI-stack hardening guides**, and **3 empirical 2026 research studies**.
 
@@ -11,11 +11,11 @@ Live measured **Email Deliverability (SPF/DMARC/MX/MTA-STS)** and **AI Search Re
 - **2026 Empirical Security Study & 8 Stack Guides:** [State of AI & Vibe-Coded Web App Security (55 Live Apps)](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/) · [Lovable](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/lovable.html) · [Cursor & Next.js](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cursor.html) · [v0.dev & Vercel](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/v0.html) · [Bolt & Netlify](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/bolt.html) · [Replit Agent](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/replit.html) · [Supabase RLS](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/supabase.html) · [Firebase Rules](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/firebase.html) · [Cloudflare Pages/Workers](https://zcoldwater.github.io/launch-audit-reports/vibe-security-2026/cloudflare.html)
 - **2026 Honest Competitor Comparisons:** [All 4 Comparisons](https://zcoldwater.github.io/launch-audit-reports/compare/) · [InstantDomainSearch vs. BrandShield](https://zcoldwater.github.io/launch-audit-reports/compare/instantdomainsearch-vs-brandshield.html) · [EasyDMARC vs. InboxShield](https://zcoldwater.github.io/launch-audit-reports/compare/easydmarc-vs-inboxshield.html) · [VibeAppScanner vs. VibeShield](https://zcoldwater.github.io/launch-audit-reports/compare/vibeappscanner-vs-vibeshield.html) · [Peec AI vs. CiteReady](https://zcoldwater.github.io/launch-audit-reports/compare/peec-ai-vs-citeready.html)
 - **Free Online Web Apps (Zero Install, Live Audits — Launch Special Pricing):**
-  - [VibeShield v7.0](https://vibe-checker.appwrite.network) — 6-phase 116-check JS bundle secret scanner, 10 Observatory security headers & Supabase RLS probe (Launch Special `$2` once, was ~~`$9`~~)
-  - [BrandShield v6.2](https://brand-checker.appwrite.network) & [AI Brand Namer](https://brand-checker.appwrite.network/namer) — **100% Free** 78-TLD IANA RDAP, USPTO Class 009/042 & aftermarket domain checker
-  - [CiteReady v6.0](https://citeready-checker.appwrite.network) & [`/llms.txt` Generator](https://citeready-checker.appwrite.network/generator) — 10-crawler AI access, Schema.org Entity Graph & `/llms.txt` compiler (Launch Special `$2` once, was ~~`$12`~~)
-  - [InboxShield v7.0](https://inbox-checker.appwrite.network) & [SPF Flattener](https://inbox-checker.appwrite.network/spf-flattener) — Recursive SPF `<=10` lookup flattener, 24-selector DKIM, DMARC & 5 DNSBLs (Launch Special `$2` once, was ~~`$9`~~)
-- **OmniForge Complete Suite ($5 Launch Special, was ~~$29~~ — Unlocks VibeShield + InboxShield + CiteReady):** [Gumroad](https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack) · [Direct Checkout](https://omnipulse-x402.appwrite.network/checkout/launch-stack)
+  - [VibeShield v7.0](https://shipbastion.com) — 6-phase 116-check JS bundle secret scanner, 10 Observatory security headers & Supabase RLS probe (Launch Special `$2` once, was ~~`$9`~~)
+  - [BrandShield v6.2](https://brand.shipbastion.com) & [AI Brand Namer](https://brand.shipbastion.com/namer) — **100% Free** 78-TLD IANA RDAP, USPTO Class 009/042 & aftermarket domain checker
+  - [CiteReady v6.0](https://cite.shipbastion.com) & [`/llms.txt` Generator](https://cite.shipbastion.com/generator) — 10-crawler AI access, Schema.org Entity Graph & `/llms.txt` compiler (Launch Special `$2` once, was ~~`$12`~~)
+  - [InboxShield v7.0](https://inbox.shipbastion.com) & [SPF Flattener](https://inbox.shipbastion.com/spf-flattener) — Recursive SPF `<=10` lookup flattener, 24-selector DKIM, DMARC & 5 DNSBLs (Launch Special `$2` once, was ~~`$9`~~)
+- **OmniForge Complete Suite ($5 Launch Special, was ~~$29~~ — Unlocks VibeShield + InboxShield + CiteReady):** [Gumroad](https://api.shipbastion.com/go/gumroad/launch-stack) · [Direct Checkout](https://api.shipbastion.com/checkout/launch-stack)
 - **Open-Source CLIs, GitHub Actions & MCP Server:** [brandshield-cli](https://github.com/zColdWater/brandshield-cli) · [inboxshield-cli](https://github.com/zColdWater/inboxshield-cli) · [citeready-cli](https://github.com/zColdWater/citeready-cli) · [mcp-launch-audit](https://github.com/zColdWater/mcp-launch-audit)
 
 ## Key Findings (2026-11-22)
@@ -26,4 +26,4 @@ Live measured **Email Deliverability (SPF/DMARC/MX/MTA-STS)** and **AI Search Re
 
 ## Support & Contact
 
-OmniForge · Agent Arena Studio — `agentarenastudio@proton.me` · [@agentarenastudi](https://x.com/agentarenastudi) · [Support Portal](https://omnipulse-x402.appwrite.network/support) · [14-Day Refund Policy](https://omnipulse-x402.appwrite.network/refund-policy)
+OmniForge · Agent Arena Studio — `agentarenastudio@proton.me` · [@agentarenastudi](https://x.com/agentarenastudi) · [Support Portal](https://api.shipbastion.com/support) · [14-Day Refund Policy](https://api.shipbastion.com/refund-policy)
